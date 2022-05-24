@@ -52,7 +52,7 @@ function scr_get_card_bt(_card_selected){
 			}
 			//var _find = true; //temporario
 			if (_find){//caso a carta já esteja em um projeto do jogador
-				show_message("CARD TYPE SELECIONADO>> " + string(_card_selected.card_type));
+				show_debug_message("CARD TYPE SELECIONADO>> " + string(_card_selected.card_type));
 				switch (_card_selected.card_type){
 					case CARDTYPE.CLASSE:
 						switch (_card_selected.card_subtype){
@@ -71,7 +71,12 @@ function scr_get_card_bt(_card_selected){
 					case CARDTYPE.VARIAVEL:
 						if (player.edit_project){ 
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
+							
+							//teste
 							_card_selected.move_card = true;
+							_card_selected.x = mouse_x;
+							_card_selected.y = mouse_y;
+							//
 							show_debug_message("MOVENDO CARTA");
 						}
 						break;
