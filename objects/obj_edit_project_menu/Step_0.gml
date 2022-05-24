@@ -4,7 +4,7 @@
 if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){
 		moving_card = true;
-		instance_create_layer(0, 0, "Menu_move_card", obj_move_card_menu);
+		instance_create_depth(0, 0, -10, obj_move_card_menu);
 	}
 	if (!moving_card){ //trava todos os botões caso esteja movendo uma carta
 		if (position_meeting(mouse_x, mouse_y, cancel_bt)){

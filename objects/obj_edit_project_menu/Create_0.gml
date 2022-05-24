@@ -10,6 +10,7 @@ y_size = room_height / sprite_height - 1;
 x_pos = room_width / 1.6;
 y_pos = room_height / 2;
 
+
 image_xscale =  x_size;
 image_yscale = y_size;
 

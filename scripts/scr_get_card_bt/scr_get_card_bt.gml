@@ -69,8 +69,10 @@ function scr_get_card_bt(_card_selected){
 					break;
 			
 					case CARDTYPE.VARIAVEL:
-						if (player.edit_project){
+						if (player.edit_project){ 
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
+							_card_selected.move_card = true;
+							show_debug_message("MOVENDO CARTA");
 						}
 						break;
 				

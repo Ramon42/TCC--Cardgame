@@ -5,6 +5,8 @@
 card_type = -1;
 card_subtype = -1;
 in_project = false;
+move_card = false;
+
 
 valor = noone;
 texto_auxiliar = "";
