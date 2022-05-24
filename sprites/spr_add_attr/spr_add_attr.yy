@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_add_attr","path":"sprites/spr_add_attr/spr_add_attr.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_add_attr",
     "tags": [],
     "resourceType": "GMSequence",

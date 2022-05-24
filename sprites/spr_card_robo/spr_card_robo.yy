@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_card_robo","path":"sprites/spr_card_robo/spr_card_robo.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_card_robo",
     "tags": [],
     "resourceType": "GMSequence",

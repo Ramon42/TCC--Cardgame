@@ -7,6 +7,7 @@ card_subtype = -1;
 in_project = false;
 
 valor = noone;
+texto_auxiliar = "";
 
 enum CARDTYPE //todos os tipos de cartas e seus códigos
 {

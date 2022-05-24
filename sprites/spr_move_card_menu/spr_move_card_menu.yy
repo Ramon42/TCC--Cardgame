@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_move_card_menu","path":"sprites/spr_move_card_menu/spr_move_card_menu.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_move_card_menu",
     "tags": [],
     "resourceType": "GMSequence",

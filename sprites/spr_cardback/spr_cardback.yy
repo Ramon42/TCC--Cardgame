@@ -138,7 +138,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_cardback","path":"sprites/spr_cardback/spr_cardback.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_cardback",
     "tags": [],
     "resourceType": "GMSequence",

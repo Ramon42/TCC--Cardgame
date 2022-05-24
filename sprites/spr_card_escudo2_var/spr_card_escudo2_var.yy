@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_card_escudo2_var","path":"sprites/spr_card_escudo2_var/spr_card_escudo2_var.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_card_escudo2_var",
     "tags": [],
     "resourceType": "GMSequence",

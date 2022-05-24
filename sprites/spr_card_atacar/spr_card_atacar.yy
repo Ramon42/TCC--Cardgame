@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_card_atacar","path":"sprites/spr_card_atacar/spr_card_atacar.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_card_atacar",
     "tags": [],
     "resourceType": "GMSequence",

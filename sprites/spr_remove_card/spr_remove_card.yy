@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_remove_card","path":"sprites/spr_remove_card/spr_remove_card.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_remove_card",
     "tags": [],
     "resourceType": "GMSequence",
