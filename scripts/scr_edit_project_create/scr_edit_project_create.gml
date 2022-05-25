@@ -5,6 +5,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 	instance_create_layer(0, 0, "Menu_edit_project", obj_edit_project_menu);
 	if(!_project.created){ //não adiciona objetos toda hora que clicar em editar
 		_project.created = true;
+		obj_edit_project_menu.projeto = _project;
 		for (var i=0; i < array_length(_project.sprite_list); i ++){
 			var _temp_obj = instance_create_layer(0, 0, "Menu_edit_project", obj_card);
 			_temp_obj.sprite_index = _project.sprite_list[i];

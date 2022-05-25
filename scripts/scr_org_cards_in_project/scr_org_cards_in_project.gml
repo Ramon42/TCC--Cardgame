@@ -11,12 +11,16 @@ function scr_org_cards_in_project(){
 			case CARDTYPE.CLASSE:
 				card_list[|i].x = 500;
 				card_list[|i].y = 500;
+				card_list[|i].x_pos = 500;
+				card_list[|i].y_pos = 500;
 				card_list[|i].depth = -2;
 				break;
 				
 			case CARDTYPE.VARIAVEL:
 				card_list[|i].x = col1;
 				card_list[|i].y = lines[_pos_var];
+				card_list[|i].x_pos = col1;
+				card_list[|i].y_pos = lines[_pos_var];
 				card_list[|i].depth = -2;
 				_pos_var++;
 				show_message("POS VAR SIZE: " + string(_pos_var));
@@ -25,6 +29,8 @@ function scr_org_cards_in_project(){
 			case CARDTYPE.CONSTANTE:
 				card_list[|i].x = col2;
 				card_list[|i].y = lines[_pos_cons];
+				card_list[|i].x_pos = col2;
+				card_list[|i].y_pos = lines[_pos_cons];
 				card_list[|i].depth = -2;
 				_pos_cons++;
 				break;
@@ -32,6 +38,8 @@ function scr_org_cards_in_project(){
 			case CARDTYPE.METODO:
 				card_list[|i].x = col3;
 				card_list[|i].y = lines[_pos_meth];
+				card_list[|i].x_pos = col3;
+				card_list[|i].y_pos = lines[_pos_meth];
 				card_list[|i].depth = -2;
 				_pos_meth++;
 				break;

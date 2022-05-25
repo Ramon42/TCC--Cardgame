@@ -8,6 +8,9 @@ in_project = false;
 move_card = false;
 
 
+x_pos = x;
+y_pos = y;
+
 valor = noone;
 texto_auxiliar = "";
 

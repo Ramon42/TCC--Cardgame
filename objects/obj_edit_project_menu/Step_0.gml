@@ -9,6 +9,7 @@ if (mouse_check_button_released(mb_left)){
 	if (!moving_card){ //trava todos os botões caso esteja movendo uma carta
 		if (position_meeting(mouse_x, mouse_y, cancel_bt)){
 			con_client.player.edit_project = false;
+			con_client.player.card_selected.move_card = false;
 			con_client.player.card_selected = noone;
 			for (var i = 0; i < ds_list_size(obj_edit_project_menu.card_list); i++){
 				obj_edit_project_menu.card_list[|i].x = -700;

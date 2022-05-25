@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 if (self.move_card == true){
-	scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
+	//scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
 	if (mouse_check_button(mb_left)){
 		self.x = mouse_x;
 		self.y = mouse_y;
@@ -14,6 +14,7 @@ if (self.move_card == true){
 		//passar por cima dele, para avisar o jogador o alvo atual
 	}
 	else{ //ao soltar o botão do mouse a carta volta para pos original
-		
+		self.x = x_pos;
+		self.y = y_pos;
 	}
 }

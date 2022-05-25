@@ -3,10 +3,9 @@
 function scr_card_preview(_card_selected){
 	with(obj_card_preview){ instance_destroy(); }
 	with(obj_action_bt_parent){ instance_destroy(); }
-	var _preview = instance_create_layer(150, 200, "Instances", obj_card_preview);
+	var _preview = instance_create_depth(150, 200, -3, obj_card_preview);
 	_preview.show_text = _card_selected.texto_auxiliar;
 	_preview.sprite_index = _card_selected.sprite_index;
 	_preview.image_xscale = 2;
 	_preview.image_yscale = 2;
-	_preview.depth = -y;
 }
