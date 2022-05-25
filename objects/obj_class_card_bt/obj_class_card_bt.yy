@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_save_class",
-    "path": "sprites/spr_save_class/spr_save_class.yy",
+    "name": "spr_add_class",
+    "path": "sprites/spr_add_class/spr_add_class.yy",
   },
   "solid": false,
   "visible": true,

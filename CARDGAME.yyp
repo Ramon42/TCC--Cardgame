@@ -52,6 +52,7 @@
     {"id":{"name":"scr_send_project","path":"scripts/scr_send_project/scr_send_project.yy",},"order":2,},
     {"id":{"name":"obj_add_card_bt","path":"objects/obj_add_card_bt/obj_add_card_bt.yy",},"order":2,},
     {"id":{"name":"example_fns","path":"scripts/example_fns/example_fns.yy",},"order":3,},
+    {"id":{"name":"spr_add_class","path":"sprites/spr_add_class/spr_add_class.yy",},"order":8,},
     {"id":{"name":"obj_card","path":"objects/obj_card/obj_card.yy",},"order":5,},
     {"id":{"name":"scr_edit_project_create","path":"scripts/scr_edit_project_create/scr_edit_project_create.yy",},"order":0,},
     {"id":{"name":"obj_class_card_bt","path":"objects/obj_class_card_bt/obj_class_card_bt.yy",},"order":0,},

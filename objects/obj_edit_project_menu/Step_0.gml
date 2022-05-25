@@ -2,6 +2,13 @@
 // You can write your code in this editor
 
 if (mouse_check_button_released(mb_left)){
+	
+	if (position_meeting(mouse_x, mouse_y, obj_projeto)){ //teste pra drag and drop em cima de um projeto
+		var _inst;
+		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
+		show_message(_inst.id);
+	}
+	
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){
 		moving_card = true;
 		instance_create_depth(0, 0, -10, obj_move_card_menu);
@@ -15,8 +22,7 @@ if (mouse_check_button_released(mb_left)){
 				obj_edit_project_menu.card_list[|i].x = -700;
 			}
 			scr_set_projects_position(con_client.project_list);
-			instance_destroy(projeto);
-			ds_list_destroy(card_list);
+			ds_list_destroy(self.card_list);
 			instance_destroy(obj_edit_project_menu);
 			instance_destroy(obj_class_menu_parent_bt);
 		
