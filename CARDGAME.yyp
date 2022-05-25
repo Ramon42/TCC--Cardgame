@@ -29,6 +29,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"order":3,},
     {"id":{"name":"obj_opponent","path":"objects/obj_opponent/obj_opponent.yy",},"order":8,},
     {"id":{"name":"obj_cancel_bt","path":"objects/obj_cancel_bt/obj_cancel_bt.yy",},"order":2,},
+    {"id":{"name":"scr_set_project_to_move","path":"scripts/scr_set_project_to_move/scr_set_project_to_move.yy",},"order":1,},
     {"id":{"name":"spr_move_card","path":"sprites/spr_move_card/spr_move_card.yy",},"order":6,},
     {"id":{"name":"scr_send_opponent","path":"scripts/scr_send_opponent/scr_send_opponent.yy",},"order":7,},
     {"id":{"name":"scr_show_op_hand","path":"scripts/scr_show_op_hand/scr_show_op_hand.yy",},"order":4,},

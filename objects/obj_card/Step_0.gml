@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 if (self.move_card == true){
+	scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
 	if (mouse_check_button(mb_left)){
 		self.x = mouse_x;
 		self.y = mouse_y;
