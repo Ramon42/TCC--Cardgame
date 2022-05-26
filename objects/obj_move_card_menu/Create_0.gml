@@ -36,6 +36,5 @@ for(var i = 0; i < array_length_1d(proj); i++){
 }
 scr_org_move_project(); //organiza os projetos dentro do menu de mover carta
 
-
 cancel_move_bt = instance_create_depth(col4_m, lin5_m, -11, obj_cancel_bt);
 select__move_bt = instance_create_depth(col4_m, lin6_m, -11, obj_save_class_bt); //mudar esse botão

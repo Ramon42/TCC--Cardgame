@@ -74,7 +74,6 @@ function scr_get_card_bt(_card_selected){
 							
 							//teste
 							_card_selected.move_card = true;
-							scr_set_project_to_move();
 							//
 							show_debug_message("MOVENDO CARTA");
 						}

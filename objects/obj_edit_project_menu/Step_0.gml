@@ -6,8 +6,14 @@ if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, obj_projeto)){ //teste pra drag and drop em cima de um projeto
 		var _inst;
 		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
-		show_message(_inst.id);
-		show_message(con_client.player.card_selected);
+		if(_inst.id == self.projeto.id){
+			show_message("Esta carta já pertence a esse Projeto");
+		}
+		else { //aqui deve ser atualizado tanto o projeto atual (saida da carta) quanto o novo alvo da carta
+			show_message(_inst.id);
+			show_message(con_client.player.card_selected);
+		}
+
 	}
 	
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){

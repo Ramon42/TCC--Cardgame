@@ -9,6 +9,8 @@
 
 draw_self();
 
+draw_sprite(spr_lixeira, 0, 100, 800);
+
 draw_line(x - aux_x/2, y-aux_y, x - aux_x/2, y+aux_y);
 draw_line(x + aux_x/2, y-aux_y, x + aux_x/2, y+aux_y);
 
