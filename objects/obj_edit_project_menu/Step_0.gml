@@ -7,6 +7,7 @@ if (mouse_check_button_released(mb_left)){
 		var _inst;
 		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		show_message(_inst.id);
+		show_message(con_client.player.card_selected);
 	}
 	
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){
