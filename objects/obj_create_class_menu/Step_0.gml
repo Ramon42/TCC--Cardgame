@@ -46,6 +46,7 @@ if (mouse_check_button_released(mb_left)){
 			ds_list_add(card_list, con_client.player.card_selected);
 			card_list_size = ds_list_size(card_list);
 			array_push(projeto.sprite_list, con_client.player.card_selected.sprite_index);
+			array_push(projeto.obj_list, con_client.player.card_selected);
 			scr_add_value_to_project(projeto);
 			//show_debug_message("FORÇA DO PROJETO: " + string(projeto[? forca_var]));
 			//show_debug_message("ESCUDO DO PROJETO: " + string(projeto[? escudo_var]));
