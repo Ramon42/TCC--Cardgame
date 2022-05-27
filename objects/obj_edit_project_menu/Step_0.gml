@@ -3,6 +3,7 @@
 
 if (mouse_check_button_released(mb_left)){
 	
+	//ATUALIZANDO AQUI PRA N SE PERDER
 	if (position_meeting(mouse_x, mouse_y, obj_projeto)){ //teste pra drag and drop em cima de um projeto
 		var _inst;
 		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
@@ -12,9 +13,11 @@ if (mouse_check_button_released(mb_left)){
 		else { //aqui deve ser atualizado tanto o projeto atual (saida da carta) quanto o novo alvo da carta
 			show_message(_inst.id);
 			show_message(con_client.player.card_selected);
+			//scr_send_updated_project(self.projeto, _inst, con_client.player.card_selected);
 		}
 
 	}
+	//
 	
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){
 		moving_card = true;
