@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
+
 if (mouse_check_button_released(mb_left)){
 	
 	//ATUALIZANDO AQUI PRA N SE PERDER
@@ -19,6 +22,14 @@ if (mouse_check_button_released(mb_left)){
 	}
 	//
 	
+	for (var i = 0; i < ds_list_size(self.card_list); i++){
+		if (self.card_list[|i].move_card == true){
+			//scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
+			self.card_list[|i].image_alpha = 0.6;
+		}
+
+	}
+	
 	if (position_meeting(mouse_x, mouse_y, obj_move_card_bt)){
 		moving_card = true;
 		instance_create_depth(0, 0, -10, obj_move_card_menu);
@@ -26,7 +37,7 @@ if (mouse_check_button_released(mb_left)){
 	if (!moving_card){ //trava todos os botões caso esteja movendo uma carta
 		if (position_meeting(mouse_x, mouse_y, cancel_bt)){
 			con_client.player.edit_project = false;
-			if (con_client.player.card_selected != noone){
+			if (instance_exists(con_client.player.card_selected)){
 				con_client.player.card_selected.move_card = false;
 				con_client.player.card_selected = noone;
 			}
@@ -42,4 +53,7 @@ if (mouse_check_button_released(mb_left)){
 		else if (position_meeting(mouse_x, mouse_y, save_bt)){
 		}
 	}
+	
 }
+
+

@@ -6,11 +6,15 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 	for(var i = 0; i <  ds_list_size(_projeto1.cards_in_project); i++){
 		show_debug_message(string(_projeto1.cards_in_project[|i]));
 		if (_projeto1.cards_in_project[|i].id == _card.id){ //encontrar a carta no projeto para excluir ela
-			show_message("CARTA ENCONTRADA NO PROJETO");
 			ds_list_delete(_projeto1.cards_in_project, i);
-			show_message("CARTA DELETADA");
-			show_debug_message("CARTAS CADASTRADAS APÓS TROCA>> ");
-			show_debug_message(string(_projeto1.cards_in_project[|i]));
+			array_delete(_projeto1.sprite_list, i, 1);
+			obj_edit_project_menu.card_list[|i].x = -700;
+			instance_destroy(obj_edit_project_menu);
+			instance_destroy(obj_class_menu_parent_bt);
+			scr_edit_project_create(_projeto1, true);
+			
+			//ds_list_delete(obj_edit_project_menu.card_list, i);
+			break;
 		}
 	}
 	if (_projeto2 != undefined){
