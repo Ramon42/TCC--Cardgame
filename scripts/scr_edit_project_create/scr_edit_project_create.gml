@@ -11,6 +11,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 			var _temp_obj = instance_create_layer(0, 0, "Menu_edit_project", obj_card);
 			_temp_obj.sprite_index = _project.sprite_list[i];
 			array_push(_project.obj_list, _temp_obj);
+			ds_list_add(_project.cards_in_project, _temp_obj);
 			scr_assign_stats(_temp_obj);
 			ds_list_add(obj_edit_project_menu.card_list, _temp_obj);
 		}

@@ -13,7 +13,7 @@ if (mouse_check_button_released(mb_left)){
 		else { //aqui deve ser atualizado tanto o projeto atual (saida da carta) quanto o novo alvo da carta
 			show_message(_inst.id);
 			show_message(con_client.player.card_selected);
-			//scr_send_updated_project(self.projeto, _inst, con_client.player.card_selected);
+			scr_send_updated_project(self.projeto, _inst, con_client.player.card_selected);
 		}
 
 	}
@@ -26,8 +26,10 @@ if (mouse_check_button_released(mb_left)){
 	if (!moving_card){ //trava todos os botões caso esteja movendo uma carta
 		if (position_meeting(mouse_x, mouse_y, cancel_bt)){
 			con_client.player.edit_project = false;
-			con_client.player.card_selected.move_card = false;
-			con_client.player.card_selected = noone;
+			if (con_client.player.card_selected != noone){
+				con_client.player.card_selected.move_card = false;
+				con_client.player.card_selected = noone;
+			}
 			for (var i = 0; i < ds_list_size(obj_edit_project_menu.card_list); i++){
 				obj_edit_project_menu.card_list[|i].x = -700;
 			}

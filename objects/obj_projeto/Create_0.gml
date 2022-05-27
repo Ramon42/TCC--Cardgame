@@ -15,6 +15,7 @@ lin_esc = y+aux_y/6;
 
 obj_list = array_create(0);
 sprite_list = array_create(0);
+cards_in_project = ds_list_create();
 created = false;
 
 player_socket = 0;
