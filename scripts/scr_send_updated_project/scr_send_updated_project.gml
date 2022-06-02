@@ -3,6 +3,7 @@
 function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_projeto1 = projeto da onde a carta saiu
 																//_projeto2 = pra onde ela foi
 	var aux_del = noone;
+	var _aux_card = noone;
 	show_debug_message("CARTAS CADASTRADAS>> ");
 
 	
@@ -38,7 +39,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 			
 			//
 			obj_edit_project_menu.card_list[|i].x = -700;
-			var _aux = obj_edit_project_menu.card_list[|i];
+			_aux_card = obj_edit_project_menu.card_list[|i];
 			aux_del = ds_list_find_index(obj_edit_project_menu.card_list, _card);
 			show_message("AUX DEL>>> " + string(aux_del));
 			ds_list_delete(obj_edit_project_menu.card_list, aux_del);
@@ -54,7 +55,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 		}
 	}
 	if (_projeto2 != undefined){
-		ds_list_add(_projeto2.cards_in_project, _card);
+		ds_list_add(_projeto2.cards_in_project, _aux_card); //original é ds_list_add(_projeto2.cards_in_project, _card);
 		array_push(_projeto2.sprite_list, _card.sprite_index);
 		show_message("CARTA ENVIADA PARA O NOVO PROJETO");
 		scr_add_value_to_project_new(_projeto2.cards_in_project, _projeto2);

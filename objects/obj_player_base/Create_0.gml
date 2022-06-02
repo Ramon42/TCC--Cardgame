@@ -12,3 +12,15 @@ hand_size = 0;
 
 card_selected = noone;
 is_local = true;
+
+state = PLAYERSTATE;
+
+
+enum  PLAYERSTATE { //enumerar ações possiveis para enviar para o servidor
+	DRAW_PHASE,
+	MAIN_PHASE1,
+	BATTLE_PHASE,
+	MAIN_PHASE2,
+	END_PHASE,
+	ENEMY_TURN
+}
