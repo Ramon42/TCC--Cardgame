@@ -4,6 +4,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 													//deve-se criar um objeto para as cartas antes
 	instance_create_layer(0, 0, "Menu_edit_project", obj_edit_project_menu);
 	show_message("SPRITE LIST SIZE> " + string(_project.sprite_list));
+	show_message("_PROJECT.CREATED> " + string(_project.created));
 	if(!_project.created){ //não adiciona objetos toda hora que clicar em editar
 		_project.created = true;
 		obj_edit_project_menu.projeto = _project;
@@ -16,6 +17,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 			ds_list_add(_project.cards_in_project, _temp_obj);
 			scr_assign_stats(_temp_obj);
 			ds_list_add(obj_edit_project_menu.card_list, _temp_obj);
+			show_debug_message("SPRITE LIST DESSA CARALHA> " + string(_project.sprite_list));
 		}
 	}
 	else{

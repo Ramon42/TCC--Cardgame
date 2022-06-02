@@ -23,9 +23,11 @@ if (mouse_check_button_released(mb_left)){
 	//
 	
 	for (var i = 0; i < ds_list_size(self.card_list); i++){
-		if (self.card_list[|i].move_card == true){
-			//scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
-			self.card_list[|i].image_alpha = 0.6;
+		if(instance_exists(card_list[|i])){
+			if (self.card_list[|i].move_card == true){
+				//scr_set_project_to_move(); //CHAMAR ESSE SCRIPT EM UM LUGAR QUE NÃO FIQUE SE REPETINDO
+				self.card_list[|i].image_alpha = 0.6;
+			}
 		}
 
 	}
@@ -36,6 +38,7 @@ if (mouse_check_button_released(mb_left)){
 	}
 	if (!moving_card){ //trava todos os botões caso esteja movendo uma carta
 		if (position_meeting(mouse_x, mouse_y, cancel_bt)){
+			//self.projeto.created = false;
 			con_client.player.edit_project = false;
 			if (instance_exists(con_client.player.card_selected)){
 				con_client.player.card_selected.move_card = false;

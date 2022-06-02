@@ -49,7 +49,7 @@ if (mouse_check_button_released(mb_left)){
 			scr_add_value_to_project_new(card_list, projeto);
 			//show_debug_message("FORÇA DO PROJETO: " + string(projeto[? forca_var]));
 			//show_debug_message("ESCUDO DO PROJETO: " + string(projeto[? escudo_var]));
-			scr_org_cards_in_project(); //organiza os sprites dentro da interface
+			scr_org_cards_in_project(card_list, card_list_size); //organiza os sprites dentro da interface
 			
 			//DELETAR AQUI CARTAS DA MÃO ADICIONADAS AO PROJETO
 			var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);

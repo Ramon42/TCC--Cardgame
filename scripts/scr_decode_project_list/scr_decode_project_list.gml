@@ -3,11 +3,13 @@
 function scr_decode_project_list(_project_list){ //arrumar todo esse método, chamar ele toda hora vai criar um cacete
 										//de instancia repetida
 	var _array = json_parse(_project_list);
-
-	for (var row = 0; row < array_length(_array); row ++){
+	show_debug_message("_ARRAY DE _PROJECT_LIST>>>> " + string(_project_list));
+	for (var row = array_length(_array)-1; row >= 0; row--){
 		for (var i = 0; i < array_length(con_client.project_list); i++){
 				if (_array[row, 1] == con_client.project_list[i, 1]){
+					show_debug_message("DELETOU SOCK> " + string(_array[row,0]) + " ID> " +string(_array[row,1]) + " PROJETO> " +string(_array[row,2]) + " DA LISTA DECODE");
 					array_delete(_array, row, 1);
+					break;
 				}
 		}
 	}
