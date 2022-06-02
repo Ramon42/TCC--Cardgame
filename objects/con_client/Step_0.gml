@@ -3,15 +3,20 @@
 
 
 if (mouse_check_button_released(mb_left)){ //draw card
+	
+	/*
 	if (position_meeting(mouse_x, mouse_y, obj_deck)){
 		show_debug_message("DRAW");
 		scr_draw_card_client(1);
 		//scr_update_client();
 	}
+	*/
 	
+	/*
 	if (position_meeting(mouse_x, mouse_y, obj_card)){ 
 		scr_get_card();
 	}
+	*/
 	
 	if (instance_find(obj_create_class_menu, 0) != noone) {
 		if (position_meeting(mouse_x, mouse_y, obj_create_class_menu.save_bt)){

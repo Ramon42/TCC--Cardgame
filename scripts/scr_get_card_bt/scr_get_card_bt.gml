@@ -2,9 +2,9 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //AO CLICAR NO BOTÃO DE JOGAR UMA CARTA, RETORNA AS POSSIVEIS JOGADAS COM ELA
 function scr_get_card_bt(_card_selected){
-	if (_card_selected != noone){
+	if (_card_selected != noone and con_client.player.state = PLAYERSTATE.MAIN_PHASE1){
 		//if (ds_list_find_index(con.client.project_list)//caso a carta esteja dentro de um projeto
-		if (ds_list_find_index(player.hand, _card_selected) != -1){ //checa se a carta 
+		if (ds_list_find_index(con_client.player.hand, _card_selected) != -1){ //checa se a carta 
 			//selecionada está na mão do jogador, caso sim, serão mostrados os botoes de adicionar ao projeto
 			switch (_card_selected.card_type){ 
 				case CARDTYPE.CLASSE:
@@ -22,13 +22,13 @@ function scr_get_card_bt(_card_selected){
 					break;
 			
 				case CARDTYPE.VARIAVEL:
-					if (player.create_project){
+					if (con_client.player.create_project){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
 					}
 					break;
 				
 				case CARDTYPE.METODO:
-					if (player.create_project){
+					if (con_client.player.create_project){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
 					}
 					break;
@@ -69,7 +69,7 @@ function scr_get_card_bt(_card_selected){
 					break;
 			
 					case CARDTYPE.VARIAVEL:
-						if (player.edit_project){ 
+						if (con_client.player.edit_project){ 
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
 							
 							//teste
@@ -80,7 +80,7 @@ function scr_get_card_bt(_card_selected){
 						break;
 				
 					case CARDTYPE.METODO:
-						if (player.edit_project){
+						if (con_client.player.edit_project){
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
 						}
 						break;

@@ -6,10 +6,10 @@ function scr_get_card(){
 	_inst = instance_position(mouse_x, mouse_y, obj_card);
 	if(_inst != noone){
 		show_debug_message("ENTROU EM GETCARD");
-		player.card_selected = _inst;
+		con_client.player.card_selected = _inst;
 		//show_debug_message("GETCARD: " + string(player.card_selected.sprite_index));
-		scr_card_preview(player.card_selected);
-		scr_get_card_bt(player.card_selected);
+		scr_card_preview(con_client.player.card_selected);
+		scr_get_card_bt(con_client.player.card_selected);
 	}
 	/*
 	//até agora funciona quando o jogador passa o mouse sobre a carta

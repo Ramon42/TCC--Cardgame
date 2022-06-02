@@ -17,6 +17,7 @@ if (socket == _event_id){
 			opponent = instance_create_layer(0, 0, "Instances", obj_opponent); //fazer isso em create_opponent
 			deck.deck_size = buffer_read(_buff, buffer_u8);
 			server_socket = buffer_read(_buff, buffer_u8);
+			//scr_draw_card_client(7); //esse draw ta dando problema no segundo jogador conectado
 			break;
 		
 		case network.update: // retorna= deck size, cartas na mão do oponente
@@ -48,6 +49,7 @@ if (socket == _event_id){
 		
 		case 42:
 			show_message("RETORNO SOCKET" + string(self.socket));
+			scr_draw_card_client(7);
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, 55);
 			network_send_packet(global.socket, buffer, buffer_tell(buffer));

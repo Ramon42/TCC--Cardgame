@@ -13,7 +13,7 @@ hand_size = 0;
 card_selected = noone;
 is_local = true;
 
-state = PLAYERSTATE;
+state = PLAYERSTATE.DRAW_PHASE;
 
 
 enum  PLAYERSTATE { //enumerar ações possiveis para enviar para o servidor
