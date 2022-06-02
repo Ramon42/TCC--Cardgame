@@ -29,6 +29,7 @@ if (socket == _event_id){
 		case network.update_projects:
 			//projetos recebidos em json:
 			var _project_list = buffer_read(_buff, buffer_string);
+			scr_att_client_project_list(_project_list, project_list);
 			scr_decode_project_list(_project_list);
 			scr_set_projects_position(project_list);
 			break;

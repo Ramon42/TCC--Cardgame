@@ -3,9 +3,10 @@
 function scr_create_project(_project, _sock){ //lado do servidor
 	show_message("PROJETO RECEBIDO: " + string(_project));
 	
-	var _size = array_height_2d(projects_server);
+	var _size = array_length(projects_server);
+	show_message("ARRAY LENGTH CREATE> " + string(_size));
 	projects_server[_size, 0] = _sock; //id do jogador
-	projects_server[_size, 1] = _size; //id do projeto
+	projects_server[_size, 1] = _project.project_id; //id do projeto
 	projects_server[_size, 2] = _project;
 	
 	

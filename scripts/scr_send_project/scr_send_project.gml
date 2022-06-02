@@ -10,6 +10,7 @@ function scr_send_project(_projeto){
 		image_xscale : _projeto.image_xscale,
 		image_yscale : _projeto.image_yscale,
 		player_socket : con_client.server_socket,
+		project_id : _projeto.project_id,
 		forca_var : _projeto.forca_var,
 		forca_cons : _projeto.forca_cons,
 		escudo_var : _projeto.escudo_var,
@@ -23,5 +24,4 @@ function scr_send_project(_projeto){
 	var _data = json_stringify(_save_project);
 	buffer_write(buffer, buffer_string, _data);
 	network_send_packet(socket, buffer, buffer_tell(buffer));
-	show_message("SCR_SEND_PROJECT SAIU");
 }

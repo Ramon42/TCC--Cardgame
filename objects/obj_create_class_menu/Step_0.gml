@@ -46,7 +46,7 @@ if (mouse_check_button_released(mb_left)){
 			ds_list_add(card_list, con_client.player.card_selected);
 			card_list_size = ds_list_size(card_list);
 			array_push(projeto.sprite_list, con_client.player.card_selected.sprite_index);
-			scr_add_value_to_project(projeto);
+			scr_add_value_to_project_new(card_list, projeto);
 			//show_debug_message("FORÇA DO PROJETO: " + string(projeto[? forca_var]));
 			//show_debug_message("ESCUDO DO PROJETO: " + string(projeto[? escudo_var]));
 			scr_org_cards_in_project(); //organiza os sprites dentro da interface

@@ -3,14 +3,16 @@
 function scr_decode_project_list(_project_list){ //arrumar todo esse método, chamar ele toda hora vai criar um cacete
 										//de instancia repetida
 	var _array = json_parse(_project_list);
-	for (var row = 0; row < array_height_2d(_array); row ++){
-		for (var i = 0; i < array_height_2d(con_client.project_list); i++){
+
+	for (var row = 0; row < array_length(_array); row ++){
+		for (var i = 0; i < array_length(con_client.project_list); i++){
 				if (_array[row, 1] == con_client.project_list[i, 1]){
 					array_delete(_array, row, 1);
 				}
 		}
 	}
-	for (var row = 0; row < array_height_2d(_array); row ++){
+	
+	for (var row = 0; row < array_length(_array); row ++){
 		show_message("CRIANDO INSTANCIA");
 		_inst = instance_create_layer(0, 0,  "Projects", obj_projeto); //tirar essa instanciação daqui pq vai dar merda
 		var _load = _array[row, 2];
@@ -19,6 +21,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			image_xscale = _load.image_xscale;
 			image_yscale = _load.image_yscale;
 			player_socket = _load.player_socket;
+			project_id = _load.project_id;
 			forca_var = _load.forca_var;
 			forca_cons = _load.forca_cons;
 			escudo_var = _load.escudo_var;
@@ -28,7 +31,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			attributes_map = _load.attributes_map;
 			voo = _load.voo;
 		}
-		var _size = array_height_2d(con_client.project_list);
+		var _size = array_length(con_client.project_list);
+		
 		con_client.project_list[_size, 0] = _array[row, 0]; //sock do dono do projeto
 		con_client.project_list[_size, 1] = _array[row, 1]; //id projeto
 		con_client.project_list[_size, 2] = _inst;
@@ -37,8 +41,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	}
 	
 	//con_client.project_list = _aux_array;
-	for (var row = 0; row < array_height_2d(con_client.project_list); row++){
-		for (var col = 0; col < array_length_2d(con_client.project_list, row); col++){
+	for (var row = 0; row < array_length(con_client.project_list); row++){
+		for (var col = 0; col < array_length(con_client.project_list[row]); col++){
 			show_debug_message("VAL: " + string(con_client.project_list[row, col]));
 		}
 	}

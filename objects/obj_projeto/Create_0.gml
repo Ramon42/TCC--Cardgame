@@ -15,11 +15,11 @@ lin_esc = y+aux_y/6;
 
 obj_list = array_create(0);
 sprite_list = array_create(0);
+project_id = noone;
+player_socket = noone;
 
 cards_in_project = ds_list_create();
 created = false;
-
-player_socket = 0;
 
 forca_var = -1;
 forca_cons = -1;

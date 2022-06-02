@@ -87,6 +87,12 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			var _project = json_parse(buffer_read(_buff, buffer_string));
 			scr_create_project(_project, _sock);
 			break;
+			
+		case network.send_edit_project:
+			var _att_project = json_parse(buffer_read(_buff, buffer_string));
+			show_message("PROJETO ATUALIZADO RECEBIDO> " + string(_att_project));
+			scr_edit_project(_att_project, _sock);
+			break;
 
 	}
 }

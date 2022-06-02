@@ -16,6 +16,7 @@ if (mouse_check_button_released(mb_left)){ //draw card
 	if (instance_find(obj_create_class_menu, 0) != noone) {
 		if (position_meeting(mouse_x, mouse_y, obj_create_class_menu.save_bt)){
 			player.card_selected = noone;
+			obj_create_class_menu.projeto.project_id = array_length(con_client.project_list);
 			scr_send_project(obj_create_class_menu.projeto);
 			instance_destroy(obj_create_class_menu.projeto);
 			for (var i = 0; i < ds_list_size(obj_create_class_menu.card_list); i++){

@@ -19,7 +19,7 @@ if (connect < 0){
 //
 opponent = noone;
 player = noone;
-project_list = noone;
+project_list = [];
 player_proj = [];
 
 deck = noone; 
@@ -30,7 +30,7 @@ enum network { //enumerar ações possiveis para enviar para o servidor
 	update_projects,
 	draw_card,
 	create_project,
-	
+	send_edit_project,
 	entity,
 	create_opponent,
 	update_opponent,
