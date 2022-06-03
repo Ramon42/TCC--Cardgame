@@ -18,7 +18,7 @@ if (server == _event_id) {
 		//
 		
 		ds_map_add(clients, _sock, _p); //_sock = key
-		
+		self.alarm[0] = 30;
 		
 		for (var i = 0; i < ds_map_size(sockets); i ++){
 			show_debug_message("VALOR SOCKET: " + string(sockets[|i])); //retorna todos os sockets conectados

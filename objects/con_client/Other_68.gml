@@ -19,6 +19,9 @@ if (socket == _event_id){
 			server_socket = buffer_read(_buff, buffer_u8);
 			//scr_draw_card_client(7); //esse draw ta dando problema no segundo jogador conectado
 			break;
+			
+		case network.start_player:
+			self.player.state = PLAYERSTATE.DRAW_PHASE;
 		
 		case network.update: // retorna= deck size, cartas na mão do oponente
 			deck.deck_size = buffer_read(_buff, buffer_u8);
@@ -43,6 +46,9 @@ if (socket == _event_id){
 			ds_list_add(player.hand, _card);
 			scr_show_hand();
 			break;
+			
+		case network.wait:
+			self.player.state = PLAYERSTATE.ENEMY_TURN;
 			
 		//FIM DO NOVO
 			
