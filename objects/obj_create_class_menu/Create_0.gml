@@ -40,10 +40,15 @@ save_bt = instance_create_depth((col4), (lin6+20), -2, obj_save_class_bt);
 
 //novo, usando só uma lista para todas as cartas
 card_list = ds_list_create();
+projeto = instance_create_depth(col4, lin3, -2, obj_projeto);
 
 ds_list_add(card_list, con_client.player.card_selected);
+
 var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
+show_message("POSIÇÃO CREATE CLASS>>" + string(pos));
+show_message("SPRITE A SER DELETADO>> " + string(sprite_get_name(con_client.player.hand[|pos].sprite_index)))
 ds_list_delete(con_client.player.hand, pos);
 
 card_list_size = ds_list_size(card_list);
-projeto = instance_create_depth(col4, lin3, -2, obj_projeto);
+
+scr_org_cards_in_project(card_list, card_list_size);

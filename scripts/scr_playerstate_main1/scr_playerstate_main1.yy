@@ -6,7 +6,7 @@
     "path": "folders/Scripts/CLIENTE/PLAYER STATE.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_playerstate_main",
+  "name": "scr_playerstate_main1",
   "tags": [],
   "resourceType": "GMScript",
 }

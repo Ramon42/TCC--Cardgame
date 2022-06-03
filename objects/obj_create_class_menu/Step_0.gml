@@ -7,7 +7,7 @@ if (mouse_check_button_released(mb_left)){
 		show_message("PLAYERSTATE: " + string(con_client.player.create_project))
 		//CASO O PROJETO SEJA CANCELADO, ADICIONAR TODAS AS CARTAS DA CARD_LIST PARA A MÃO DO JOGADOR
 
-		for (var i = 0; i < card_list_size; i++){
+		for (var i = 0; i < ds_list_size(card_list); i++){
 			ds_list_add(con_client.player.hand, card_list[|i]);
 		}
 		scr_show_hand();

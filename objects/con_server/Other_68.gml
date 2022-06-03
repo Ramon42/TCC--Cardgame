@@ -74,6 +74,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		//só deve rodar após os dois clientes estarem conectados
 		case network.update: //enviar oponente 0 para 1 e oponente 1 para 0
 			scr_update(_sock, _p);
+			_p.hand_size = buffer_read(_buff, buffer_u8);
 			scr_update_projects(_sock);
 			break;
 			
@@ -93,6 +94,17 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			show_message("PROJETO ATUALIZADO RECEBIDO> " + string(_att_project));
 			scr_edit_project(_att_project, _sock);
 			break;
+			
+		case network.wait:
+			
+		break;
+		
+		case network.pass_turn:
+			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
+			else{ self.turn_player = self.sockets[|0]; }
+			scr_change_player_turn(_sock);
+			
+		break;
 
 	}
 }

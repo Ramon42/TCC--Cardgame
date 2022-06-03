@@ -22,6 +22,13 @@ if (socket == _event_id){
 			
 		case network.start_player:
 			self.player.state = PLAYERSTATE.DRAW_PHASE;
+			scr_draw_card_client(7);
+			break;
+		
+		case network.second_player:
+			self.player.state = PLAYERSTATE.ENEMY_TURN;
+			//scr_draw_card_client(7);
+			break;
 		
 		case network.update: // retorna= deck size, cartas na mão do oponente
 			deck.deck_size = buffer_read(_buff, buffer_u8);
@@ -49,13 +56,22 @@ if (socket == _event_id){
 			
 		case network.wait:
 			self.player.state = PLAYERSTATE.ENEMY_TURN;
-			
+			break;
+		
+		case network.start_turn:
+			var _turn_player = buffer_read(_buff, buffer_u8);
+			show_debug_message("_TURN_PLAYER> " + string(_turn_player));
+			show_debug_message("SELF.SOCKET> " + string(self.socket));
+			if (_turn_player == self.server_socket){
+				show_message("STARTANDO TURNO");
+				con_client.player.state = PLAYERSTATE.DRAW_PHASE;
+			}
+			break;
 		//FIM DO NOVO
 			
 		
 		case 42:
 			show_message("RETORNO SOCKET" + string(self.socket));
-			scr_draw_card_client(7);
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, 55);
 			network_send_packet(global.socket, buffer, buffer_tell(buffer));

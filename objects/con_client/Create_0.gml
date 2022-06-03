@@ -27,6 +27,8 @@ deck = noone;
 enum network { //enumerar ações possiveis para enviar para o servidor
 	init,
 	start_player,
+	second_player,
+	start_turn,
 	update,
 	update_projects,
 	draw_card,

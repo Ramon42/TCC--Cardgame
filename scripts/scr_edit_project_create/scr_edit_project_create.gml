@@ -34,5 +34,5 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 	_project.depth = -2;
 	_project.image_xscale = 3.5;
 	_project.image_yscale = 3.5;
-	obj_edit_project_menu.alarm[0] = 60;
+	obj_edit_project_menu.alarm[0] = 1;
 }
