@@ -12,6 +12,10 @@ function scr_update(_sock, _p){ //envia todos os updates GERAIS (ex, tamanho do 
 		buffer_write(buffer, buffer_u8, deck_server.deck_size);
 		//cartas na mão do oponente
 		buffer_write(buffer, buffer_u8, _op.hand_size);
+		//vida do oponente
+		buffer_write(buffer, buffer_u8, _op.vida_atual);
+		//vida do jogador
+		buffer_write(buffer, buffer_u8, _p.vida_atual);
 
 		network_send_packet(_sock, buffer, buffer_tell(buffer));
 	}

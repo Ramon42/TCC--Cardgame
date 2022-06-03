@@ -34,6 +34,7 @@ enum network { //enumerar ações possiveis para enviar para o servidor
 	draw_card,
 	create_project,
 	send_edit_project,
+	deal_damage,
 	entity,
 	create_opponent,
 	update_opponent,

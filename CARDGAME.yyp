@@ -71,6 +71,7 @@
     {"id":{"name":"obj_class_card_bt","path":"objects/obj_class_card_bt/obj_class_card_bt.yy",},"order":0,},
     {"id":{"name":"scr_change_player_turn","path":"scripts/scr_change_player_turn/scr_change_player_turn.yy",},"order":9,},
     {"id":{"name":"scr_create_project","path":"scripts/scr_create_project/scr_create_project.yy",},"order":6,},
+    {"id":{"name":"scr_send_damage","path":"scripts/scr_send_damage/scr_send_damage.yy",},"order":0,},
     {"id":{"name":"scr_playerstate_draw","path":"scripts/scr_playerstate_draw/scr_playerstate_draw.yy",},"order":0,},
     {"id":{"name":"dropdown_fns","path":"scripts/dropdown_fns/dropdown_fns.yy",},"order":2,},
     {"id":{"name":"scr_assign_stats","path":"scripts/scr_assign_stats/scr_assign_stats.yy",},"order":7,},
@@ -159,6 +160,7 @@
     {"folderPath":"folders/Scripts/AUXILIAR.yy","order":5,"resourceVersion":"1.0","name":"AUXILIAR","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/DROPDOWN MENU.yy","order":15,"resourceVersion":"1.0","name":"DROPDOWN MENU","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/CLIENTE/PLAYER STATE.yy","order":6,"resourceVersion":"1.0","name":"PLAYER STATE","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Scripts/CLIENTE/BATTLE.yy","order":7,"resourceVersion":"1.0","name":"BATTLE","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

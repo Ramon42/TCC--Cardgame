@@ -9,12 +9,12 @@ edit_project = false; //true = tela de edição de projeto
 
 hand = ds_list_create();
 hand_size = 0;
-
+vida_atual = 0;
+vida_max = 20;
 card_selected = noone;
 is_local = true;
 
 state = PLAYERSTATE.ENEMY_TURN;
-
 
 enum  PLAYERSTATE { //enumerar ações possiveis para enviar para o servidor
 	DRAW_PHASE,

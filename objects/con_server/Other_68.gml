@@ -10,7 +10,7 @@ if (server == _event_id) {
 	if (_type == network_type_connect){
 		ds_list_add(sockets, _sock);
 		var _p = instance_create_layer(0, 0, "Instances", obj_player_base);
-		
+		_p.vida_atual = 20;
 		scr_send_init(_sock);
 		//colocar tudo isso no send init
 		//scr_send_opponent(_sock, _p.id, _p.hand_size); //arrumar isso (10/10)
@@ -75,6 +75,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.update: //enviar oponente 0 para 1 e oponente 1 para 0
 			scr_update(_sock, _p);
 			_p.hand_size = buffer_read(_buff, buffer_u8);
+			//_p.vida_atual = buffer_read(_buff, buffer_u8);
 			scr_update_projects(_sock);
 			break;
 			
@@ -98,6 +99,16 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.wait:
 			
 		break;
+		
+		case network.deal_damage:
+			var _dmg = buffer_read(_buff, buffer_u8);
+			var _op = scr_find_op(_p);
+			show_message("VIDA _P = " + string(_p.vida_atual));
+			show_message("VIDA_OP = " + string(_op.vida_atual));
+			show_message("SERVIDOR RECEBEU DANO = " + string(_dmg));
+			_op.vida_atual -= _dmg;
+			show_message("VIDA_OP = " + string(_op.vida_atual));
+			break;
 		
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
