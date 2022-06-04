@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //AO CLICAR NO BOTÃO DE JOGAR UMA CARTA, RETORNA AS POSSIVEIS JOGADAS COM ELA
 function scr_get_card_bt(_card_selected){
-	if (_card_selected != noone and con_client.player.state = PLAYERSTATE.MAIN_PHASE1){
+	if (_card_selected != noone and (con_client.player.state == PLAYERSTATE.MAIN_PHASE1 or con_client.player.state == PLAYERSTATE.MAIN_PHASE2)){
 		//if (ds_list_find_index(con.client.project_list)//caso a carta esteja dentro de um projeto
 		if (ds_list_find_index(con_client.player.hand, _card_selected) != -1){ //checa se a carta 
 			//selecionada está na mão do jogador, caso sim, serão mostrados os botoes de adicionar ao projeto
@@ -10,7 +10,9 @@ function scr_get_card_bt(_card_selected){
 				case CARDTYPE.CLASSE:
 					switch (_card_selected.card_subtype){
 						case SUBTYPE.PROJETO:
-							instance_create_layer(0,0, "Instances", obj_class_card_bt);
+							if (!con_client.player.create_project and !con_client.player.edit_project) {
+								instance_create_layer(0,0, "Instances", obj_class_card_bt);
+							}
 							break;
 						
 						case SUBTYPE.SUPERCLASSE:

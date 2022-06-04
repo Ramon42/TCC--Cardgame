@@ -3,4 +3,4 @@
 
 show_debug_message("BOTAO CLASS CRIADO")
 x = 150;
-y = 400;
+y = 370;

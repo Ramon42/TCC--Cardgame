@@ -22,6 +22,9 @@ player_socket = noone;
 
 cards_in_project = ds_list_create();
 created = false;
+edit_project_bt = noone;
+create_instance_bt = noone;
+
 
 forca_var = -1;
 forca_cons = -1;

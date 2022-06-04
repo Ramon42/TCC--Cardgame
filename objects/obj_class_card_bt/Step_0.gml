@@ -8,4 +8,7 @@ if (mouse_check_button_released(mb_left)){
 		instance_destroy(self);
 		//scr_debug_hand();
 	}
+	if(position_meeting(mouse_x, mouse_y, obj_card)){
+		instance_destroy(self);
+	}
 }

@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x = 150;
+x = 75;
 y = 370;
 
-card = noone;
