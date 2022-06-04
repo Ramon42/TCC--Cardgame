@@ -15,6 +15,8 @@ lin_esc = y+aux_y/6;
 
 obj_list = array_create(0);
 sprite_list = array_create(0);
+selected = false;
+show_text = "";
 project_id = noone;
 player_socket = noone;
 
