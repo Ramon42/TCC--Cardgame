@@ -16,7 +16,6 @@ if (mouse_check_button_released(mb_left)){
 			for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
 				if (con_client.player.hand[|i].card_subtype == SUBTYPE.ROBO){
 					create_instance_bt = instance_create_depth(0, 0, -1, obj_create_instance_bt);
-					scr_create_instance(self, i); //enviar i para saber a posição da carta projeto na mão do jogador
 					break;
 				}
 			}
@@ -55,7 +54,9 @@ if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, create_instance_bt)){
 			instance_destroy(edit_project_bt);
 			instance_destroy(create_instance_bt);
+			scr_create_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
 			show_message("CRIANDO INSTANCIA DO PROJETO");
+			
 	}
 }
 
