@@ -25,7 +25,10 @@ function scr_send_instance(_project){
 		energia_var :  _project.energia_var,
 		energia_cons :  _project.energia_cons,
 
-		voo : _project.voo
+		voo : _project.voo,
+		
+		atacar_1 : _project.atacar_1,
+		atacar_2 : _project.atacar_2
 	}
 	
 	var _data = json_stringify(_save_instance);

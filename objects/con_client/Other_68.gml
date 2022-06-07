@@ -51,7 +51,7 @@ if (socket == _event_id){
 		case network.update_instances:
 			var _instance_list = buffer_read(_buff, buffer_string);
 			scr_decode_instance_list(_instance_list);
-			scr_set_instances_position(self.instance_list);
+			//scr_set_instances_position(self.instance_list);
 			break;
 		
 		case network.draw_card:

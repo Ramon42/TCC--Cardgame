@@ -38,6 +38,8 @@ function scr_decode_instance_list(_instance_list){
 			energia_var = _load.energia_var;
 			energia_cons = _load.energia_cons;
 			voo = _load.voo;
+			atacar_1 = _load.atacar_1;
+			atacar_2 = _load.atacar_2;
 		}
 		var _size = array_length(con_client.instance_list);
 		

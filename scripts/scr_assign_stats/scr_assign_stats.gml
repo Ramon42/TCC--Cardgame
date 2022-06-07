@@ -26,6 +26,7 @@ function scr_assign_stats(_card){
 	else if (_card.sprite_index == spr_card_robo){
 		_card.card_subtype = SUBTYPE.ROBO;
 		_card.card_type = CARDTYPE.OBJETO;
+		_card.texto_auxiliar = "Utilize esta carta para criar um Robô a partir de um Projeto existente.";
 	}
 }
 

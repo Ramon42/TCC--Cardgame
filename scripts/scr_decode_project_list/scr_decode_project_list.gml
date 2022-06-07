@@ -32,6 +32,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			energia_cons = _load.energia_cons;
 			attributes_map = _load.attributes_map;
 			voo = _load.voo;
+			atacar_1 = _load.atacar_1;
+			atacar_2 = _load.atacar_2;
 		}
 		var _size = array_length(con_client.project_list);
 		

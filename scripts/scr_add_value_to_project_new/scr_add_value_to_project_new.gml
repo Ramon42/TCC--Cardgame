@@ -40,6 +40,17 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 				}
 			break;
 			
+			case CARDTYPE.METODO:
+				switch(_card_list[|_pos].card_subtype){
+					case SUBTYPE.ATACAR_1:
+						_projeto.atacar_1 = true;
+					break;
+					
+					case SUBTYPE.ATACAR_2:
+						_projeto.atacar_2 = true;
+				}
+			break;
+			
 			
 		}
 	}

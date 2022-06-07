@@ -18,7 +18,9 @@ function scr_send_project(_projeto){
 		energia_var : _projeto.energia_var,
 		energia_cons : _projeto.energia_cons,
 		attributes_map : _projeto.attributes_map,
-		voo : _projeto.voo
+		voo : _projeto.voo,
+		atacar_1 : _projeto.atacar_1,
+		atacar_2 : _projeto.atacar_2
 	}
 
 	var _data = json_stringify(_save_project);
