@@ -15,8 +15,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	}
 	
 	for (var row = 0; row < array_length(_array); row ++){
-		show_message("CRIANDO INSTANCIA");
-		_inst = instance_create_layer(0, 0,  "Projects", obj_projeto); //tirar essa instanciação daqui pq vai dar merda
+		show_message("CRIANDO PROJETO");
+		var _inst = instance_create_layer(0, 0,  "Projects", obj_projeto); //tirar essa instanciação daqui pq vai dar merda
 		var _load = _array[row, 2];
 		with (_inst){
 			sprite_list = _load.sprite_list;

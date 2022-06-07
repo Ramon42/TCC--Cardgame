@@ -54,7 +54,7 @@ if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, create_instance_bt)){
 			instance_destroy(edit_project_bt);
 			instance_destroy(create_instance_bt);
-			scr_create_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
+			scr_send_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
 			show_message("CRIANDO INSTANCIA DO PROJETO");
 			
 	}

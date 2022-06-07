@@ -4,7 +4,7 @@
 aux_id = -1;
 
 player_projects = noone;
-player_objects = noone;
+player_instances = noone;
 create_project = false; //true= tela de criação de nova classe
 edit_project = false; //true = tela de edição de projeto
 

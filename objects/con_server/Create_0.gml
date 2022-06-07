@@ -9,7 +9,8 @@ server = network_create_server(network_socket_tcp, PORT, MAX_CLIENTS);
 buffer = buffer_create(1024, buffer_grow, 1);
 clients = ds_map_create();
 sockets = ds_list_create();
-projects_server = [];
+projects_server = array_create(0);
+instances_server = array_create(0);
 turn_player = noone;
 
 /* da pra fazer assim com um obj_player_base, problema= estruturado impede + de 2 jogadores

@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AUXILIAR.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_set_projects_position",
+  "name": "scr_set_instances_position",
   "tags": [],
   "resourceType": "GMScript",
 }

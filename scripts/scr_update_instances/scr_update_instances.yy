@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "AUXILIAR",
-    "path": "folders/Scripts/AUXILIAR.yy",
+    "name": "NEW",
+    "path": "folders/Scripts/SERVIDOR/NEW.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_set_projects_position",
+  "name": "scr_update_instances",
   "tags": [],
   "resourceType": "GMScript",
 }

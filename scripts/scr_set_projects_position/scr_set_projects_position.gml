@@ -17,7 +17,7 @@ function scr_set_projects_position(_projects_list){
 					aux_p++;
 				}
 				else {
-					_projects_list[row, 2].x = 550;
+					_projects_list[row, 2].x = 600;
 					_projects_list[row, 2].y = ((100*((aux_p-1) div 2))+800);
 					aux_p++;
 				}
@@ -29,7 +29,7 @@ function scr_set_projects_position(_projects_list){
 					aux_o++;
 				}
 				else {
-					_projects_list[row, 2].x = 550;
+					_projects_list[row, 2].x = 600;
 					_projects_list[row, 2].y = ((100*((aux_o-1) div 2))+300);
 					aux_o++;
 				}

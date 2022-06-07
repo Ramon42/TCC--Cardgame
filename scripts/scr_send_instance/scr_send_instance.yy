@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "AUXILIAR",
-    "path": "folders/Scripts/AUXILIAR.yy",
+    "name": "GAME ACTION",
+    "path": "folders/Scripts/CLIENTE/GAME ACTION.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_set_projects_position",
+  "name": "scr_send_instance",
   "tags": [],
   "resourceType": "GMScript",
 }
