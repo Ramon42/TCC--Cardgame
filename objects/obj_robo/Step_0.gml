@@ -3,7 +3,7 @@
 
 if (!self.atk_path){
 	self.atk_path = true;
-	path_start(pth_test, 4, path_action_stop, true);
+	path_start(pth_test, 15, path_action_stop, true);
 }
 
 if (mouse_check_button_released(mb_left)){

@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_decode_instance_list(_instance_list){
 	var _array = json_parse(_instance_list);
+	var _aux_pos = array_length(_array);
 	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
