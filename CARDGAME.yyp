@@ -96,6 +96,7 @@
     {"id":{"name":"spr_card_atacar","path":"sprites/spr_card_atacar/spr_card_atacar.yy",},"order":5,},
     {"id":{"name":"scr_create_player","path":"scripts/scr_create_player/scr_create_player.yy",},"order":5,},
     {"id":{"name":"scr_set_pos_move_card","path":"scripts/scr_set_pos_move_card/scr_set_pos_move_card.yy",},"order":0,},
+    {"id":{"name":"obj_atk_bt","path":"objects/obj_atk_bt/obj_atk_bt.yy",},"order":8,},
     {"id":{"name":"scr_set_projects_position","path":"scripts/scr_set_projects_position/scr_set_projects_position.yy",},"order":3,},
     {"id":{"name":"obj_edit_project_menu","path":"objects/obj_edit_project_menu/obj_edit_project_menu.yy",},"order":0,},
     {"id":{"name":"obj_config_menu","path":"objects/obj_config_menu/obj_config_menu.yy",},"order":2,},
@@ -183,7 +184,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.5.0.8",
+    "IDEVersion": "2022.5.1.14",
   },
   "resourceVersion": "1.5",
   "name": "CARDGAME",

@@ -9,7 +9,7 @@ function scr_set_instances_position(_instance_list){
 		if (instance_exists(_instance_list[row, 2])){
 			_instance_list[row, 2].image_xscale = 1;
 			_instance_list[row, 2].image_yscale = 1;
-			if (con_client.server_socket == _instance_list[row, 0]){ //checa se o projeto pertence a este jogador
+			/*if (con_client.server_socket == _instance_list[row, 0]){ //checa se o projeto pertence a este jogador
 				array_push(aux_instance_list_player, _instance_list[row]);
 				if (aux_p mod 2 == 0) { //todo esse rolo só pra organizar os projetos
 					_instance_list[row, 2].x = 1000;
@@ -22,7 +22,9 @@ function scr_set_instances_position(_instance_list){
 					aux_p++;
 				}
 			}
-			else{ //projetos do oponente
+			*/
+			//else {
+			if (con_client.server_socket != _instance_list[row, 0]){ //projetos do oponente
 				if (aux_o mod 2 == 0) { //todo esse rolo só pra organizar os projetos
 					_instance_list[row, 2].x = 1000;
 					_instance_list[row, 2].y = ((100*(aux_o div 2))+300);
@@ -37,11 +39,5 @@ function scr_set_instances_position(_instance_list){
 		}
 
 	}
-	con_client.player.player_instances = aux_instance_list_player; //seta todos os projetos do player vindos do servidor
-	show_debug_message("PLAYER.PLAYER_INSTANCES>>> ");
-	for (var i=0; i<array_length(con_client.player.player_instances); i++)
-	{show_debug_message(string(con_client.player.player_instances[i]))}
-	show_debug_message("AUX INSTANCE LIST PLAYER>>> ");
-	for (var i=0; i<array_length(aux_instance_list_player); i++)
-	{show_debug_message(string(aux_instance_list_player[i]))}
+	//con_client.player.player_instances = aux_instance_list_player; //seta todos os projetos do player vindos do servidor
 }

@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_decode_instance_list(_instance_list){
 	var _array = json_parse(_instance_list);
-	var _aux_pos = array_length(_array);
+	var _aux_p = array_length(con_client.player.player_instances);
 	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
@@ -28,6 +28,14 @@ function scr_decode_instance_list(_instance_list){
 		show_message("CRIANDO PROJETO");
 		var _inst = instance_create_depth(0, 0,  -1, obj_robo);
 		var _load = _array[i, 2];
+		if (_aux_p mod 2 == 0){
+			_inst.x = 1000;
+			_inst.y = ((100*(_aux_p div 2))+800);
+		}
+		else {
+			_inst.x = 1200;
+			_inst.y = ((100*((_aux_p-1) div 2))+800);
+		}
 		with(_inst){
 			inst_proj_id = _load.inst_proj_id;
 			inst_sock_id = _load.inst_sock_id;
@@ -47,5 +55,9 @@ function scr_decode_instance_list(_instance_list){
 		con_client.instance_list[_size, 0] = _array[i, 0]; //sock do dono do projeto
 		con_client.instance_list[_size, 1] = _array[i, 1]; //id projeto
 		con_client.instance_list[_size, 2] = _inst;
+		
+		if (con_client.server_socket == _array[i, 0]){
+			array_push(con_client.player.player_instances, _inst) ;
+		}
 	}
 }

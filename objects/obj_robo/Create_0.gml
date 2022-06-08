@@ -6,10 +6,11 @@ col = x - aux_x*0.75;
 lin_for = y-aux_y/6;
 lin_esc = y+aux_y/6;
 
+pth = noone;
 
 selected = false;
 attacking = false;
-atk_path = false; //variavel para startar e parar o path de ataque
+atk_path = true; //variavel para startar e parar o path de ataque
 defending = false;
 
 inst_proj_id = 0;

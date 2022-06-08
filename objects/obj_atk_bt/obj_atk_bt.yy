@@ -1,11 +1,17 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_remove_card",
+    "path": "sprites/spr_remove_card/spr_remove_card.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_action_bt_parent",
+    "path": "objects/obj_action_bt_parent/obj_action_bt_parent.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -19,7 +25,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -28,7 +34,7 @@
     "path": "folders/Objects/INGAME/BOTÕES DE AÇÃO.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_action_bt_parent",
+  "name": "obj_atk_bt",
   "tags": [],
   "resourceType": "GMObject",
 }
