@@ -38,6 +38,7 @@ enum network { //enumerar ações possiveis para enviar para o servidor
 	create_instance,
 	send_edit_project,
 	deal_damage,
+	atk_instance,
 	entity,
 	create_opponent,
 	update_opponent,
