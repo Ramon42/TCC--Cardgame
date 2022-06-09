@@ -17,14 +17,13 @@ inst_proj_id = 0;
 inst_sock_id = 0;
 inst_id = 0;
 
-forca_var = -1;
-forca_cons = -1;
+forca_var = 0;
+forca_cons = 0;
 
-escudo_var = -1;
-escudo_cons = -1;
+escudo_var = 0;
+escudo_cons = 0;
 
-energia_var = -1;
-energia_cons = -1;
+energia = 0;
 
 voo = noone;
 

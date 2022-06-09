@@ -22,8 +22,7 @@ function scr_send_instance(_project){
 		escudo_var :  _project.escudo_var,
 		escudo_cons :  _project.escudo_cons,
 
-		energia_var :  _project.energia_var,
-		energia_cons :  _project.energia_cons,
+		energia :  _project.energia,
 
 		voo : _project.voo,
 		

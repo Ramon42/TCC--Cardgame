@@ -27,8 +27,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 				forca_cons : _projeto1.forca_cons,
 				escudo_var : _projeto1.escudo_var,
 				escudo_cons : _projeto1.escudo_cons,
-				energia_var : _projeto1.energia_var,
-				energia_cons : _projeto1.energia_cons,
+				energia : _projeto1.energia,
 				attributes_map : _projeto1.attributes_map,
 				voo : _projeto1.voo
 			}
@@ -72,8 +71,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 			forca_cons : _projeto2.forca_cons,
 			escudo_var : _projeto2.escudo_var,
 			escudo_cons : _projeto2.escudo_cons,
-			energia_var : _projeto2.energia_var,
-			energia_cons : _projeto2.energia_cons,
+			energia : _projeto2.energia,
 			attributes_map : _projeto2.attributes_map,
 			voo : _projeto2.voo
 		}

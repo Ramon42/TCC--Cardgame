@@ -16,8 +16,7 @@ function scr_att_client_project_list(_project_list, _client_projects){
 					forca_cons = _load.forca_cons;
 					escudo_var = _load.escudo_var;
 					escudo_cons = _load.escudo_cons;
-					energia_var = _load.energia_var;
-					energia_cons = _load.energia_cons;
+					energia = _load.energia;
 					attributes_map = _load.attributes_map;
 					voo = _load.voo;
 				}

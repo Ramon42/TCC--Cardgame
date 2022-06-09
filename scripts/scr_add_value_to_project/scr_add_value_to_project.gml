@@ -10,7 +10,7 @@ function scr_add_value_to_project(_projeto){
 					ds_map_set(_projeto.attributes_map, "forca_v", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ENERGIA:
-					_projeto.energia_var = card_list[|_pos].valor;
+					_projeto.energia = card_list[|_pos].valor;
 					ds_map_set(_projeto.attributes_map, "energia_v", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ESCUDO:
@@ -28,10 +28,6 @@ function scr_add_value_to_project(_projeto){
 				case SUBTYPE.FORCA:
 					_projeto.forca_cons = card_list[|_pos].valor;
 					ds_map_set(_projeto.attributes_map, "forca_c", card_list[|_pos].valor);
-					break;
-				case SUBTYPE.ENERGIA:
-					_projeto.energia_cons = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "energia_c", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ESCUDO:
 					_projeto.escudo_cons = card_list[|_pos].valor;
@@ -52,7 +48,7 @@ function scr_add_value_to_project(_projeto){
 						_projeto.forca_var = card_list[|i].valor;
 						break;
 					case SUBTYPE.ENERGIA:
-						_projeto.energia_var = card_list[|i].valor;
+						_projeto.energia = card_list[|i].valor;
 						break;
 					case SUBTYPE.ESCUDO:
 						_projeto.escudo_var = card_list[|i].valor;
@@ -67,9 +63,6 @@ function scr_add_value_to_project(_projeto){
 				switch (card_list[|i].card_subtype){
 					case SUBTYPE.FORCA:
 						_projeto.forca_cons = card_list[|i].valor;
-						break;
-					case SUBTYPE.ENERGIA:
-						_projeto.energia_cons = card_list[|i].valor;
 						break;
 					case SUBTYPE.ESCUDO:
 						_projeto.escudo_cons = card_list[|i].valor;

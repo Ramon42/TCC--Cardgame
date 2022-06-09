@@ -15,10 +15,10 @@ if (self.defending){
 	draw_sprite_ext(spr_card_highlight_def, 0, self.x, self.y, self.image_xscale, self.image_yscale, 0, c_white, 0.8);
 }
 
-if (forca_var != -1){
+if (forca_var != 0){
 	draw_text(col, lin_for, "-int Força = " + string(forca_var));
 }
 
-if (escudo_var != -1){
+if (escudo_var != 0){
 	draw_text(col, lin_esc, "-int Escudo = " + string(escudo_var));
 }

@@ -9,12 +9,12 @@ if (instance_position(mouse_x, mouse_y, self)){
 
 draw_self();
 
-if (forca_var != -1){
+if (forca_var != 0){
 	draw_text(col, lin_for, "-int Força = " + string(forca_var));
 	self.show_text = self.show_text + "-int Força = " + string(forca_var) + "\n";
 }
 
-if (escudo_var != -1){
+if (escudo_var != 0){
 	draw_text(col, lin_esc, "-int Escudo = " + string(escudo_var));
 	self.show_text = self.show_text + "-int Escudo = " + string(escudo_var) + "\n";
 }
@@ -26,11 +26,11 @@ if (self.selected){
 }
 
 /*
-if (attributes_map[? "forca_v"] != -1){
+if (attributes_map[? "forca_v"] != 0){
 	draw_text(col, lin_for, "-int Força = " + string(attributes_map[? "forca_v"]));
 }
 
-if (attributes_map[? "escudo_v"] != -1){
+if (attributes_map[? "escudo_v"] != 0){
 	draw_text(col, lin_esc, "-int Escudo = " + string(attributes_map[? "escudo_v"]));
 }
 */
