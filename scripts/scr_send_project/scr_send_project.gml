@@ -7,8 +7,6 @@ function scr_send_project(_projeto){
 	//enviando todas as variaveis do projeto
 	var _save_project = {
 		sprite_list : _projeto.sprite_list,
-		image_xscale : _projeto.image_xscale,
-		image_yscale : _projeto.image_yscale,
 		player_socket : con_client.server_socket,
 		project_id : _projeto.project_id,
 		forca_var : _projeto.forca_var,

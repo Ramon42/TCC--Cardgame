@@ -19,8 +19,6 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 			buffer_write(con_client.buffer, buffer_u8, network.send_edit_project);
 			var _save_project = {
 				sprite_list : _projeto1.sprite_list,
-				image_xscale : _projeto1.image_xscale,
-				image_yscale : _projeto1.image_yscale,
 				player_socket : con_client.server_socket,
 				project_id : _projeto1.project_id,
 				forca_var : _projeto1.forca_var,

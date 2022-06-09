@@ -20,8 +20,6 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		var _load = _array[row, 2];
 		with (_inst){
 			sprite_list = _load.sprite_list;
-			image_xscale = _load.image_xscale;
-			image_yscale = _load.image_yscale;
 			player_socket = _load.player_socket;
 			project_id = _load.project_id;
 			forca_var = _load.forca_var;

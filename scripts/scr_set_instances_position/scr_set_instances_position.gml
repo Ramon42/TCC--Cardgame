@@ -7,8 +7,8 @@ function scr_set_instances_position(_instance_list){
 	var aux_instance_list_player = [];
 	for (var row = 0; row < _length ; row++){
 		if (instance_exists(_instance_list[row, 2])){
-			_instance_list[row, 2].image_xscale = 1;
-			_instance_list[row, 2].image_yscale = 1;
+			_instance_list[row, 2].image_xscale = 0.5;
+			_instance_list[row, 2].image_yscale = 0.5;
 			/*if (con_client.server_socket == _instance_list[row, 0]){ //checa se o projeto pertence a este jogador
 				array_push(aux_instance_list_player, _instance_list[row]);
 				if (aux_p mod 2 == 0) { //todo esse rolo só pra organizar os projetos

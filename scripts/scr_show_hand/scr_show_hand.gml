@@ -6,6 +6,8 @@ function scr_show_hand(){
 	for (i = con_client.player.hand_size-1; i >= 0; --i){
 		con_client.player.hand[|i].x = room_width*0.5+(100)*i;
 		con_client.player.hand[|i].y = room_height;
+		con_client.player.hand[|i].image_xscale = 0.5;
+		con_client.player.hand[|i].image_yscale = 0.5;
 		//hand[|i].y = room_height*0.9;
 	}
 }

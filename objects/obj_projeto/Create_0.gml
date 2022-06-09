@@ -1,8 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-image_xscale = 3.5;
-image_yscale = 3.5;
+image_xscale = 1.75;
+image_yscale = 1.75;
 
 aux_x = sprite_width/2
 aux_y = sprite_height/2
