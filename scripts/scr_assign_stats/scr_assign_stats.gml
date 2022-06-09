@@ -18,6 +18,11 @@ function scr_assign_stats(_card){
 		_card.valor = 2;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 2 à variável Escudo do Projeto atul.";
 	}
+	else if (_card.sprite_index == spr_card_defender){
+		_card.card_subtype = SUBTYPE.DEFENDER;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Defender(Ataque) ao Projeto atual.";
+	}
 	else if (_card.sprite_index == spr_card_atacar){
 		_card.card_subtype = SUBTYPE.ATACAR_1;
 		_card.card_type = CARDTYPE.METODO;

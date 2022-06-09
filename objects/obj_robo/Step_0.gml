@@ -3,7 +3,7 @@
 
 if (!self.atk_path){
 	self.atk_path = true;
-	path_start(self.pth, 30, path_action_stop, false);
+	path_start(self.pth, 75, path_action_stop, false);
 }
 
 if (mouse_check_button_released(mb_left)){
@@ -19,14 +19,15 @@ if (mouse_check_button_released(mb_left)){
 		
 			if (self.atacar_1){
 				//caso possa usar o método atacar_1
-				instance_create_depth(0, 0, -1, obj_atk_bt);
+				self.atk_bt = instance_create_depth(0, 0, -1, obj_atk_bt);
 			}
 		}
 	}
-	if (position_meeting(mouse_x, mouse_y, obj_atk_bt) and self.selected){
+	if (position_meeting(mouse_x, mouse_y, self.atk_bt) and self.selected){
 		self.attacking = true;
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
 			if (con_client.server_socket != con_client.instance_list[i, 0]){
+				show_message("OPONENTE POSSUI ROBO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
 				_atk_direct = false;
 				break;
 			}
@@ -43,6 +44,7 @@ if (mouse_check_button_released(mb_left)){
 				var _ang = (point_direction(self.x, self.y, _inst.x, _inst.y))-90;
 				path_rotate(self.pth, _ang);
 				self.atk_path = false;
+				self.attacking = false;
 			}
 		}
 		if (_atk_direct){
@@ -51,9 +53,9 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	
-	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_atk_bt)){
+	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, self.atk_bt)){
 		self.selected = false;
 		self.attacking = false;
-		instance_destroy(obj_atk_bt);
+		instance_destroy(self.atk_bt);
 	}
 }

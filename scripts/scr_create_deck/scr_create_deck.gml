@@ -6,7 +6,8 @@
 2 = projeto
 3 = forca2
 4 = robo
-5 = atacar
+5 = atacar(objeto)
+6 = defender(ataque)
 */
 
 function scr_create_deck(){
@@ -24,6 +25,10 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, 2);
 	ds_list_add(cards_in_deck, 5);
 	ds_list_add(cards_in_deck, 1);
+	ds_list_add(cards_in_deck, 6);
+	ds_list_add(cards_in_deck, 6);
+	ds_list_add(cards_in_deck, 6);
+	ds_list_add(cards_in_deck, 6);
 	deck_size = ds_list_size(cards_in_deck);
-	//ds_list_shuffle(deck_p);
+	//ds_list_shuffle(cards_in_deck);
 }

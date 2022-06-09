@@ -33,13 +33,13 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			voo = _load.voo;
 			atacar_1 = _load.atacar_1;
 			atacar_2 = _load.atacar_2;
+			defender = _load.defender;
 		}
 		var _size = array_length(con_client.project_list);
 		
 		con_client.project_list[_size, 0] = _array[row, 0]; //sock do dono do projeto
 		con_client.project_list[_size, 1] = _array[row, 1]; //id projeto
 		con_client.project_list[_size, 2] = _inst;
-		show_debug_message("PROJECT LIST>>>> " + string(con_client.project_list));
 				
 	}
 	

@@ -19,7 +19,8 @@ function scr_send_project(_projeto){
 		attributes_map : _projeto.attributes_map,
 		voo : _projeto.voo,
 		atacar_1 : _projeto.atacar_1,
-		atacar_2 : _projeto.atacar_2
+		atacar_2 : _projeto.atacar_2,
+		defender : _projeto.defender
 	}
 
 	var _data = json_stringify(_save_project);

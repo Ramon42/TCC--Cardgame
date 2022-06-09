@@ -3,6 +3,7 @@
 function scr_decode_instance_list(_instance_list){
 	var _array = json_parse(_instance_list);
 	var _aux_p = array_length(con_client.player.player_instances);
+	var _aux_o = 0;
 	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
@@ -16,6 +17,7 @@ function scr_decode_instance_list(_instance_list){
 	*/
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
 		for (var o = 0; o < array_length(_array); o++){
+			if (_array[o, 0] != con_client.server_socket) { _aux_o ++; }
 			if (_array[o, 2].inst_id == con_client.instance_list[i, 2].inst_id){
 				// and _array[o, 0] == con_client.server_socket NÃO FUNCIONA PQ O SERVER SOCKET É DIFERENTE PRA CADA USUÁRIO
 				array_delete(_array, o, 1);
@@ -28,13 +30,25 @@ function scr_decode_instance_list(_instance_list){
 		show_message("CRIANDO PROJETO");
 		var _inst = instance_create_depth(0, 0,  -1, obj_robo);
 		var _load = _array[i, 2];
-		if (_aux_p mod 2 == 0){
-			_inst.x = 1000;
-			_inst.y = ((100*(_aux_p div 2))+800);
+		if (_array[i, 0] == con_client.server_socket){
+			if (_aux_p mod 2 == 0){
+				_inst.x = 1000;
+				_inst.y = ((100*(_aux_p div 2))+800);
+			}
+			else {
+				_inst.x = 1200;
+				_inst.y = ((100*((_aux_p-1) div 2))+800);
+			}
 		}
-		else {
-			_inst.x = 1200;
-			_inst.y = ((100*((_aux_p-1) div 2))+800);
+		else{
+			if (_aux_o mod 2 == 0) {
+				_inst.x = 1000;
+				_inst.y = ((100*(_aux_o div 2))+300);
+			}
+			else {
+				_inst.x = 1200;
+				_inst.y = ((100*((_aux_o-1) div 2))+300);
+			}
 		}
 		with(_inst){
 			inst_proj_id = _load.inst_proj_id;
@@ -48,6 +62,7 @@ function scr_decode_instance_list(_instance_list){
 			voo = _load.voo;
 			atacar_1 = _load.atacar_1;
 			atacar_2 = _load.atacar_2;
+			defender = _load.defender;
 		}
 		var _size = array_length(con_client.instance_list);
 		

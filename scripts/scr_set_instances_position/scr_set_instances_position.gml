@@ -24,6 +24,7 @@ function scr_set_instances_position(_instance_list){
 			}
 			*/
 			//else {
+			/*
 			if (con_client.server_socket != _instance_list[row, 0]){ //projetos do oponente
 				if (aux_o mod 2 == 0) { //todo esse rolo só pra organizar os projetos
 					_instance_list[row, 2].x = 1000;
@@ -36,6 +37,7 @@ function scr_set_instances_position(_instance_list){
 					aux_o++;
 				}
 			}
+			*/
 		}
 
 	}

@@ -60,6 +60,10 @@ if (server == _event_id) {
 else if (_event_id != global.socket){ //recebendo data de outro client
 	var _sock = async_load[? "id"];
 	var _buff = async_load[? "buffer"];
+	var _sock_op;
+	if (self.sockets[|0] == _sock) { _sock_op = self.sockets[|1]; }
+	else { _sock_op = self.sockets[|0]; }
+	
 	
 	buffer_seek(_buff, buffer_seek_start, 0);
 	var _msgid = buffer_read(_buff, buffer_u8);
@@ -110,6 +114,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.atk_instance:
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
+			scr_send_atk_animation(_sock_op, _atk_id, _def_id);
 			//anotação futura: provavelmente quando um robo for destruido aqui, tem que
 			//diminuir 1 do lugar que posiciona eles no cliente
 			scr_calculate_dmg(_atk_id, _def_id);
@@ -119,7 +124,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			var _dmg = buffer_read(_buff, buffer_u8);
 			var _op = scr_find_op(_p);
 			_op.vida_atual -= _dmg;
-			break;
+		break;
 		
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }

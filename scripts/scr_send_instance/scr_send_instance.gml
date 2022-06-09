@@ -27,7 +27,9 @@ function scr_send_instance(_project){
 		voo : _project.voo,
 		
 		atacar_1 : _project.atacar_1,
-		atacar_2 : _project.atacar_2
+		atacar_2 : _project.atacar_2,
+		
+		defender : _project.defender
 	}
 	
 	var _data = json_stringify(_save_instance);

@@ -4,12 +4,23 @@ function scr_calculate_dmg(_atk_id, _def_id){
 	var _atk;
 	var _def;
 	var _dmg;
+	var _escudo;
 	
 	for (var i = 0; i < array_length(con_server.instances_server); i++){
 		if(con_server.instances_server[i, 2].inst_id == _atk_id) { _atk = con_server.instances_server[i, 2]; }
 		else if (con_server.instances_server[i, 2].inst_id == _def_id) { _def = con_server.instances_server[i, 2]; }
 	}
+	
 	if (_atk.forca_var > _atk.forca_cons) { _dmg = _atk.forca_var; } 
 	else { _dmg = _atk.forca_cons; }
-	_def.energia -= _dmg;
+	if (_def.escudo_var > _def.escudo_cons) { _escudo = _def.escudo_var; } 
+	else { _escudo = _def.escudo_cons; }
+	
+	if (_def.defender){
+		//caso o alvo tenha o metodo defender, ele absorve dano = seu escudo
+		_dmg = _dmg - _escudo;
+	}
+	
+	if (_dmg > 0){ _def.energia -= _dmg; } //só realiza o dano caso ele seja maior que 0 (caso contrário receberia dano negativo)
+	
 }

@@ -44,6 +44,11 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 					
 					case SUBTYPE.ATACAR_2:
 						_projeto.atacar_2 = true;
+					break;
+					
+					case SUBTYPE.DEFENDER:
+						_projeto.defender = true;
+					break;
 				}
 			break;
 			

@@ -5,7 +5,8 @@
 2 = projeto
 3 = forca2
 4 = robo
-5 = atacar
+5 = atacar(objeto)
+6 = defender(ataque)
 */
 function scr_atribuir_sprite(_val){
 	switch(_val){
@@ -23,6 +24,9 @@ function scr_atribuir_sprite(_val){
 			break;
 		case 5:
 			return spr_card_atacar;
+			break;
+		case 6:
+			return spr_card_defender;
 			break;
 	}
 

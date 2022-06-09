@@ -11,6 +11,7 @@ pth = noone;
 selected = false;
 attacking = false;
 atk_path = true; //variavel para startar e parar o path de ataque
+atk_bt = noone;
 defending = false;
 
 inst_proj_id = 0;
@@ -29,3 +30,5 @@ voo = noone;
 
 atacar_1 = false;
 atacar_2 = false;
+
+defender = false;

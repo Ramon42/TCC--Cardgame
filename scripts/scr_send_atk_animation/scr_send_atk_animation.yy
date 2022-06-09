@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "AUXILIAR",
-    "path": "folders/Scripts/AUXILIAR.yy",
+    "name": "BATTLE",
+    "path": "folders/Scripts/SERVIDOR/NEW/BATTLE.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_decode_project_list",
+  "name": "scr_send_atk_animation",
   "tags": [],
   "resourceType": "GMScript",
 }

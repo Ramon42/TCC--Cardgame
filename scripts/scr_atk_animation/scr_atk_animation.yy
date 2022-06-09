@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AUXILIAR.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_decode_project_list",
+  "name": "scr_atk_animation",
   "tags": [],
   "resourceType": "GMScript",
 }
