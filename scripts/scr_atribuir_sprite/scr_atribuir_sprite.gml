@@ -7,6 +7,8 @@
 4 = robo
 5 = atacar(objeto)
 6 = defender(ataque)
+7 = energia 2
+8 = voar()
 */
 function scr_atribuir_sprite(_val){
 	switch(_val){
@@ -27,6 +29,12 @@ function scr_atribuir_sprite(_val){
 			break;
 		case 6:
 			return spr_card_defender;
+			break;
+		case 7:
+			return spr_card_energia2;
+			break;
+		case 8:
+			return spr_card_voar;
 			break;
 	}
 

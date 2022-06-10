@@ -18,7 +18,9 @@ function scr_send_project(_projeto){
 		voo : _projeto.voo,
 		atacar_1 : _projeto.atacar_1,
 		atacar_2 : _projeto.atacar_2,
-		defender : _projeto.defender
+		refletir : _projeto.refletir,
+		defender : _projeto.defender,
+		voar : _projeto.voar
 	}
 
 	var _data = json_stringify(_save_project);

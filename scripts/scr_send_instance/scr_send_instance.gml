@@ -28,7 +28,8 @@ function scr_send_instance(_project){
 		
 		atacar_1 : _project.atacar_1,
 		atacar_2 : _project.atacar_2,
-		
+		voar : _project.voar,
+		refletir : _project.refletir,
 		defender : _project.defender
 	}
 	

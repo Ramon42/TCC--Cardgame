@@ -18,6 +18,12 @@ function scr_assign_stats(_card){
 		_card.valor = 2;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 2 à variável Escudo do Projeto atul.";
 	}
+	else if (_card.sprite_index == spr_card_energia2){
+		_card.card_subtype = SUBTYPE.ENERGIA;
+		_card.card_type = CARDTYPE.VARIAVEL;
+		_card.valor = 2;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 2 à variável Energia do Projeto atual.";
+	}
 	else if (_card.sprite_index == spr_card_defender){
 		_card.card_subtype = SUBTYPE.DEFENDER;
 		_card.card_type = CARDTYPE.METODO;
@@ -27,6 +33,11 @@ function scr_assign_stats(_card){
 		_card.card_subtype = SUBTYPE.ATACAR_1;
 		_card.card_type = CARDTYPE.METODO;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Atacar(alvo) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_voar){
+		_card.card_subtype = SUBTYPE.VOAR;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Voar() ao Projeto atual.";
 	}
 	else if (_card.sprite_index == spr_card_robo){
 		_card.card_subtype = SUBTYPE.ROBO;

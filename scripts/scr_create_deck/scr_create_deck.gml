@@ -8,25 +8,34 @@
 4 = robo
 5 = atacar(objeto)
 6 = defender(ataque)
+7 = energia 2
+8 = voar()
 */
 
 function scr_create_deck(){
 	ds_list_add(cards_in_deck, 5);
 	ds_list_add(cards_in_deck, 2);
 	ds_list_add(cards_in_deck, 1);
+	ds_list_add(cards_in_deck, 7);
 	ds_list_add(cards_in_deck, 3);
+	ds_list_add(cards_in_deck, 8);
 	ds_list_add(cards_in_deck, 2);
 	ds_list_add(cards_in_deck, 5);
 	ds_list_add(cards_in_deck, 1);
 	ds_list_add(cards_in_deck, 3);
 	ds_list_add(cards_in_deck, 4);
+	ds_list_add(cards_in_deck, 7);
 	ds_list_add(cards_in_deck, 4);
+	ds_list_add(cards_in_deck, 8);
 	ds_list_add(cards_in_deck, 4);
 	ds_list_add(cards_in_deck, 2);
 	ds_list_add(cards_in_deck, 5);
+	ds_list_add(cards_in_deck, 7);
 	ds_list_add(cards_in_deck, 1);
 	ds_list_add(cards_in_deck, 6);
 	ds_list_add(cards_in_deck, 6);
+	ds_list_add(cards_in_deck, 8);
+	ds_list_add(cards_in_deck, 7);
 	ds_list_add(cards_in_deck, 6);
 	ds_list_add(cards_in_deck, 6);
 	deck_size = ds_list_size(cards_in_deck);

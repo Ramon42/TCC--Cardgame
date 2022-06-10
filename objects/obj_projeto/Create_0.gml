@@ -40,6 +40,8 @@ voo = noone;
 atacar_1 = false;
 atacar_2 = false;
 defender = false;
+refletir = false;
+voar = false;
 
 attributes_map = ds_map_create();
 ds_map_add(attributes_map, "forca_v", 0);

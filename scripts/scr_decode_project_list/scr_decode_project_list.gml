@@ -31,7 +31,9 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			voo = _load.voo;
 			atacar_1 = _load.atacar_1;
 			atacar_2 = _load.atacar_2;
+			refletir = _load.refletir;
 			defender = _load.defender;
+			voar = _load.voar;
 		}
 		var _size = array_length(con_client.project_list);
 		

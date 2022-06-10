@@ -30,5 +30,6 @@ voo = noone;
 
 atacar_1 = false;
 atacar_2 = false;
-
+refletir = false;
 defender = false;
+voar = false;

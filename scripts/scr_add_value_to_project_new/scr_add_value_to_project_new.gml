@@ -49,6 +49,10 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 					case SUBTYPE.DEFENDER:
 						_projeto.defender = true;
 					break;
+					
+					case SUBTYPE.VOAR:
+						_projeto.voar = true;
+					break;
 				}
 			break;
 			
