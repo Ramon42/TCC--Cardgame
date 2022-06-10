@@ -6,7 +6,7 @@
     "path": "folders/Scripts/SERVIDOR/NEW/UPDATES.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_update_projects",
+  "name": "scr_update_projects_energy",
   "tags": [],
   "resourceType": "GMScript",
 }

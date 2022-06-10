@@ -12,30 +12,41 @@
 */
 function scr_atribuir_sprite(_val){
 	switch(_val){
-		case 1:
+		case CARD.v_escudo1:
+			return spr_card_escudo1_var;
+			break;
+		case CARD.v_escudo2:
 			return spr_card_escudo2_var;
 			break;
-		case 2:
+		case CARD.projeto:
 			return spr_card_projeto;
 			break;
-		case 3:
+		case CARD.v_forca1:
+			return spr_card_forca1_var;
+			break;
+		case CARD.v_forca2:
 			return spr_card_forca2_var;
 			break;
-		case 4:
+		case CARD.robo:
 			return spr_card_robo;
 			break;
-		case 5:
-			return spr_card_atacar;
+		case CARD.m_atacar1:
+			return spr_card_atacar1;
 			break;
-		case 6:
+		case CARD.m_atacar2:
+			return spr_card_atacar2;
+			break;
+		case CARD.m_defender:
 			return spr_card_defender;
 			break;
-		case 7:
+		case CARD.v_energia1:
+			return spr_card_energia1;
+			break;
+		case CARD.v_energia2:
 			return spr_card_energia2;
 			break;
-		case 8:
+		case CARD.m_voar:
 			return spr_card_voar;
 			break;
 	}
-
 }

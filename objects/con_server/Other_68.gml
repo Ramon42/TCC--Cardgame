@@ -117,7 +117,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			scr_send_atk_animation(_sock_op, _atk_id, _def_id);
 			//anotação futura: provavelmente quando um robo for destruido aqui, tem que
 			//diminuir 1 do lugar que posiciona eles no cliente
-			scr_calculate_dmg(_atk_id, _def_id);
+			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op);
 		break;
 		
 		case network.deal_damage:

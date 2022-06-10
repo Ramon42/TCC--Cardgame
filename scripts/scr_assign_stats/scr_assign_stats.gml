@@ -6,17 +6,35 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.CLASSE;
 		_card.texto_auxiliar = "Utilize esta carta para criar um novo Projeto.";
 	}
+	else if (_card.sprite_index == spr_card_forca1_var){
+		_card.card_subtype = SUBTYPE.FORCA;
+		_card.card_type = CARDTYPE.VARIAVEL;
+		_card.valor = 1;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 1 à variável Força do Projeto atual.";
+	}
 	else if (_card.sprite_index == spr_card_forca2_var){
 		_card.card_subtype = SUBTYPE.FORCA;
 		_card.card_type = CARDTYPE.VARIAVEL;
 		_card.valor = 2;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 2 à variável Força do Projeto atual.";
 	}
+	else if (_card.sprite_index == spr_card_escudo1_var){
+		_card.card_subtype = SUBTYPE.ESCUDO;
+		_card.card_type = CARDTYPE.VARIAVEL;
+		_card.valor = 1;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 1 à variável Escudo do Projeto atul.";
+	}
 	else if (_card.sprite_index == spr_card_escudo2_var){
 		_card.card_subtype = SUBTYPE.ESCUDO;
 		_card.card_type = CARDTYPE.VARIAVEL;
 		_card.valor = 2;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 2 à variável Escudo do Projeto atul.";
+	}
+	else if (_card.sprite_index == spr_card_energia1){
+		_card.card_subtype = SUBTYPE.ENERGIA;
+		_card.card_type = CARDTYPE.VARIAVEL;
+		_card.valor = 1;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o valor 1 à variável Energia do Projeto atual.";
 	}
 	else if (_card.sprite_index == spr_card_energia2){
 		_card.card_subtype = SUBTYPE.ENERGIA;
@@ -29,10 +47,15 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.METODO;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Defender(Ataque) ao Projeto atual.";
 	}
-	else if (_card.sprite_index == spr_card_atacar){
+	else if (_card.sprite_index == spr_card_atacar1){
 		_card.card_subtype = SUBTYPE.ATACAR_1;
 		_card.card_type = CARDTYPE.METODO;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Atacar(alvo) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_atacar2){
+		_card.card_subtype = SUBTYPE.ATACAR_2;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Atacar(alvo, alvo) ao Projeto atual.";
 	}
 	else if (_card.sprite_index == spr_card_voar){
 		_card.card_subtype = SUBTYPE.VOAR;
