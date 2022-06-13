@@ -9,16 +9,19 @@ if (instance_position(mouse_x, mouse_y, self)){
 
 draw_self();
 
-if (forca_var != 0){
+if (forca_var > 0){
 	draw_text(col, lin_for, "-int Força = " + string(forca_var));
 	self.show_text = self.show_text + "-int Força = " + string(forca_var) + "\n";
 }
 
-if (escudo_var != 0){
+if (escudo_var > 0){
 	draw_text(col, lin_esc, "-int Escudo = " + string(escudo_var));
 	self.show_text = self.show_text + "-int Escudo = " + string(escudo_var) + "\n";
 }
-
+if (energia > 0){
+	draw_text(col, lin_eng, "-int Energia = " + string(energia));
+	self.show_text = self.show_text + "-int Energia = " + string(energia) + "\n";
+}
 
 
 if (self.selected){

@@ -69,6 +69,11 @@ if (socket == _event_id){
 			scr_atk_animation(_atk_id, _def_id);
 			break;
 			
+		case network.atk_instance:
+			var _instance_list = buffer_read(_buff, buffer_string);
+			scr_att_client_instances(_instance_list);
+			break;
+			
 		case network.wait:
 			self.player.state = PLAYERSTATE.ENEMY_TURN;
 			break;

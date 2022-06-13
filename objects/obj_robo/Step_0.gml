@@ -6,8 +6,8 @@ if (!self.atk_path){
 	path_start(self.pth, 75, path_action_stop, false);
 }
 
+
 if (mouse_check_button_released(mb_left)){
-	var _atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 	if (position_meeting(mouse_x, mouse_y, self)){
 		//caso o jogador clique na carta durante a fase de batalha
 		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
@@ -25,11 +25,30 @@ if (mouse_check_button_released(mb_left)){
 	}
 	if (position_meeting(mouse_x, mouse_y, self.atk_bt) and self.selected){
 		self.attacking = true;
-		for (var i = 0; i < array_length(con_client.instance_list); i++){
-			if (con_client.server_socket != con_client.instance_list[i, 0]){
-				show_message("OPONENTE POSSUI ROBO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
-				_atk_direct = false;
-				break;
+		if (!self.voo){
+			for (var i = 0; i < array_length(con_client.instance_list); i++){
+				if (con_client.server_socket != con_client.instance_list[i, 0]){
+					show_message("OPONENTE POSSUI ROBO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
+					atk_direct = false;
+					break;
+				}
+				else {
+					atk_direct = true;
+				}
+			}
+		}
+		else {
+			for (var i = 0; i < array_length(con_client.instance_list); i++){
+				if (con_client.server_socket != con_client.instance_list[i, 0]){
+					if (con_client.instance_list[i, 2].voo){
+						show_message("OPONENTE POSSUI ROBO VOANDO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
+						atk_direct = false;
+						break;
+					}
+					else {
+						atk_direct = true;
+					}
+				}
 			}
 		}
 	}
@@ -47,8 +66,9 @@ if (mouse_check_button_released(mb_left)){
 				self.attacking = false;
 			}
 		}
-		if (_atk_direct){
-			//ataca diretamente
+		else if (atk_direct){
+			//ataca diretamente  
+			show_message("ATACANDO DIRETO");
 			scr_send_atk(self, undefined);
 		}
 	}

@@ -10,6 +10,7 @@ function scr_send_atk(_atk, _def = undefined){
 	}
 	
 	else{ //atacando diretamente
+		show_message("SEND ATK ATACANDO DIRETO");
 		scr_send_damage(_atk);
 	}
 }

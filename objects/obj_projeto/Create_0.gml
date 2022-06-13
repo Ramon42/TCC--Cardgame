@@ -10,15 +10,16 @@ aux_y = sprite_height/2
 
 col = x - aux_x*0.75;
 
-lin_for = y-aux_y/6;
-lin_esc = y+aux_y/6;
+lin_for = y+20;
+lin_esc = y+45;
+lin_eng = y+60;
 
 obj_list = array_create(0);
 sprite_list = array_create(0);
 
 selected = false;
 show_text = "";
-project_id = noone;
+project_id = 0;
 player_socket = noone;
 
 cards_in_project = ds_list_create();

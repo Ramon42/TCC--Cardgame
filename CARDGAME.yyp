@@ -79,6 +79,7 @@
     {"id":{"name":"scr_atk_animation","path":"scripts/scr_atk_animation/scr_atk_animation.yy",},"order":6,},
     {"id":{"name":"spr_cardback","path":"sprites/spr_cardback/spr_cardback.yy",},"order":0,},
     {"id":{"name":"scr_send_project","path":"scripts/scr_send_project/scr_send_project.yy",},"order":2,},
+    {"id":{"name":"scr_att_client_instances","path":"scripts/scr_att_client_instances/scr_att_client_instances.yy",},"order":7,},
     {"id":{"name":"obj_add_card_bt","path":"objects/obj_add_card_bt/obj_add_card_bt.yy",},"order":2,},
     {"id":{"name":"example_fns","path":"scripts/example_fns/example_fns.yy",},"order":3,},
     {"id":{"name":"spr_lixeira","path":"sprites/spr_lixeira/spr_lixeira.yy",},"order":8,},

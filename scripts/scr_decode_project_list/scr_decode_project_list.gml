@@ -3,21 +3,54 @@
 function scr_decode_project_list(_project_list){ //arrumar todo esse método, chamar ele toda hora vai criar um cacete
 										//de instancia repetida
 	var _array = json_parse(_project_list);
-	show_debug_message("_ARRAY DE _PROJECT_LIST>>>> " + string(_project_list));
+	var _aux_p = array_length(con_client.player.player_projects);
+	var _aux_o = 0;
+	
+	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
 		for (var i = 0; i < array_length(con_client.project_list); i++){
 				if (_array[row, 1] == con_client.project_list[i, 1]){
-					show_debug_message("DELETOU SOCK> " + string(_array[row,0]) + " ID> " +string(_array[row,1]) + " PROJETO> " +string(_array[row,2]) + " DA LISTA DECODE");
 					array_delete(_array, row, 1);
 					break;
 				}
 		}
 	}
+	*/
 	
-	for (var row = 0; row < array_length(_array); row ++){
+	for (var i = 0; i < array_length(con_client.project_list); i ++){
+		for (var o = 0; o < array_length(_array); o++){
+			if (_array[o, 2].player_socket != con_client.server_socket) { _aux_o ++; }
+			if (_array[o, 2].project_id == con_client.project_list[i, 2].project_id){
+				array_delete(_array, o, 1);
+				break;
+			}
+		}
+	}
+		
+	for (var i = 0; i < array_length(_array); i++){
 		show_message("CRIANDO PROJETO");
-		var _inst = instance_create_layer(0, 0,  "Projects", obj_projeto); //tirar essa instanciação daqui pq vai dar merda
-		var _load = _array[row, 2];
+		var _inst = instance_create_depth(0, 0,  -1, obj_projeto);
+		var _load = _array[i, 2];
+		if (_array[i, 0] == con_client.server_socket){
+			if (_aux_p mod 2 == 0){
+				_inst.x = 500;
+				_inst.y = ((100*(_aux_p div 2))+800);
+			}
+			else {
+				_inst.x = 700;
+				_inst.y = ((100*((_aux_p-1) div 2))+800);
+			}
+		}
+		else{
+			if (_aux_o mod 2 == 0) {
+				_inst.x = 500;
+				_inst.y = ((100*(_aux_o div 2))+300);
+			}
+			else {
+				_inst.x = 700;
+				_inst.y = ((100*((_aux_o-1) div 2))+300);
+			}
+		}
 		with (_inst){
 			sprite_list = _load.sprite_list;
 			player_socket = _load.player_socket;
@@ -37,16 +70,12 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		}
 		var _size = array_length(con_client.project_list);
 		
-		con_client.project_list[_size, 0] = _array[row, 0]; //sock do dono do projeto
-		con_client.project_list[_size, 1] = _array[row, 1]; //id projeto
+		con_client.project_list[_size, 0] = _array[i, 0]; //sock do dono do projeto
+		con_client.project_list[_size, 1] = _array[i, 1]; //id projeto
 		con_client.project_list[_size, 2] = _inst;
-				
-	}
 	
-	//con_client.project_list = _aux_array;
-	for (var row = 0; row < array_length(con_client.project_list); row++){
-		for (var col = 0; col < array_length(con_client.project_list[row]); col++){
-			show_debug_message("VAL: " + string(con_client.project_list[row, col]));
+		if (con_client.server_socket == _array[i, 0]){
+			array_push(con_client.player.player_projects, _inst);
 		}
 	}
 		/*

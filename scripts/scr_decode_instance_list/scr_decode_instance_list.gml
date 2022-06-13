@@ -27,7 +27,6 @@ function scr_decode_instance_list(_instance_list){
 	}
 	
 	for (var i = 0; i < array_length(_array); i++){
-		show_message("CRIANDO PROJETO");
 		var _inst = instance_create_depth(0, 0,  -1, obj_robo);
 		var _load = _array[i, 2];
 		if (_array[i, 0] == con_client.server_socket){
@@ -73,7 +72,7 @@ function scr_decode_instance_list(_instance_list){
 		con_client.instance_list[_size, 2] = _inst;
 		
 		if (con_client.server_socket == _array[i, 0]){
-			array_push(con_client.player.player_instances, _inst) ;
+			array_push(con_client.player.player_instances, _inst);
 		}
 	}
 }

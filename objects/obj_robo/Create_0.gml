@@ -13,6 +13,7 @@ attacking = false;
 atk_path = true; //variavel para startar e parar o path de ataque
 atk_bt = noone;
 defending = false;
+atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 
 inst_proj_id = 0;
 inst_sock_id = 0;

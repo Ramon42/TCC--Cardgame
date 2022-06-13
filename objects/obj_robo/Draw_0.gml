@@ -4,7 +4,8 @@
 if (instance_position(mouse_x, mouse_y, self) or self.selected){
 	draw_sprite_ext(spr_card_highlight, 0, self.x, self.y, self.image_xscale, self.image_yscale, 0, c_white, 0.8);
 }
-
+if (self.voo){ image_angle = 90; }
+else { image_angle = 0; }
 draw_self();
 
 if (self.attacking){

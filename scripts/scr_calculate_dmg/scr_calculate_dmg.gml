@@ -26,5 +26,6 @@ function scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op){
 		_atk.energia -= _dmg_refletir;
 	}
 	if (_dmg > 0){ _def.energia -= _dmg; } //só realiza o dano caso ele seja maior que 0 (caso contrário receberia dano negativo)
+	show_message("SERVIDOR ENVIANDO UPDATE DE ENERGIA");
 	scr_update_projects_energy(_sock, _sock_op);
 }

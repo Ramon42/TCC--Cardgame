@@ -8,8 +8,6 @@ function scr_att_client_project_list(_project_list, _client_projects){
 				var _load = _array[row, 2];
 				with (_client_projects[i, 2]){
 					sprite_list = _load.sprite_list;
-					player_socket = _load.player_socket;
-					project_id = _load.project_id;
 					forca_var = _load.forca_var;
 					forca_cons = _load.forca_cons;
 					escudo_var = _load.escudo_var;
@@ -17,6 +15,11 @@ function scr_att_client_project_list(_project_list, _client_projects){
 					energia = _load.energia;
 					attributes_map = _load.attributes_map;
 					voo = _load.voo;
+					atacar_1 = _load.atacar_1;
+					atacar_2 = _load.atacar_2;
+					refletir = _load.refletir;
+					defender = _load.defender;
+					voar = _load.voar;
 				}
 			}
 		}
