@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -27,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MENU",
-    "path": "folders/Objects/INGAME/MENU.yy",
+    "name": "CREATE PROJECT",
+    "path": "folders/Objects/INGAME/MENU/CREATE PROJECT.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_save_class_bt",

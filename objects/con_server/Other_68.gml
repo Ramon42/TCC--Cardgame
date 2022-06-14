@@ -120,11 +120,14 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			//defender
 			//anotação futura: provavelmente quando um robo for destruido aqui, tem que
 			//diminuir 1 do lugar que posiciona eles no cliente
-			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op);
+			
 		break;
 		
 		case network.instance_dmg_calc:
-			
+			var _atk_id = buffer_read(_buff, buffer_u8);
+			var _def_id = buffer_read(_buff, buffer_u8);
+			var _bloq = buffer_read(_buff, buffer_bool);
+			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq);
 		break;
 			
 		case network.deal_damage:

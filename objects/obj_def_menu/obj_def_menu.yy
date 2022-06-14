@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_move_card_menu",
-    "path": "sprites/spr_move_card_menu/spr_move_card_menu.yy",
+    "name": "spr_create_class_menu",
+    "path": "sprites/spr_create_class_menu/spr_create_class_menu.yy",
   },
   "solid": false,
   "visible": true,

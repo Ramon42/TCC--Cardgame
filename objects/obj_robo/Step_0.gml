@@ -85,12 +85,13 @@ if (mouse_check_button_released(mb_left)){
 			//ataca diretamente  
 			show_message("ATACANDO DIRETO");
 			scr_send_atk(self, undefined);
+			self.attacking = false;
 		}
 	}
 	
-	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_action_bt_parent)){
+	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_combat_bt_base)){
 		self.selected = false;
 		self.attacking = false;
-		instance_destroy(obj_action_bt_parent);
+		instance_destroy(obj_combat_bt_base);
 	}
 }
