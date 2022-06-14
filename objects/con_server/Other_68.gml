@@ -115,11 +115,18 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
 			scr_send_atk_animation(_sock_op, _atk_id, _def_id);
+			scr_send_def_choice(_sock_op, _atk_id, _def_id);
+			//criar um spript pra abrir um menu perguntando se o jogador deseja utilizar o metodo
+			//defender
 			//anotação futura: provavelmente quando um robo for destruido aqui, tem que
 			//diminuir 1 do lugar que posiciona eles no cliente
 			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op);
 		break;
 		
+		case network.instance_dmg_calc:
+			
+		break;
+			
 		case network.deal_damage:
 			var _dmg = buffer_read(_buff, buffer_u8);
 			var _op = scr_find_op(_p);

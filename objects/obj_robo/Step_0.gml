@@ -9,6 +9,10 @@ if (!self.atk_path){
 
 if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, self)){
+		if (self.voar and self.inst_sock_id == con_client.server_socket){
+			self.selected = true;
+			self.voar_bt = instance_create_depth(0, 0, -1, obj_voar_bt);
+		}
 		//caso o jogador clique na carta durante a fase de batalha
 		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
 			show_message("ENTRA NO ROBO SHINJI");
@@ -19,11 +23,22 @@ if (mouse_check_button_released(mb_left)){
 		
 			if (self.atacar_1){
 				//caso possa usar o método atacar_1
-				self.atk_bt = instance_create_depth(0, 0, -1, obj_atk_bt);
+				self.atk1_bt = instance_create_depth(0, 0, -1, obj_atk1_bt);
+			}
+			if (self.atacar_2){
+				self.atk2_bt = instance_create_depth(0, 0,0 -1, obj_atk2_bt);
 			}
 		}
 	}
-	if (position_meeting(mouse_x, mouse_y, self.atk_bt) and self.selected){
+	if (position_meeting(mouse_x, mouse_y, self.voar_bt) and self.selected){
+		if (self.voo){
+			self.voo = false;
+		}
+		else {
+			self.voo = true;
+		}
+	}
+	if (position_meeting(mouse_x, mouse_y, self.atk1_bt) and self.selected){
 		self.attacking = true;
 		if (!self.voo){
 			for (var i = 0; i < array_length(con_client.instance_list); i++){
@@ -73,9 +88,9 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	
-	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, self.atk_bt)){
+	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_action_bt_parent)){
 		self.selected = false;
 		self.attacking = false;
-		instance_destroy(self.atk_bt);
+		instance_destroy(obj_action_bt_parent);
 	}
 }

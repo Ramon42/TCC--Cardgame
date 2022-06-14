@@ -50,6 +50,10 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 						_projeto.defender = true;
 					break;
 					
+					case SUBTYPE.REFLETIR:
+						_projeto.refletir = true;
+					break;
+					
 					case SUBTYPE.VOAR:
 						_projeto.voar = true;
 					break;

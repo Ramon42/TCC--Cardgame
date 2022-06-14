@@ -63,6 +63,13 @@ if (socket == _event_id){
 			scr_show_hand();
 			break;
 			
+		case network.def_menu: //cria um menu para o jogador defensor decidir se vai usar 
+		// o metodo defender()
+			var _atk_id = buffer_read(_buff, buffer_u8);
+			var _def_id = buffer_read(_buff, buffer_u8);
+			scr_menu_defender(_atk_id, _def_id);
+			break;
+		
 		case network.atk_animation:
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);

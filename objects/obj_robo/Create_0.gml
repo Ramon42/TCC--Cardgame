@@ -11,7 +11,9 @@ pth = noone;
 selected = false;
 attacking = false;
 atk_path = true; //variavel para startar e parar o path de ataque
-atk_bt = noone;
+atk1_bt = noone;
+atk2_bt = noone;
+voar_bt = noone;
 defending = false;
 atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 
@@ -27,7 +29,7 @@ escudo_cons = 0;
 
 energia = 0;
 
-voo = noone;
+voo = false;
 
 atacar_1 = false;
 atacar_2 = false;
