@@ -5,6 +5,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	var _array = json_parse(_project_list);
 	var _aux_p = array_length(con_client.player.player_projects);
 	var _aux_o = 0;
+	var _aux_project_list_player = [];
 	
 	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
@@ -20,6 +21,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	for (var i = 0; i < array_length(con_client.project_list); i ++){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 2].player_socket != con_client.server_socket) { _aux_o ++; }
+			else { array_push(_aux_project_list_player, _array[o]); }
 			if (_array[o, 2].project_id == con_client.project_list[i, 2].project_id){
 				array_delete(_array, o, 1);
 				break;
@@ -32,24 +34,13 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		var _inst = instance_create_depth(0, 0,  -1, obj_projeto);
 		var _load = _array[i, 2];
 		if (_array[i, 0] == con_client.server_socket){
-			if (_aux_p mod 2 == 0){
-				_inst.x = 500;
-				_inst.y = ((100*(_aux_p div 2))+800);
-			}
-			else {
-				_inst.x = 700;
-				_inst.y = ((100*((_aux_p-1) div 2))+800);
-			}
+			_inst.x = con_client.player.p_projects_pos[_aux_p, 0];
+			_inst.y = con_client.player.p_projects_pos[_aux_p, 1];
+			
 		}
 		else{
-			if (_aux_o mod 2 == 0) {
-				_inst.x = 500;
-				_inst.y = ((100*(_aux_o div 2))+300);
-			}
-			else {
-				_inst.x = 700;
-				_inst.y = ((100*((_aux_o-1) div 2))+300);
-			}
+			_inst.x = con_client.player.op_projects_pos[_aux_o, 0];
+			_inst.y = con_client.player.op_projects_pos[_aux_o, 1];
 		}
 		with (_inst){
 			image_xscale = 0.5;
@@ -80,6 +71,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			array_push(con_client.player.player_projects, _inst);
 		}
 	}
+	con_client.player.player_projects = _aux_project_list_player; //seta todos os projetos do player vindos do servidor
+	con_client.player_proj = _aux_project_list_player;
 		/*
 		for (var i = array_height_2d(_array) - 1; i > -1; i--;)
 		{
