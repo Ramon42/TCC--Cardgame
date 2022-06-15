@@ -15,7 +15,6 @@ if (mouse_check_button_released(mb_left)){
 		}
 		//caso o jogador clique na carta durante a fase de batalha
 		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
-			show_message("ENTRA NO ROBO SHINJI");
 			self.selected = true;
 			con_client.player.card_selected = noone;
 			with(obj_card_preview){ instance_destroy(); }
@@ -38,60 +37,118 @@ if (mouse_check_button_released(mb_left)){
 			self.voo = true;
 		}
 	}
-	if (position_meeting(mouse_x, mouse_y, self.atk1_bt) and self.selected){
-		self.attacking = true;
+	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){
+		var _text = "";
+		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)
+		if (position_meeting(mouse_x, mouse_y, self.atk1_bt)) { 
+			self.attacking1 = true; 
+			_text = "SELECIONE UM ROBÔ INIMIGO PARA ATACAR!";
+		}
+		else if (position_meeting(mouse_x, mouse_y, self.atk2_bt)) { 
+			self.attacking2 = true; 
+			_text = "SELECIONE DOIS ROBÔS INIMIGOS PARA ATACAR!";
+		}
 		if (!self.voo){
 			for (var i = 0; i < array_length(con_client.instance_list); i++){
 				if (con_client.server_socket != con_client.instance_list[i, 0]){
-					show_message("OPONENTE POSSUI ROBO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
+					show_message(_text);
 					atk_direct = false;
-					break;
+					_count ++;
+					if (_count >= 2){
+						break;
+					}
 				}
-				else {
+				else if (_count == 0){
 					atk_direct = true;
 				}
+			}
+			if (_count < 2 and self.attacking2){
+				self.attacking2 = false;
+				show_message("O OPONENTE POSSUI MENOS DE DOIS ROBÔS, NÃO É POSSÍVEL UTILIZAR ESTE MÉTODO!");
 			}
 		}
 		else {
 			for (var i = 0; i < array_length(con_client.instance_list); i++){
 				if (con_client.server_socket != con_client.instance_list[i, 0]){
 					if (con_client.instance_list[i, 2].voo){
-						show_message("OPONENTE POSSUI ROBO VOANDO, NÃO É POSSIVEL ATACAR DIRETAMENTE!");
+						show_message("OPONENTE POSSUI ROBÔ(S) VOANDO, " + _text);
 						atk_direct = false;
-						break;
+						_count ++;
+						if (_count >= 2){
+							break;
+						}
 					}
-					else {
+					else if (_count == 0){
 						atk_direct = true;
 					}
 				}
 			}
+			if (_count < 2 and self.attacking2){
+				self.attacking2 = false;
+				show_message("O OPONENTE POSSUI MENOS DE DOIS ROBÔS, NÃO É POSSÍVEL UTILIZAR ESTE MÉTODO!");
+			}
 		}
 	}
-	if (self.attacking){ //selecionar alvo do ataque
+
+	if (self.attacking1){ //selecionar alvo do ataque
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
-				show_message("ALVO SELECIONADO")
-				scr_send_atk(self, _inst);
+				show_message("ALVO SELECIONADO");
+				if(self.forca_var > 0) { scr_send_atk(self, _inst, self.forca_var); }
+				else { scr_send_atk(self, _inst, self.forca_cons); }
 				//significa que selecionou um robo que não é do jogador como alvo
 				self.pth = path_duplicate(pth_test);
 				var _ang = (point_direction(self.x, self.y, _inst.x, _inst.y))-90;
 				path_rotate(self.pth, _ang);
 				self.atk_path = false;
-				self.attacking = false;
+				self.attacking1 = false;
 			}
 		}
 		else if (atk_direct){
 			//ataca diretamente  
 			show_message("ATACANDO DIRETO");
 			scr_send_atk(self, undefined);
-			self.attacking = false;
+			self.attacking1 = false;
+		}
+	}
+	else if (self.attacking2){
+		if (position_meeting(mouse_x, mouse_y, obj_robo) and self.atk2_count == 0){
+			var _alvo1 = instance_position(mouse_x, mouse_y, obj_robo);
+			if(_alvo1.inst_sock_id != con_client.server_socket){
+				self.pth = path_duplicate(pth_test);
+				var _ang = (point_direction(self.x, self.y, _alvo1.x, _alvo1.y))-90;
+				path_rotate(self.pth, _ang);
+				self.atk_path = false;
+				self.atk_list[0, 0] = self;
+				self.atk_list[0, 1] = _alvo1;
+				if(self.forca_var > 0) { self.atk_list[0, 2] = self.forca_var; }
+				else { self.atk_list[0, 2] = self.forca_cons; }
+	
+				self.atk_menu = instance_create_depth(0, 0, -2, obj_atk2_menu);
+				self.atk_menu.menu_list = self.atk_list;
+				self.atk_menu.max_dmg = self.atk_list[0, 2];
+				self.atk2_count = 1;
+			}
+		}
+		else if (position_meeting(mouse_x, mouse_y, obj_robo) and self.atk2_count == 1){
+			var _alvo2 = instance_position(mouse_x, mouse_y, obj_robo);
+			if(_alvo2.inst_sock_id != con_client.server_socket){
+				scr_send_atk(self, _alvo2, self.dmg_rest);
+				self.pth = path_duplicate(pth_test);
+				var _ang = (point_direction(self.x, self.y, _alvo2.x, _alvo2.y))-90;
+				path_rotate(self.pth, _ang);
+				self.atk_path = false;
+				self.atk2_count = 0;
+				self.attacking2 = false;
+			}
 		}
 	}
 	
 	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_combat_bt_base)){
 		self.selected = false;
-		self.attacking = false;
+		self.attacking1 = false;
+		self.attacking2 = false;
 		instance_destroy(obj_combat_bt_base);
 	}
 }

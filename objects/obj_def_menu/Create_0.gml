@@ -1,14 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x_pos = room_width / 1.6;
+x_pos = room_width / 2;
 y_pos = room_height / 2;
 
 x = x_pos;
 y = y_pos;
 
-image_xscale = 1.5;
-image_yscale = 1;
+image_xscale = 3.5;
+image_yscale = 3;
 
 atk_recebido = 0;
 escudo = 0;

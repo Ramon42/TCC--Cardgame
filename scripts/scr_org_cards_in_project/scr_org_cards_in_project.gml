@@ -23,7 +23,6 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 					_card_list[|i].y_pos = lines[_pos_var];
 					_card_list[|i].depth = -2;
 					_pos_var++;
-					show_message("POS VAR SIZE: " + string(_pos_var));
 					break;
 				
 				case CARDTYPE.CONSTANTE:

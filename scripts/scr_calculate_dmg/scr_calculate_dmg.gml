@@ -1,9 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq){
+function scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq, _dmg){
 	var _atk;
 	var _def;
-	var _dmg;
 	var _escudo;
 	var _dmg_refletir = 0;
 	
@@ -12,8 +11,6 @@ function scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq){
 		else if (con_server.instances_server[i, 2].inst_id == _def_id) { _def = con_server.instances_server[i, 2]; }
 	}
 	
-	if (_atk.forca_var > _atk.forca_cons) { _dmg = _atk.forca_var; } 
-	else { _dmg = _atk.forca_cons; }
 	if (_def.escudo_var > _def.escudo_cons) { _escudo = _def.escudo_var; } 
 	else { _escudo = _def.escudo_cons; }
 	

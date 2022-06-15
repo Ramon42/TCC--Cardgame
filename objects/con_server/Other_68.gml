@@ -114,12 +114,13 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.atk_instance:
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
+			var _dmg = buffer_read(_buff, buffer_u8);
 			aux_atk = _atk_id;
 			aux_def1 = _def_id;
 			aux_sock = _sock_op;
 			//alarm[1] = 0;
 			scr_send_atk_animation(_sock_op, _atk_id, _def_id);
-			scr_send_def_choice(_sock_op, _atk_id, _def_id, -1);
+			scr_send_def_choice(_sock_op, _atk_id, _def_id, _dmg);
 			
 			//criar um spript pra abrir um menu perguntando se o jogador deseja utilizar o metodo
 			//defender
@@ -149,8 +150,9 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.instance_dmg_calc:
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
+			var _dmg = buffer_read(_buff, buffer_u8);
 			var _bloq = buffer_read(_buff, buffer_bool);
-			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq);
+			scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq, _dmg);
 		break;
 			
 		case network.deal_damage:

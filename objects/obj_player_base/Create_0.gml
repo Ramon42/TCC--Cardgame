@@ -24,6 +24,8 @@ vida_atual = 0;
 vida_max = 20;
 card_selected = noone;
 is_local = true;
+def_menu_queue = array_create(0);
+
 
 state = PLAYERSTATE.ENEMY_TURN;
 

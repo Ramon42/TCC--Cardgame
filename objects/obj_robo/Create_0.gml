@@ -10,13 +10,20 @@ lin_eng = y+60;;
 pth = noone;
 
 selected = false;
-attacking = false;
+attacking1 = false;
+attacking2 = false;
+atk2_count = 0;
+dmg_rest = 0;
+atk_list = array_create(0);
+
 atk_path = true; //variavel para startar e parar o path de ataque
 atk1_bt = noone;
 atk2_bt = noone;
 voar_bt = noone;
 defending = false;
 atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
+
+atk_menu = noone;
 
 inst_proj_id = 0;
 inst_sock_id = 0;
