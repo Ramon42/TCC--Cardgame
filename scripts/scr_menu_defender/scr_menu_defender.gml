@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_menu_defender(_atk_id, _def_id){
+function scr_menu_defender(_atk_id, _def_id, _dmg){
 	var _atk;
-	var _def;
+	var _def = noone;
 	for (var o = 0; o < array_length(con_client.instance_list); o++){
 		if (con_client.instance_list[o, 1] == _atk_id){
 			_atk = con_client.instance_list[o, 2];

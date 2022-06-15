@@ -23,3 +23,7 @@ if (forca_var != 0){
 if (escudo_var != 0){
 	draw_text(col, lin_esc, "-int Escudo = " + string(escudo_var));
 }
+
+if (energia != 0){
+	draw_text(col, lin_eng, "-int Energia = " + string(energia));
+}

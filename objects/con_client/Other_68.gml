@@ -45,13 +45,13 @@ if (socket == _event_id){
 			var _project_list = buffer_read(_buff, buffer_string);
 			scr_att_client_project_list(_project_list, project_list);
 			scr_decode_project_list(_project_list);
-			scr_set_projects_position(self.project_list);
+			//scr_set_projects_position(self.project_list);
 			break;
 		
 		case network.update_instances:
 			var _instance_list = buffer_read(_buff, buffer_string);
 			scr_decode_instance_list(_instance_list);
-			scr_set_instances_position(self.instance_list);
+			//scr_set_instances_position(self.instance_list);
 			break;
 		
 		case network.draw_card:
@@ -67,7 +67,8 @@ if (socket == _event_id){
 		// o metodo defender()
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
-			scr_menu_defender(_atk_id, _def_id);
+			var _dmg = buffer_read(_buff, buffer_u8);
+			scr_menu_defender(_atk_id, _def_id, _dmg);
 			break;
 		
 		case network.atk_animation:

@@ -50,6 +50,8 @@ function scr_decode_instance_list(_instance_list){
 			}
 		}
 		with(_inst){
+			image_xscale = 0.5;
+			image_yscale = 0.5;
 			inst_proj_id = _load.inst_proj_id;
 			inst_sock_id = _load.inst_sock_id;
 			inst_id = _load.inst_id;

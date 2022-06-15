@@ -13,6 +13,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 			_temp_obj.sprite_index = _project.sprite_list[i];
 			_temp_obj.image_xscale = 0.5;
 			_temp_obj.image_yscale = 0.5;
+			_temp_obj.depth = -2;
 			array_push(_project.obj_list, _temp_obj);
 			ds_list_add(_project.cards_in_project, _temp_obj);
 			scr_assign_stats(_temp_obj);

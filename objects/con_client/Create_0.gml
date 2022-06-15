@@ -39,6 +39,7 @@ enum network { //enumerar ações possiveis para enviar para o servidor
 	send_edit_project,
 	deal_damage,
 	atk_instance,
+	atk_instance2,
 	atk_animation,
 	def_menu,
 	instance_dmg_calc,

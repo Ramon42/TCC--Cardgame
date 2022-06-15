@@ -5,6 +5,7 @@ aux_y = sprite_height/2
 col = x - aux_x*0.75;
 lin_for = y-aux_y/6;
 lin_esc = y+aux_y/6;
+lin_eng = y+60;;
 
 pth = noone;
 

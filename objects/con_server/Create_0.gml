@@ -13,6 +13,12 @@ projects_server = array_create(0);
 instances_server = array_create(0);
 turn_player = noone;
 
+
+aux_atk = noone;
+aux_def1 = noone;
+aux_def2 = noone;
+aux_sock = noone;
+
 /* da pra fazer assim com um obj_player_base, problema= estruturado impede + de 2 jogadores
 player1 = instance_create_layer(); // player1 também é o servidor
 player2 = instance_create_layer();
