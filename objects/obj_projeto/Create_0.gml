@@ -14,7 +14,6 @@ lin_for = y+20;
 lin_esc = y+45;
 lin_eng = y+60;
 
-obj_list = array_create(0);
 sprite_list = array_create(0);
 
 selected = false;

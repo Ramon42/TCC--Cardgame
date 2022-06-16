@@ -1,4 +1,4 @@
-// Script assets have changed for v2.3.0 see
+ // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_set_project_to_move(){ //organiza projetos para o usuário mover variaveis
 	var _size = array_length(con_client.player.player_projects);

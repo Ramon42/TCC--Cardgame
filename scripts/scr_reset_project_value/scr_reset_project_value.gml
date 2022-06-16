@@ -12,4 +12,9 @@ function scr_reset_project_value(_projeto){ //reseta todos os atributos do proje
 	ds_map_set(_projeto.attributes_map, "forca_c", 0);
 	_projeto.escudo_cons = 0;
 	ds_map_set(_projeto.attributes_map, "escudo_c", 0);
+	_projeto.atacar_1 = false;
+	_projeto.atacar_2 = false;
+	_projeto.defender = false;
+	_projeto.refletir = false;
+	_projeto.voar = false;
 }

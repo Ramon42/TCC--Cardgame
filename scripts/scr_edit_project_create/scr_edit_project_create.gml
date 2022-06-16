@@ -5,6 +5,7 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 	instance_create_depth(0, 0, -2, obj_edit_project_menu);
 	if(!_project.created){ //não adiciona objetos toda hora que clicar em editar
 		_project.created = true;
+		var _objs = ds_list_create();
 		obj_edit_project_menu.projeto = _project;
 		show_message("ARRAY DE SPRITES EM PROJETO>>> " + string(_project.sprite_list));
 		scr_set_project_to_move(); //atualiza a posição dos projetos para mover
@@ -13,25 +14,23 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 			_temp_obj.sprite_index = _project.sprite_list[i];
 			_temp_obj.image_xscale = 0.5;
 			_temp_obj.image_yscale = 0.5;
-			_temp_obj.depth = -2;
-			array_push(_project.obj_list, _temp_obj);
-			ds_list_add(_project.cards_in_project, _temp_obj);
+			_temp_obj.depth = -3;
+			ds_list_add(_objs, _temp_obj);
 			scr_assign_stats(_temp_obj);
 			ds_list_add(obj_edit_project_menu.card_list, _temp_obj);
 		}
+		_project.cards_in_project = _objs;
 	}
 	else{
-		show_debug_message("passou pelo else");
-		for(var i = 0; i < array_length(_project.obj_list); i++){
-			show_debug_message("entrou no for");
-			ds_list_add(obj_edit_project_menu.card_list, _project.obj_list[i]);
+		for(var i = 0; i < ds_list_size(_project.cards_in_project); i++){
+			ds_list_add(obj_edit_project_menu.card_list, _project.cards_in_project[|i]);
 		}
 	}
 	
 	obj_edit_project_menu.belongs_to_player = _bool;
 	_project.x = obj_edit_project_menu.col4;
 	_project.y = obj_edit_project_menu.lin3;
-	_project.depth = -2;
+	_project.depth = -3;
 	_project.image_xscale = 1.75;
 	_project.image_yscale = 1.75;
 	obj_edit_project_menu.alarm[0] = 1;

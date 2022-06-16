@@ -44,9 +44,9 @@ function scr_get_card_bt(_card_selected){
 			for (var p = 0; p < array_length(con_client.player_proj); p++){
 				var _aux = con_client.player_proj[p, 2];
 				show_debug_message("GET BT>>> " + string(_aux));
-				for (var c = 0; c < array_length(_aux.obj_list); c++){
-					show_debug_message("LENDO A LISTA DE CARTAS DE UM PROJETO>> " + string(_aux.obj_list[c]));
-					if(_aux.obj_list[c] == _card_selected){
+				for (var c = 0; c < ds_list_size(_aux.cards_in_project); c++){
+					show_debug_message("LENDO A LISTA DE CARTAS DE UM PROJETO>> " + string(_aux.cards_in_project[|c]));
+					if(_aux.cards_in_project[|c] == _card_selected){
 						_find = true;
 						break;
 					}
@@ -54,7 +54,6 @@ function scr_get_card_bt(_card_selected){
 			}
 			//var _find = true; //temporario
 			if (_find){//caso a carta já esteja em um projeto do jogador
-				show_debug_message("CARD TYPE SELECIONADO>> " + string(_card_selected.card_type));
 				switch (_card_selected.card_type){
 					case CARDTYPE.CLASSE:
 						switch (_card_selected.card_subtype){
@@ -72,12 +71,9 @@ function scr_get_card_bt(_card_selected){
 			
 					case CARDTYPE.VARIAVEL:
 						if (con_client.player.edit_project){ 
-							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
-							
 							//teste
 							_card_selected.move_card = true;
 							//
-							show_debug_message("MOVENDO CARTA");
 						}
 						break;
 				

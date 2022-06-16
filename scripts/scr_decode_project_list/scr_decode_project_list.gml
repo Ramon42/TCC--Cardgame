@@ -5,23 +5,10 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	var _array = json_parse(_project_list);
 	var _aux_p = array_length(con_client.player.player_projects);
 	var _aux_o = 0;
-	var _aux_project_list_player = [];
-	
-	/*
-	for (var row = array_length(_array)-1; row >= 0; row--){
-		for (var i = 0; i < array_length(con_client.project_list); i++){
-				if (_array[row, 1] == con_client.project_list[i, 1]){
-					array_delete(_array, row, 1);
-					break;
-				}
-		}
-	}
-	*/
 	
 	for (var i = 0; i < array_length(con_client.project_list); i ++){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 2].player_socket != con_client.server_socket) { _aux_o ++; }
-			else { array_push(_aux_project_list_player, _array[o]); }
 			if (_array[o, 2].project_id == con_client.project_list[i, 2].project_id){
 				array_delete(_array, o, 1);
 				break;
@@ -66,13 +53,8 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		con_client.project_list[_size, 0] = _array[i, 0]; //sock do dono do projeto
 		con_client.project_list[_size, 1] = _array[i, 1]; //id projeto
 		con_client.project_list[_size, 2] = _inst;
-	
-		if (con_client.server_socket == _array[i, 0]){
-			array_push(con_client.player.player_projects, _inst);
-		}
 	}
-	con_client.player.player_projects = _aux_project_list_player; //seta todos os projetos do player vindos do servidor
-	con_client.player_proj = _aux_project_list_player;
+	
 		/*
 		for (var i = array_height_2d(_array) - 1; i > -1; i--;)
 		{

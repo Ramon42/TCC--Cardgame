@@ -13,7 +13,7 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 					_card_list[|i].y = 500;
 					_card_list[|i].x_pos = 500;
 					_card_list[|i].y_pos = 500;
-					_card_list[|i].depth = -2;
+					_card_list[|i].depth = -3;
 					break;
 				
 				case CARDTYPE.VARIAVEL:
@@ -21,7 +21,7 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 					_card_list[|i].y = lines[_pos_var];
 					_card_list[|i].x_pos = col1;
 					_card_list[|i].y_pos = lines[_pos_var];
-					_card_list[|i].depth = -2;
+					_card_list[|i].depth = -3;
 					_pos_var++;
 					break;
 				
@@ -30,7 +30,7 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 					_card_list[|i].y = lines[_pos_cons];
 					_card_list[|i].x_pos = col2;
 					_card_list[|i].y_pos = lines[_pos_cons];
-					_card_list[|i].depth = -2;
+					_card_list[|i].depth = -3;
 					_pos_cons++;
 					break;
 			
@@ -39,7 +39,7 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 					_card_list[|i].y = lines[_pos_meth];
 					_card_list[|i].x_pos = col3;
 					_card_list[|i].y_pos = lines[_pos_meth];
-					_card_list[|i].depth = -2;
+					_card_list[|i].depth = -3;
 					_pos_meth++;
 					break;
 			}

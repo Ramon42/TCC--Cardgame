@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AUXILIAR.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_att_client_project_list",
+  "name": "scr_set_player_projects",
   "tags": [],
   "resourceType": "GMScript",
 }
