@@ -5,6 +5,7 @@
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": null,
@@ -28,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MOVE CARD",
-    "path": "folders/Objects/INGAME/MENU/MOVE CARD.yy",
+    "name": "EDIT PROJECT",
+    "path": "folders/Objects/INGAME/MENU/EDIT PROJECT.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_move_card_menu",

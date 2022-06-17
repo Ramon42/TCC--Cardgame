@@ -6,8 +6,9 @@ function scr_set_projects_position(_projects_list){
 	var _length = array_length(_projects_list);
 	var aux_project_list_player = [];
 	
-	for (var row = 0; row < _length ; row++){
+	for (var row = 0; row < _length; row++){
 		if (instance_exists(_projects_list[row, 2])){
+			_projects_list[row, 2].depth = -1;
 			_projects_list[row, 2].image_xscale = 0.5;
 			_projects_list[row, 2].image_yscale = 0.5;
 			if (con_client.server_socket == _projects_list[row, 0]){ //checa se o projeto pertence a este jogador

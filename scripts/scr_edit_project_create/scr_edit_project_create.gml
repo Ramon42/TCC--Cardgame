@@ -8,7 +8,6 @@ function scr_edit_project_create(_project, _bool){ //arrumar, caso seja o oponen
 		var _objs = ds_list_create();
 		obj_edit_project_menu.projeto = _project;
 		show_message("ARRAY DE SPRITES EM PROJETO>>> " + string(_project.sprite_list));
-		scr_set_project_to_move(); //atualiza a posição dos projetos para mover
 		for (var i=0; i < array_length(_project.sprite_list); i ++){
 			var _temp_obj = instance_create_depth(0, 0, -2, obj_card);
 			_temp_obj.sprite_index = _project.sprite_list[i];
