@@ -53,6 +53,7 @@
     {"id":{"name":"scr_update_project_var","path":"scripts/scr_update_project_var/scr_update_project_var.yy",},"order":4,},
     {"id":{"name":"scr_send_opponent","path":"scripts/scr_send_opponent/scr_send_opponent.yy",},"order":7,},
     {"id":{"name":"scr_show_op_hand","path":"scripts/scr_show_op_hand/scr_show_op_hand.yy",},"order":4,},
+    {"id":{"name":"scr_edit_add_card","path":"scripts/scr_edit_add_card/scr_edit_add_card.yy",},"order":7,},
     {"id":{"name":"spr_exit","path":"sprites/spr_exit/spr_exit.yy",},"order":1,},
     {"id":{"name":"scr_add_value_to_project","path":"scripts/scr_add_value_to_project/scr_add_value_to_project.yy",},"order":0,},
     {"id":{"name":"spr_turn_phase","path":"sprites/spr_turn_phase/spr_turn_phase.yy",},"order":9,},
