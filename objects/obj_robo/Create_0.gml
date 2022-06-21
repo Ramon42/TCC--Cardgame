@@ -12,14 +12,24 @@ pth = noone;
 selected = false;
 attacking1 = false;
 attacking2 = false;
+explode = false;
 atk2_count = 0;
 dmg_rest = 0;
 atk_list = array_create(0);
 
 atk_path = true; //variavel para startar e parar o path de ataque
+
 atk1_bt = noone;
 atk2_bt = noone;
 voar_bt = noone;
+inverter_bt = noone;
+explodir_bt = noone;
+usar_arma_bt = noone;
+agrupar_atacar_bt = noone;
+bt_pos = [[75, 800], [175 ,800],
+		  [75, 875], [175, 875],
+		  [75, 950], [175, 950]];
+
 defending = false;
 atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 
@@ -46,5 +56,6 @@ defender = false;
 inverter = false;
 agrupar_atacar = false;
 explodir = false;
+usar_arma = false;
 destruir_arma = false;
 voar = false;

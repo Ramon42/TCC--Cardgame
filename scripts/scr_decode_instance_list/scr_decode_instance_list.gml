@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_decode_instance_list(_instance_list){
 	var _array = json_parse(_instance_list);
-	var _aux_p = array_length(con_client.player.player_instances);
+	var _aux_p = 0;
 	var _aux_o = 0;
 	/*
 	for (var row = array_length(_array)-1; row >= 0; row--){
@@ -18,6 +18,7 @@ function scr_decode_instance_list(_instance_list){
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 0] != con_client.server_socket) { _aux_o ++; }
+			else { _aux_p ++; }
 			if (_array[o, 2].inst_id == con_client.instance_list[i, 2].inst_id){
 				// and _array[o, 0] == con_client.server_socket NÃO FUNCIONA PQ O SERVER SOCKET É DIFERENTE PRA CADA USUÁRIO
 				array_delete(_array, o, 1);
@@ -69,6 +70,7 @@ function scr_decode_instance_list(_instance_list){
 			inverter = _load.inverter;
 			agrupar_atacar = _load.agrupar_atacar;
 			destruir_arma = _load.destruir_arma;
+			usar_arma = _load.usar_arma;
 			voar = _load.voar;
 		}
 		var _size = array_length(con_client.instance_list);
@@ -76,9 +78,7 @@ function scr_decode_instance_list(_instance_list){
 		con_client.instance_list[_size, 0] = _array[i, 0]; //sock do dono do projeto
 		con_client.instance_list[_size, 1] = _array[i, 1]; //id projeto
 		con_client.instance_list[_size, 2] = _inst;
-		
-		if (con_client.server_socket == _array[i, 0]){
-			array_push(con_client.player.player_instances, _inst);
-		}
+	
+	
 	}
 }

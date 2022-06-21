@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_remove_card",
+    "path": "sprites/spr_remove_card/spr_remove_card.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

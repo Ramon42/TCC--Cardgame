@@ -70,6 +70,10 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 						_projeto.destruir_arma = true;
 					break;
 					
+					case SUBTYPE.USAR_ARMA:
+						_projeto.usar_arma = true;
+					break;
+					
 					case SUBTYPE.VOAR:
 						_projeto.voar = true;
 					break;

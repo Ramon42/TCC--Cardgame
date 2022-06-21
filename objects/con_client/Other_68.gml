@@ -81,6 +81,12 @@ if (socket == _event_id){
 			var _instance_list = buffer_read(_buff, buffer_string);
 			scr_att_client_instances(_instance_list);
 			break;
+		
+		case network.explode:
+			var _obj1_id = buffer_read(_buff, buffer_u8);
+			var _obj2_id = buffer_read(_buff, buffer_u8);
+			scr_explode(_obj1_id, _obj2_id);
+			break;
 			
 		case network.wait:
 			self.player.state = PLAYERSTATE.ENEMY_TURN;

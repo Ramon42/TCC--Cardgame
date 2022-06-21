@@ -50,6 +50,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			inverter = _load.inverter;
 			agrupar_atacar = _load.agrupar_atacar;
 			destruir_arma = _load.destruir_arma;
+			usar_arma = _load.usar_arma;
 			voar = _load.voar;
 		}
 		var _size = array_length(con_client.project_list);

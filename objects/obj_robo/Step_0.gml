@@ -9,9 +9,27 @@ if (!self.atk_path){
 
 if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, self)){
+		var _pos = 0;
+		instance_destroy(obj_action_bt_parent);
 		if (self.voar and self.inst_sock_id == con_client.server_socket){
 			self.selected = true;
-			self.voar_bt = instance_create_depth(0, 0, -1, obj_voar_bt);
+			self.voar_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_voar_bt);
+			_pos++;
+		}
+		if (self.inverter and self.inst_sock_id == con_client.server_socket){
+			self.selected = true;
+			self.inverter_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
+			_pos++;
+		}
+		if (self.explodir and self.inst_sock_id == con_client.server_socket){
+			self.selected = true;
+			self.explodir_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
+			_pos++;
+		}
+		if (self.usar_arma and self.inst_sock_id == con_client.server_socket){
+			self.selected = true;
+			self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
+			_pos++;
 		}
 		//caso o jogador clique na carta durante a fase de batalha
 		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
@@ -22,10 +40,12 @@ if (mouse_check_button_released(mb_left)){
 		
 			if (self.atacar_1){
 				//caso possa usar o método atacar_1
-				self.atk1_bt = instance_create_depth(0, 0, -1, obj_atk1_bt);
+				self.atk1_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_atk1_bt);
+				_pos++;
 			}
 			if (self.atacar_2){
-				self.atk2_bt = instance_create_depth(0, 0,0 -1, obj_atk2_bt);
+				self.atk2_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1],0 -1, obj_atk2_bt);
+				_pos++;
 			}
 		}
 	}
@@ -35,6 +55,19 @@ if (mouse_check_button_released(mb_left)){
 		}
 		else {
 			self.voo = true;
+		}
+	}
+	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){
+		self.explode = true;
+	}
+	if (self.explode){
+		if (position_meeting(mouse_x, mouse_y, obj_robo)){
+			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
+			if(_inst.inst_sock_id != con_client.server_socket){
+				show_message("ALVO SELECIONADO");
+				scr_send_explode(self, _inst);
+				instance_destroy(obj_combat_bt_base);
+			}
 		}
 	}
 	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){

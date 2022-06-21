@@ -161,6 +161,12 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			_op.vida_atual -= _dmg;
 		break;
 		
+		case network.explode:
+			var _obj1_id = buffer_read(_buff, buffer_u8);
+			var _obj2_id = buffer_read(_buff, buffer_u8);
+			scr_explode_server(_obj1_id, _obj2_id, _sock, _sock_op);
+		break;
+		
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
 			else{ self.turn_player = self.sockets[|0]; }

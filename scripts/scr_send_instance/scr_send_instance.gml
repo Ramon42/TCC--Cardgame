@@ -15,22 +15,22 @@ function scr_send_instance(_project){
 		inst_proj_id : _project.project_id,
 		inst_sock_id : _project.player_socket,
 		inst_id : 0,
-		
 		forca_var : _project.forca_var,
 		forca_cons :  _project.forca_cons,
-
 		escudo_var :  _project.escudo_var,
 		escudo_cons :  _project.escudo_cons,
-
 		energia :  _project.energia,
-
 		voo : _project.voo,
-		
 		atacar_1 : _project.atacar_1,
 		atacar_2 : _project.atacar_2,
-		voar : _project.voar,
 		refletir : _project.refletir,
-		defender : _project.defender
+		defender : _project.defender,
+		explodir : _project.explodir,
+		inverter : _project.inverter,
+		agrupar_atacar : _project.agrupar_atacar,
+		destruir_arma : _project.destruir_arma,
+		usar_arma : _project.usar_arma,
+		voar : _project.voar
 	}
 	
 	var _data = json_stringify(_save_instance);

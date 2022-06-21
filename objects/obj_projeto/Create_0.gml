@@ -43,6 +43,7 @@ defender = false;
 refletir = false;
 inverter = false;
 agrupar_atacar = false;
+usar_arma = false;
 explodir = false;
 destruir_arma = false;
 voar = false;

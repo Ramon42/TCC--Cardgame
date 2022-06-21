@@ -26,7 +26,7 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"LayerId":{"name":"9fb9bc88-bb40-4157-b880-fddecddf2aa3","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"LayerId":{"name":"ccf46943-2652-4218-898e-165d12fc8dd0","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"LayerId":{"name":"489f94a4-e3e0-4c35-85bc-a2fcf7bf07cb","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_card_agrupar_atacar","path":"sprites/spr_card_agrupar_atacar/spr_card_agrupar_atacar.yy",},"resourceVersion":"1.0","name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
@@ -66,7 +66,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"ccf46943-2652-4218-898e-165d12fc8dd0","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"489f94a4-e3e0-4c35-85bc-a2fcf7bf07cb","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9fb9bc88-bb40-4157-b880-fddecddf2aa3","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": {

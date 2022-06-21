@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_set_font(fn_pixel);
+draw_set_font(fn_padrao);
 randomise();
 global.rm_width = 1920;
 global.rm_height = 1080;

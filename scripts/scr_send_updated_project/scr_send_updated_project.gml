@@ -41,6 +41,11 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 					atacar_2 : _projeto1.atacar_2,
 					refletir : _projeto1.refletir,
 					defender : _projeto1.defender,
+					inverter : _projeto1.inverter,
+					explodir : _projeto1.explodir,
+					agrupar_atacar : _projeto1.agrupar_atacar,
+					destruir_arma : _projeto1.destruir_arma,
+					usar_arma : _projeto1.usar_arma,
 					voar : _projeto1.voar
 				}
 				var _data = json_stringify(_save_project);
@@ -87,6 +92,11 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 					atacar_2 : _projeto2.atacar_2,
 					refletir : _projeto2.refletir,
 					defender : _projeto2.defender,
+					explodir : _projeto2.explodir,
+					inverter : _projeto2.inverter,
+					agrupar_atacar : _projeto2.agrupar_atacar,
+					destruir_arma : _projeto2.destruir_arma,
+					usar_arma : _projeto2.usar_arma,
 					voar : _projeto2.voar
 			}
 			var _data = json_stringify(_save_project);

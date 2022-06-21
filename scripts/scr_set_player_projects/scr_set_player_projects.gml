@@ -14,10 +14,4 @@ function scr_set_player_projects(_projects_list){
 	}
 	con_client.player.player_projects = aux_project_list_player; //seta todos os projetos do player vindos do servidor
 	con_client.player_proj = aux_project_list_player;
-	show_debug_message("PLAYER.PLAYER_PROJECTS>>> ");
-	for (var i=0; i<array_length(con_client.player.player_projects); i++)
-	{show_debug_message(string(con_client.player.player_projects[i]))}
-	show_debug_message("AUX PROJECT LIST PLAYER>>> ");
-	for (var i=0; i<array_length(aux_project_list_player); i++)
-	{show_debug_message(string(aux_project_list_player[i]))}
 }
