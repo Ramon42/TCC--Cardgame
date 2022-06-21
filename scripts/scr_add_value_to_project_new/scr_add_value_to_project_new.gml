@@ -18,7 +18,7 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 						ds_map_set(_projeto.attributes_map, "escudo_v", _card_list[|_pos].valor);
 					break;
 					case SUBTYPE.VOO:
-						_projeto.voo = _card_list[|_pos].valor;
+						_projeto.voo = false;
 					break;
 				}
 			break;
@@ -54,9 +54,26 @@ function scr_add_value_to_project_new(_card_list, _projeto){
 						_projeto.refletir = true;
 					break;
 					
+					case SUBTYPE.AGRUPAR_ATACAR:
+						_projeto.agrupar_atacar = true;
+					break;
+					
+					case SUBTYPE.INVERTER:
+						_projeto.inverter = true;
+					break;
+					
+					case SUBTYPE.EXPLODIR:
+						_projeto.explodir = true;
+					break;
+					
+					case SUBTYPE.DESTRUIR_ARMA:
+						_projeto.destruir_arma = true;
+					break;
+					
 					case SUBTYPE.VOAR:
 						_projeto.voar = true;
 					break;
+					
 				}
 			break;
 			

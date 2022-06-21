@@ -29,7 +29,7 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 	}
-	if (position_meeting(mouse_x, mouse_y, self.voar_bt) and self.selected){
+	if (position_meeting(mouse_x, mouse_y, self.voar_bt) and self.selected and self.voo != noone){
 		if (self.voo){
 			self.voo = false;
 		}

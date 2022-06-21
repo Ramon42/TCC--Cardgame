@@ -41,6 +41,10 @@ atacar_1 = false;
 atacar_2 = false;
 defender = false;
 refletir = false;
+inverter = false;
+agrupar_atacar = false;
+explodir = false;
+destruir_arma = false;
 voar = false;
 
 attributes_map = ds_map_create();

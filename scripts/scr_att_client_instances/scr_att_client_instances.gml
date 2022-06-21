@@ -13,8 +13,11 @@ function scr_att_client_instances(_instance_list){
 					escudo_var = _load.escudo_var;
 					escudo_cons = _load.escudo_cons;
 					voo = _load.voo;
+					explodir = _load.explodir;
+					inverter = _load.inverter;
+					agrupar_atacar = _load.agrupar_atacar;
+					destruir_arma = _load.destruir_arma;
 				}
-				show_message("NOVA ENERGIA> " + string(con_client.instance_list[o,2].energia));
 			}
 		}
 	}

@@ -65,6 +65,10 @@ function scr_decode_instance_list(_instance_list){
 			atacar_2 = _load.atacar_2;
 			refletir = _load.refletir;
 			defender = _load.defender;
+			explodir = _load.explodir;
+			inverter = _load.inverter;
+			agrupar_atacar = _load.agrupar_atacar;
+			destruir_arma = _load.destruir_arma;
 			voar = _load.voar;
 		}
 		var _size = array_length(con_client.instance_list);

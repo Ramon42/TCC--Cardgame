@@ -57,6 +57,36 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.METODO;
 		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Atacar(alvo, alvo) ao Projeto atual.";
 	}
+	else if (_card.sprite_index == spr_card_explodir){
+		_card.card_subtype = SUBTYPE.EXPLODIR;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Explodir(Objeto) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_inverter){
+		_card.card_subtype = SUBTYPE.INVERTER;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método Inverter(Var, Var) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_agrupar_atacar){
+		_card.card_subtype = SUBTYPE.AGRUPAR_ATACAR;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método AgruparEAtacar(Aliado, Alvo) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_destruir_arma){
+		_card.card_subtype = SUBTYPE.DESTRUIR_ARMA;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método DestruirArma(Var, Var) ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_usar_arma){
+		_card.card_subtype = SUBTYPE.USAR_ARMA;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o Método UsarArma() ao Projeto atual.";
+	}
+	else if (_card.sprite_index == spr_card_voo){
+		_card.card_subtype = SUBTYPE.VOO;
+		_card.card_type = CARDTYPE.VARIAVEL;
+		_card.texto_auxiliar = "Utilize esta carta para adicionar o a variável booleana voo ao Projeto atual.";
+	}
 	else if (_card.sprite_index == spr_card_voar){
 		_card.card_subtype = SUBTYPE.VOAR;
 		_card.card_type = CARDTYPE.METODO;

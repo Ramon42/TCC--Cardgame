@@ -21,6 +21,10 @@ function scr_att_client_project_list(_project_list, _client_projects){
 					atacar_2 = _load.atacar_2;
 					refletir = _load.refletir;
 					defender = _load.defender;
+					explodir = _load.explodir;
+					inverter = _load.inverter;
+					agrupar_atacar = _load.agrupar_atacar;
+					destruir_arma = _load.destruir_arma;
 					voar = _load.voar;
 				}
 			}

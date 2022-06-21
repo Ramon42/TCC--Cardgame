@@ -37,10 +37,14 @@ escudo_cons = 0;
 
 energia = 0;
 
-voo = false;
+voo = noone;
 
 atacar_1 = false;
 atacar_2 = false;
 refletir = false;
 defender = false;
+inverter = false;
+agrupar_atacar = false;
+explodir = false;
+destruir_arma = false;
 voar = false;

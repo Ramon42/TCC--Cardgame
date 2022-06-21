@@ -20,6 +20,10 @@ function scr_send_project(_projeto){
 		atacar_2 : _projeto.atacar_2,
 		refletir : _projeto.refletir,
 		defender : _projeto.defender,
+		inverter : _projeto.inverter,
+		explodir : _projeto.explodir,
+		agrupar_atacar : _projeto.agrupar_atacar,
+		destruir_arma : _projeto.destruir_arma,
 		voar : _projeto.voar
 	}
 

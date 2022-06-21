@@ -17,4 +17,9 @@ function scr_reset_project_value(_projeto){ //reseta todos os atributos do proje
 	_projeto.defender = false;
 	_projeto.refletir = false;
 	_projeto.voar = false;
+	_projeto.inverter = false;
+	_projeto.explodir = false;
+	_projeto.agrupar_atacar = false;
+	_projeto.explodir = false;
+	_projeto.destruir_arma = false;
 }
