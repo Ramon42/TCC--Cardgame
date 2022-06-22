@@ -90,7 +90,7 @@ if (socket == _event_id){
 			
 		case network.invert:
 			var _obj_id = buffer_read(_buff, buffer_u8);
-			var _update = buffer_read(_buff, buffer_u8);
+			var _update = buffer_read(_buff, buffer_string);
 			scr_inverter(_obj_id, _update);
 			break;
 			

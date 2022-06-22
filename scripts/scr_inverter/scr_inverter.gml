@@ -3,8 +3,8 @@
 function scr_inverter( _obj_id, _update){
 	var _load = json_parse(_update);
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
-		if (con_client.instance_list[i].inst_id == _obj_id){
-			with(con_client.instance_list[i]){
+		if (con_client.instance_list[i, 2].inst_id == _obj_id){
+			with(con_client.instance_list[i, 2]){
 				sprite_list = _load.sprite_list;
 				forca_var = _load.forca_var;
 				forca_cons =  _load.forca_cons;
@@ -23,6 +23,7 @@ function scr_inverter( _obj_id, _update){
 				usar_arma = _load.usar_arma;
 				voar = _load.voar;
 			}
+			show_message("NOVA FORÇA> " + string(con_client.instance_list[i, 2].forca_var));
 			break;
 		}
 	}

@@ -15,7 +15,7 @@
 function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.v_forca2);
 	ds_list_add(cards_in_deck, CARD.v_energia2);
-	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
 	ds_list_add(cards_in_deck, CARD.b_voo);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);

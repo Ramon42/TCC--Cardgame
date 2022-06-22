@@ -12,3 +12,5 @@ robo = noone;
 var1 = noone;
 var2 = noone;
 save_bt = noone;
+
+self.save_bt = instance_create_depth(self.x + self.x/4, self.y + self.y/4, -4, obj_inverter_bt);

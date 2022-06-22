@@ -40,7 +40,7 @@ function scr_assign_stats(_card){
 		_card.card_subtype = SUBTYPE.ENERGIA;
 		_card.card_type = CARDTYPE.VARIAVEL;
 		_card.valor = 2;
-		_card.texto_auxiliar = "Variável - inteiro - \nEnergia = 2 -> Resiste a 1 ponto de dano.";
+		_card.texto_auxiliar = "Variável - inteiro - \nEnergia = 2 -> Resiste a 2 pontos de dano.";
 	}
 	else if (_card.sprite_index == spr_card_defender){
 		_card.card_subtype = SUBTYPE.DEFENDER;

@@ -3,8 +3,8 @@
 function scr_inverter_server(_obj_id, _var1, _var2, _sock ,_sock_op){
 	var num1, num2, _robo;
 	for (var i = 0; i < array_length(con_server.instances_server); i++){
-		if (con_server.instances_server[i].inst_id == _obj_id){
-			_robo = con_server.instances_server[i];
+		if (con_server.instances_server[i, 2].inst_id == _obj_id){
+			_robo = con_server.instances_server[i, 2];
 			switch (_var1){
 				case SUBTYPE.FORCA:
 					num1 = _robo.forca_var;
@@ -75,7 +75,7 @@ function scr_inverter_server(_obj_id, _var1, _var2, _sock ,_sock_op){
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, network.invert);
 			buffer_write(buffer, buffer_u8, _obj_id);
-			buffer_write(buffer, buffer_u8, _data);
+			buffer_write(buffer, buffer_string, _data);
 			network_send_packet(_sock, buffer, buffer_tell(buffer));
 			network_send_packet(_sock_op, buffer, buffer_tell(buffer));
 			break;
