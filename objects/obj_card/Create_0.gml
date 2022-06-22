@@ -13,6 +13,7 @@ y_pos = y;
 
 valor = noone;
 texto_auxiliar = "";
+highlight = false;
 
 enum CARDTYPE //todos os tipos de cartas e seus códigos
 {

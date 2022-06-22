@@ -8,5 +8,7 @@ image_xscale = 3;
 image_yscale = 2;
 
 var_list = ds_list_create();
+robo = noone;
 var1 = noone;
 var2 = noone;
+save_bt = noone;

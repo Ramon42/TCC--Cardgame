@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_move_card_menu",
-    "path": "sprites/spr_move_card_menu/spr_move_card_menu.yy",
+    "name": "spr_save_class",
+    "path": "sprites/spr_save_class/spr_save_class.yy",
   },
   "solid": false,
   "visible": true,
@@ -21,11 +21,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -33,7 +29,7 @@
     "path": "folders/Objects/INGAME/MENU/INVERTER.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_inverter_menu",
+  "name": "obj_inverter_bt",
   "tags": [],
   "resourceType": "GMObject",
 }

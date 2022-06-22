@@ -77,7 +77,17 @@ if (mouse_check_button_released(mb_left)){
 	//
 	//metodo inverter
 	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected){
-		scr_inverter_create(self);
+		var _count = 0;
+		for (var i = 0; i < array_length(self.sprite_list); i++){
+			if (self.sprite_list[i] == spr_card_energia1 or self.sprite_list[i] == spr_card_energia2 or
+			self.sprite_list[i] == spr_card_escudo1_var or self.sprite_list[i] == spr_card_escudo2_var or 
+			self.sprite_list[i] == spr_card_forca1_var or self.sprite_list[i] == spr_card_forca2_var){
+				_count++;
+			}
+			if (_count >= 2){ break; }
+		}
+		if (_count >= 2){ scr_inverter_create(self); }
+		else { show_message("Este Robô possui menos de duas variáveis lógicas!"); }
 	}
 	//
 	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){

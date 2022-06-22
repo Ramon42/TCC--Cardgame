@@ -167,6 +167,13 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			scr_explode_server(_obj1_id, _obj2_id, _sock, _sock_op);
 		break;
 		
+		case network.invert:
+			var _obj_id = buffer_read(_buff, buffer_u8);
+			var _var1 = buffer_read(_buff,buffer_u8);
+			var _var2 = buffer_read(_buff, buffer_u8);
+			scr_inverter_server(_obj_id, _var1, _var2, _sock, _sock_op);
+		break;
+		
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
 			else{ self.turn_player = self.sockets[|0]; }

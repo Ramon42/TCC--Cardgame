@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Scripts/SERVIDOR/NEW.yy",
+    "name": "INVERTER MENU",
+    "path": "folders/Scripts/CLIENTE/INVERTER MENU.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_send_init",
+  "name": "scr_inverter",
   "tags": [],
   "resourceType": "GMScript",
 }

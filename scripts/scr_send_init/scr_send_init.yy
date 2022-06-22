@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "NEW",
-    "path": "folders/Scripts/SERVIDOR/NEW.yy",
+    "name": "SEND",
+    "path": "folders/Scripts/SERVIDOR/NEW/SEND.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_send_init",
