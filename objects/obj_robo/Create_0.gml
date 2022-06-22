@@ -18,7 +18,7 @@ dmg_rest = 0;
 atk_list = array_create(0);
 
 atk_path = true; //variavel para startar e parar o path de ataque
-
+sprite_list = [];
 atk1_bt = noone;
 atk2_bt = noone;
 voar_bt = noone;

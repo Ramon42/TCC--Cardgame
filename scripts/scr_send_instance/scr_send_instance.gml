@@ -12,6 +12,7 @@ function scr_send_instance(_project){
 	buffer_seek(con_client.buffer, buffer_seek_start, 0);
 	buffer_write(con_client.buffer, buffer_u8, network.create_instance);
 	var _save_instance = {
+		sprite_list : _project.sprite_list,
 		inst_proj_id : _project.project_id,
 		inst_sock_id : _project.player_socket,
 		inst_id : 0,

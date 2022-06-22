@@ -49,6 +49,8 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 	}
+	
+	//metodo voar
 	if (position_meeting(mouse_x, mouse_y, self.voar_bt) and self.selected and self.voo != noone){
 		if (self.voo){
 			self.voo = false;
@@ -57,6 +59,8 @@ if (mouse_check_button_released(mb_left)){
 			self.voo = true;
 		}
 	}
+	//
+	//metodo explodir
 	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){
 		self.explode = true;
 	}
@@ -70,6 +74,12 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 	}
+	//
+	//metodo inverter
+	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected){
+		scr_inverter_create(self);
+	}
+	//
 	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){
 		var _text = "";
 		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)

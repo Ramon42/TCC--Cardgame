@@ -1,10 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_set_instances_position(_instance_list){
-	var aux_p = 0;
-	var aux_o = 0;
 	var _length = array_length(_instance_list);
-	var aux_instance_list_player = [];
 	for (var row = 0; row < _length ; row++){
 		if (instance_exists(_instance_list[row, 2])){
 			_instance_list[row, 2].image_xscale = 0.5;
