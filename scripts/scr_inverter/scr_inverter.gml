@@ -24,6 +24,7 @@ function scr_inverter( _obj_id, _update){
 				voar = _load.voar;
 			}
 			show_message("NOVA FORÇA> " + string(con_client.instance_list[i, 2].forca_var));
+			show_message("INSTANCE LIST LENGTH> " + string(array_length(con_client.instance_list)));
 			break;
 		}
 	}
