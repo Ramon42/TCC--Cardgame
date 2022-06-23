@@ -66,5 +66,20 @@ function scr_atribuir_sprite(_val){
 		case CARD.m_voar:
 			return spr_card_voar;
 			break;
+		case CARD.projeto_final:
+			return spr_card_projeto_final;
+			break;
+		case CARD.superclasse1:
+			return spr_card_superclasse1;
+			break;
+		case CARD.superclasse2:
+			return spr_card_superclasse2;
+			break;
+		case CARD.v_incremento1:
+			return spr_card_incremento1;
+			break;
+		case CARD.v_incremento2:
+			return spr_card_incremento2;
+			break;
 	}
 }

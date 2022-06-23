@@ -174,6 +174,13 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			scr_inverter_server(_obj_id, _var1, _var2, _sock, _sock_op);
 		break;
 		
+		case network.increment:
+			var _obj_id = buffer_read(_buff, buffer_u8);
+			var _var_sub = buffer_read(_buff, buffer_u8);
+			var _incr_sub = buffer_read(_buff, buffer_u8);
+			scr_incremento_server(_obj_id, _var_sub, _incr_sub, _sock, _sock_op);
+		break;
+		
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
 			else{ self.turn_player = self.sockets[|0]; }

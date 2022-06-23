@@ -1,10 +1,35 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_assign_stats(_card){
-	if (_card.sprite_index == spr_card_projeto){
-		_card.card_subtype = SUBTYPE.PROJETO;
+	if (_card.sprite_index == spr_card_projeto_final){
+		_card.card_subtype = SUBTYPE.PROJETO_FINAL;
 		_card.card_type = CARDTYPE.CLASSE;
 		_card.texto_auxiliar = "Classe - final - \nProjeto -> Descreve o funcionamento do robô. \nAgrupa variáveis e métodos. \nNão pode ser superclasse numa relação de herança.";
+	}
+	else if (_card.sprite_index == spr_card_projeto){
+		_card.card_subtype = SUBTYPE.PROJETO;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - \nProjeto -> Descreve o funcionamento do robô. \nAgrupa variáveis e métodos.";
+	}
+	else if (_card.sprite_index == spr_card_superclasse1){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE1;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-var Força = 2;\n-var Energia = 1;\nAtacar(Objeto): Causa FORÇA de dano ao Objeto alvo.";
+	}
+	else if (_card.sprite_index == spr_card_superclasse2){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE2;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-bool Voo = false;\n-var Força = 1;\nVoar(): Gire esta carta para a posição horizontal para ativar voo.";
+	}
+	else if (_card.sprite_index == spr_card_incremento1){
+		_card.card_subtype = SUBTYPE.INCREMENTO1;
+		_card.card_type = CARDTYPE.VALOR;
+		_card.texto_auxiliar = "Valor - \nIncremento = 1 -> Aumenta permanentemente em 1 o valor da Variável escolhida.\nEsta carta não pode mudar de posição.\nNão pode ser usada em Constantes.";
+	}
+	else if (_card.sprite_index == spr_card_incremento2){
+		_card.card_subtype = SUBTYPE.INCREMENTO2;
+		_card.card_type = CARDTYPE.VALOR;
+		_card.texto_auxiliar = "Valor - \nIncremento = 2 -> Aumenta permanentemente em 2 o valor da Variável escolhida.\nEsta carta não pode mudar de posição.\nNão pode ser usada em Constantes.";
 	}
 	else if (_card.sprite_index == spr_card_forca1_var){
 		_card.card_subtype = SUBTYPE.FORCA;

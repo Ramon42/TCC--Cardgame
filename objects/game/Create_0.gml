@@ -32,6 +32,14 @@ enum CARD {
 	c_forca2,
 	c_forca3,
 	c_forca4,
+	v_incremento1,
+	v_incremento2,
+	v_decremento1,
+	v_decremento2,
 	robo,
-	projeto
+	projeto,
+	projeto_final,
+	superclasse1,
+	superclasse2,
+	heranca
 }

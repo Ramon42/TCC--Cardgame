@@ -8,8 +8,16 @@ if (!self.atk_path){
 
 
 if (mouse_check_button_released(mb_left)){
+	
+	//incremento / decremento
+	if (position_meeting(mouse_x, mouse_y, obj_incr_decr_bt)){
+		self.incr_decr = true;
+	}
+	//
+	
 	if (position_meeting(mouse_x, mouse_y, self)){
 		var _pos = 0;
+		
 		instance_destroy(obj_action_bt_parent);
 		if (self.voar and self.inst_sock_id == con_client.server_socket){
 			self.selected = true;
@@ -60,6 +68,10 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	//
+	//metodo incremento
+	if (self.incr_decr){
+		scr_incremento_create(self, con_client.player.card_selected);
+	}
 	//metodo explodir
 	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){
 		self.explode = true;
@@ -90,6 +102,7 @@ if (mouse_check_button_released(mb_left)){
 		else { show_message("Este Robô possui menos de duas variáveis lógicas!"); }
 	}
 	//
+
 	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){
 		var _text = "";
 		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)

@@ -15,7 +15,7 @@ function scr_get_card_bt(_card_selected){
 							}
 							break;
 						
-						case SUBTYPE.SUPERCLASSE:
+						case SUBTYPE.SUPERCLASSE1:
 							break;
 						
 						case SUBTYPE.HERANCA:
@@ -34,7 +34,11 @@ function scr_get_card_bt(_card_selected){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
 					}
 					break;
-				
+				case CARDTYPE.VALOR:
+					if (array_length(con_client.instance_list) > 0){
+						instance_create_layer(0, 0, "Instances", obj_incr_decr_bt);
+					}
+					break;
 			}
 		}
 		////
@@ -61,7 +65,7 @@ function scr_get_card_bt(_card_selected){
 
 								break;
 						
-							case SUBTYPE.SUPERCLASSE:
+							case SUBTYPE.SUPERCLASSE1:
 							break;
 						
 							case SUBTYPE.HERANCA:

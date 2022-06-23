@@ -29,8 +29,10 @@ enum CARDTYPE //todos os tipos de cartas e seus códigos
 
 enum SUBTYPE //tipos especificos de cartas
 {
-	DECREMENTO, //VALORES
-	INCREMENTO, //
+	DECREMENTO1,
+	DECREMENTO2,//VALORES
+	INCREMENTO1,
+	INCREMENTO2,//
 	
 	DEFENDER, //METODOS
 	INVERTER,
@@ -44,7 +46,9 @@ enum SUBTYPE //tipos especificos de cartas
 	VOAR, //
 	
 	PROJETO, //CLASSES
-	SUPERCLASSE,
+	PROJETO_FINAL,
+	SUPERCLASSE1,
+	SUPERCLASSE2,
 	HERANCA,
 	FUZIL, 
 	BAZUCA,

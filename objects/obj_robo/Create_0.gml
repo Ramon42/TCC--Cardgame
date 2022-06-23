@@ -16,7 +16,7 @@ explode = false;
 atk2_count = 0;
 dmg_rest = 0;
 atk_list = array_create(0);
-
+incr_decr = false;
 atk_path = true; //variavel para startar e parar o path de ataque
 sprite_list = [];
 atk1_bt = noone;

@@ -5,7 +5,6 @@ function scr_get_card(){
 	var _inst;
 	_inst = instance_position(mouse_x, mouse_y, obj_card);
 	if(_inst != noone){
-		show_debug_message("ENTROU EM GETCARD");
 		con_client.player.card_selected = _inst;
 		//show_debug_message("GETCARD: " + string(player.card_selected.sprite_index));
 		scr_card_preview(con_client.player.card_selected);
