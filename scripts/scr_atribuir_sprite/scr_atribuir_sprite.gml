@@ -69,17 +69,32 @@ function scr_atribuir_sprite(_val){
 		case CARD.projeto_final:
 			return spr_card_projeto_final;
 			break;
-		case CARD.superclasse1:
-			return spr_card_superclasse1;
+		case CARD.superclasse_atacar1:
+			return spr_card_superclasse_atacar1;
 			break;
-		case CARD.superclasse2:
-			return spr_card_superclasse2;
+		case CARD.superclasse_atacar2:
+			return spr_card_superclasse_atacar2;
+			break;
+		case CARD.superclasse_defender1:
+			return spr_card_superclasse_defender1;
+			break;
+		case CARD.superclasse_defender2:
+			return spr_card_superclasse_defender2;
+			break;
+		case CARD.superclasse_voar:
+			return spr_card_superclasse_voar;
 			break;
 		case CARD.v_incremento1:
 			return spr_card_incremento1;
 			break;
 		case CARD.v_incremento2:
 			return spr_card_incremento2;
+			break;
+		case CARD.v_decremento1:
+			return spr_card_decremento1;
+			break;
+		case CARD.v_decremento2:
+			return spr_card_decremento2;
 			break;
 	}
 }

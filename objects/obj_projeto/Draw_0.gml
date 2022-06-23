@@ -22,18 +22,12 @@ if (energia > 0){
 	draw_text(col, lin_eng, "-int Energia = " + string(energia));
 	self.show_text = self.show_text + "-int Energia = " + string(energia) + "\n";
 }
+if (voo != noone){
+	draw_text(col, lin_voo, "-bool Voo = " + string(voo));
+	self.show_text = self.show_text + "-bool Voo = " + string(voo) + "\n";
+}
 
 
 if (self.selected){
 	draw_text_ext(50, 400, self.show_text, 30, 300);
 }
-
-/*
-if (attributes_map[? "forca_v"] != 0){
-	draw_text(col, lin_for, "-int Força = " + string(attributes_map[? "forca_v"]));
-}
-
-if (attributes_map[? "escudo_v"] != 0){
-	draw_text(col, lin_esc, "-int Escudo = " + string(attributes_map[? "escudo_v"]));
-}
-*/

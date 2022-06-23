@@ -9,12 +9,6 @@ if (!self.atk_path){
 
 if (mouse_check_button_released(mb_left)){
 	
-	//incremento / decremento
-	if (position_meeting(mouse_x, mouse_y, obj_incr_decr_bt)){
-		self.incr_decr = true;
-	}
-	//
-	
 	if (position_meeting(mouse_x, mouse_y, self)){
 		var _pos = 0;
 		
@@ -70,7 +64,8 @@ if (mouse_check_button_released(mb_left)){
 	//
 	//metodo incremento
 	if (self.incr_decr){
-		scr_incremento_create(self, con_client.player.card_selected);
+		scr_incremento_create(self, self.last_card);
+		self.incr_decr = false;
 	}
 	//metodo explodir
 	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){

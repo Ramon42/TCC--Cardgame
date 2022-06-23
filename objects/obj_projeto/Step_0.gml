@@ -9,10 +9,11 @@ if (mouse_check_button_released(mb_left)){
 		instance_destroy(obj_action_bt_parent);
 		self.selected = true;
 		
-		edit_project_bt = instance_create_depth(0, 0, -1, obj_edit_project_bt);
-		
+		//if (!self.abstract){
+			edit_project_bt = instance_create_depth(0, 0, -1, obj_edit_project_bt);
+		//}
 		//checar se existe uma carta de robô na mão do jogador para poder criar o botão de criar instancia
-		if (player_socket == con_client.server_socket) {
+		if (player_socket == con_client.server_socket and !self.abstract) {
 			for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
 				if (con_client.player.hand[|i].card_subtype == SUBTYPE.ROBO){
 					create_instance_bt = instance_create_depth(0, 0, -1, obj_create_instance_bt);

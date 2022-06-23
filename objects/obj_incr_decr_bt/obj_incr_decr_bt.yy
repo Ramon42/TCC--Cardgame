@@ -23,12 +23,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "BOTÕES DE AÇÃO",
-    "path": "folders/Objects/INGAME/BOTÕES DE AÇÃO.yy",
+    "name": "INCREMENTO",
+    "path": "folders/Objects/INGAME/MENU/INCREMENTO.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_incr_decr_bt",

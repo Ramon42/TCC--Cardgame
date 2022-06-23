@@ -15,10 +15,37 @@ function scr_get_card_bt(_card_selected){
 							}
 							break;
 						
-						case SUBTYPE.SUPERCLASSE1:
+						case SUBTYPE.SUPERCLASSE_ATACAR1:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_superclass_bt);
+							}
+							break;
+						case SUBTYPE.SUPERCLASSE_ATACAR2:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_superclass_bt);
+							}
+							break;
+						case SUBTYPE.SUPERCLASSE_DEFENDER1:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_superclass_bt);
+							}
+							break;
+						case SUBTYPE.SUPERCLASSE_DEFENDER2:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_superclass_bt);
+							}
+							break;
+						case SUBTYPE.SUPERCLASSE_VOAR:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_superclass_bt);
+							}
 							break;
 						
 						case SUBTYPE.HERANCA:
+							break;
+							
+						case SUBTYPE.CANHAO:
+							instance_create_layer(0,0, "Instances", obj_arma_bt);
 							break;
 					}
 					break;
@@ -34,6 +61,7 @@ function scr_get_card_bt(_card_selected){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
 					}
 					break;
+					
 				case CARDTYPE.VALOR:
 					if (array_length(con_client.instance_list) > 0){
 						instance_create_layer(0, 0, "Instances", obj_incr_decr_bt);
@@ -62,10 +90,6 @@ function scr_get_card_bt(_card_selected){
 					case CARDTYPE.CLASSE:
 						switch (_card_selected.card_subtype){
 							case SUBTYPE.PROJETO:
-
-								break;
-						
-							case SUBTYPE.SUPERCLASSE1:
 							break;
 						
 							case SUBTYPE.HERANCA:

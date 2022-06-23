@@ -15,7 +15,6 @@ var _save_project = {
 	escudo_var : _projeto.escudo_var,
 	escudo_cons : _projeto.escudo_cons,
 	energia : _projeto.energia,
-	attributes_map : _projeto.attributes_map,
 	voo : _projeto.voo,
 	atacar_1 : _projeto.atacar_1,
 	atacar_2 : _projeto.atacar_2,

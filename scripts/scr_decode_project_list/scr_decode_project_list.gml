@@ -3,12 +3,25 @@
 function scr_decode_project_list(_project_list){ //arrumar todo esse método, chamar ele toda hora vai criar um cacete
 										//de instancia repetida
 	var _array = json_parse(_project_list);
-	var _aux_p = array_length(con_client.player.player_projects);
+	var _aux_p = 0;
 	var _aux_o = 0;
+	var _aux_sup_p = 0;
+	var _aux_sup_o = 0;
 	
 	for (var i = 0; i < array_length(con_client.project_list); i ++){
 		for (var o = 0; o < array_length(_array); o++){
-			if (_array[o, 2].player_socket != con_client.server_socket) { _aux_o ++; }
+			if (_array[o, 2].player_socket != con_client.server_socket) { 
+				if (con_client.project_list[i, 2].abstract){
+					_aux_sup_p++;
+				}
+				else { _aux_o ++; }
+			}
+			else { 
+				if (con_client.project_list[i, 2].abstract){
+					_aux_sup_o++;
+				}
+				else { _aux_p++; }
+			}
 			if (_array[o, 2].project_id == con_client.project_list[i, 2].project_id){
 				array_delete(_array, o, 1);
 				break;
@@ -17,17 +30,29 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	}
 		
 	for (var i = 0; i < array_length(_array); i++){
-		show_message("CRIANDO PROJETO");
 		var _inst = instance_create_depth(0, 0,  -1, obj_projeto);
 		var _load = _array[i, 2];
-		if (_array[i, 0] == con_client.server_socket){
-			_inst.x = con_client.player.p_projects_pos[_aux_p, 0];
-			_inst.y = con_client.player.p_projects_pos[_aux_p, 1];
+		if (!_load.abstract){
+			if (_array[i, 0] == con_client.server_socket){
+				_inst.x = con_client.player.p_projects_pos[_aux_p, 0];
+				_inst.y = con_client.player.p_projects_pos[_aux_p, 1];
 			
+			}
+			else{
+				_inst.x = con_client.player.op_projects_pos[_aux_o, 0];
+				_inst.y = con_client.player.op_projects_pos[_aux_o, 1];
+			}
 		}
-		else{
-			_inst.x = con_client.player.op_projects_pos[_aux_o, 0];
-			_inst.y = con_client.player.op_projects_pos[_aux_o, 1];
+		else{ //lista de cartas abstratas fica separada
+			if (_array[i, 0] == con_client.server_socket){
+				_inst.x = con_client.player.p_projects_pos[_aux_sup_p, 0];
+				_inst.y = con_client.player.p_projects_pos[_aux_sup_p, 1];
+			
+			}
+			else{
+				_inst.x = con_client.player.op_projects_pos[_aux_sup_o, 0];
+				_inst.y = con_client.player.op_projects_pos[_aux_sup_o, 1];
+			}
 		}
 		with (_inst){
 			image_xscale = 0.5;
@@ -35,12 +60,13 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			sprite_list = _load.sprite_list;
 			player_socket = _load.player_socket;
 			project_id = _load.project_id;
+			final = _load.final;
+		    abstract = _load.abstract;
 			forca_var = _load.forca_var;
 			forca_cons = _load.forca_cons;
 			escudo_var = _load.escudo_var;
 			escudo_cons = _load.escudo_cons;
 			energia = _load.energia;
-			attributes_map = _load.attributes_map;
 			voo = _load.voo;
 			atacar_1 = _load.atacar_1;
 			atacar_2 = _load.atacar_2;
@@ -84,7 +110,6 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			escudo_var = _load.escudo_var;
 			escudo_cons = _load.escudo_cons;
 			energia = _load.energia;
-			attributes_map = _load.attributes_map;
 			voo = _load.voo;
 		}
 		ds_list_add(con_client.project_list, _inst);

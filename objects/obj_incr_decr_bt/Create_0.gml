@@ -3,3 +3,6 @@
 
 x = 150;
 y = 370;
+
+sel = false;
+card = noone;

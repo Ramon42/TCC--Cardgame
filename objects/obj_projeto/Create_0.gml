@@ -10,9 +10,10 @@ aux_y = sprite_height/2
 
 col = x - aux_x*0.75;
 
-lin_for = y+20;
+lin_voo = y;
+lin_eng = y+20;
 lin_esc = y+45;
-lin_eng = y+60;
+lin_for = y+60;
 
 sprite_list = array_create(0);
 
@@ -25,6 +26,8 @@ cards_in_project = ds_list_create();
 created = false;
 edit_project_bt = noone;
 create_instance_bt = noone;
+final = false;
+abstract = false;
 
 
 forca_var = 0;
@@ -47,13 +50,3 @@ usar_arma = false;
 explodir = false;
 destruir_arma = false;
 voar = false;
-
-attributes_map = ds_map_create();
-ds_map_add(attributes_map, "forca_v", 0);
-ds_map_add(attributes_map, "forca_c", 0);
-
-ds_map_add(attributes_map, "escudo_v", 0);
-ds_map_add(attributes_map, "escudo_c", 0);
-
-ds_map_add(attributes_map, "energia_v", 0);
-ds_map_add(attributes_map, "energia_c", 0);

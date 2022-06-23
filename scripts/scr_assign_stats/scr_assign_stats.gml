@@ -11,15 +11,35 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.CLASSE;
 		_card.texto_auxiliar = "Classe - \nProjeto -> Descreve o funcionamento do robô. \nAgrupa variáveis e métodos.";
 	}
-	else if (_card.sprite_index == spr_card_superclasse1){
-		_card.card_subtype = SUBTYPE.SUPERCLASSE1;
+	else if (_card.sprite_index == spr_card_superclasse_atacar1){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE_ATACAR1;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-var Força = 1;\n-var Energia = 2;\nAtacar(Objeto): Causa FORÇA de dano ao Objeto alvo.";
+	}
+	else if (_card.sprite_index == spr_card_superclasse_atacar2){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE_ATACAR2;
 		_card.card_type = CARDTYPE.CLASSE;
 		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-var Força = 2;\n-var Energia = 1;\nAtacar(Objeto): Causa FORÇA de dano ao Objeto alvo.";
 	}
-	else if (_card.sprite_index == spr_card_superclasse2){
-		_card.card_subtype = SUBTYPE.SUPERCLASSE2;
+	else if (_card.sprite_index == spr_card_superclasse_defender1){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE_DEFENDER1;
 		_card.card_type = CARDTYPE.CLASSE;
-		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-bool Voo = false;\n-var Força = 1;\nVoar(): Gire esta carta para a posição horizontal para ativar voo.";
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-var Escudo = 1;\n-var Energia = 2;\nDefender(Ataque): Bloqueia ESCUDO de dano no Ataque recebido.";
+	}
+	else if (_card.sprite_index == spr_card_superclasse_defender2){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE_DEFENDER2;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-var Escudo = 2;\n-var Energia = 1;\nDefender(Ataque): Bloqueia ESCUDO de dano no Ataque recebido.";
+	}
+	else if (_card.sprite_index == spr_card_superclasse_voar){
+		_card.card_subtype = SUBTYPE.SUPERCLASSE_VOAR;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - Abstrata - \nSuperClasse -> Não se pode criar Objetos a partir desta classe. Deve ser usada apenas como superclasse em relação de Herança.\n-bool Voo = false;\n-var Energia = 1;\nVoar(): Gire esta carta para a posição horizontal para ativar voo.";
+	}
+	else if (_card.sprite_index == spr_card_classe_canhao){
+		_card.card_subtype = SUBTYPE.CANHAO;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Classe - com método abstrato - \nCanhão de Fótons -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter a habilidade de usar armas para poder usar esta carta.\nAtirarEm(Objeto): Causa 8 pontos de dano ao alvo. Demora 5 turnos para recarregar.";
 	}
 	else if (_card.sprite_index == spr_card_incremento1){
 		_card.card_subtype = SUBTYPE.INCREMENTO1;
@@ -30,6 +50,16 @@ function scr_assign_stats(_card){
 		_card.card_subtype = SUBTYPE.INCREMENTO2;
 		_card.card_type = CARDTYPE.VALOR;
 		_card.texto_auxiliar = "Valor - \nIncremento = 2 -> Aumenta permanentemente em 2 o valor da Variável escolhida.\nEsta carta não pode mudar de posição.\nNão pode ser usada em Constantes.";
+	}
+	else if (_card.sprite_index == spr_card_decremento1){
+		_card.card_subtype = SUBTYPE.DECREMENTO1;
+		_card.card_type = CARDTYPE.VALOR;
+		_card.texto_auxiliar = "Valor - \nDecremento = 1 -> Diminui permanentemente em 1 o valor da Variável escolhida.\nEsta carta não pode mudar de posição.\nNão pode ser usada em Constantes.";
+	}
+	else if (_card.sprite_index == spr_card_decremento2){
+		_card.card_subtype = SUBTYPE.DECREMENTO2;
+		_card.card_type = CARDTYPE.VALOR;
+		_card.texto_auxiliar = "Valor - \nDecremento = 2 -> Diminui permanentemente em 2 o valor da Variável escolhida.\nEsta carta não pode mudar de posição.\nNão pode ser usada em Constantes.";
 	}
 	else if (_card.sprite_index == spr_card_forca1_var){
 		_card.card_subtype = SUBTYPE.FORCA;

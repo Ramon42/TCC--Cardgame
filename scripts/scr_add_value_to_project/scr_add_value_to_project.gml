@@ -7,15 +7,12 @@ function scr_add_value_to_project(_projeto){
 			switch (card_list[|_pos].card_subtype){
 				case SUBTYPE.FORCA:
 					_projeto.forca_var = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "forca_v", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ENERGIA:
 					_projeto.energia = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "energia_v", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ESCUDO:
 					_projeto.escudo_var = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "escudo_v", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.VOO:
 					_projeto.voo = card_list[|_pos].valor;
@@ -27,11 +24,9 @@ function scr_add_value_to_project(_projeto){
 			switch (card_list[|_pos].card_subtype){
 				case SUBTYPE.FORCA:
 					_projeto.forca_cons = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "forca_c", card_list[|_pos].valor);
 					break;
 				case SUBTYPE.ESCUDO:
 					_projeto.escudo_cons = card_list[|_pos].valor;
-					ds_map_set(_projeto.attributes_map, "escudo_c", card_list[|_pos].valor);
 					break;
 			}
 			break;

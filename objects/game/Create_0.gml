@@ -39,7 +39,10 @@ enum CARD {
 	robo,
 	projeto,
 	projeto_final,
-	superclasse1,
-	superclasse2,
+	superclasse_atacar1,
+	superclasse_atacar2,
+	superclasse_defender1,
+	superclasse_defender2,
+	superclasse_voar,
 	heranca
 }
