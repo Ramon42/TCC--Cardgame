@@ -45,13 +45,13 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		}
 		else{ //lista de cartas abstratas fica separada
 			if (_array[i, 0] == con_client.server_socket){
-				_inst.x = con_client.player.p_projects_pos[_aux_sup_p, 0];
-				_inst.y = con_client.player.p_projects_pos[_aux_sup_p, 1];
+				_inst.x = con_client.player.p_superclass_pos[_aux_sup_p, 0];
+				_inst.y = con_client.player.p_superclass_pos[_aux_sup_p, 1];
 			
 			}
 			else{
-				_inst.x = con_client.player.op_projects_pos[_aux_sup_o, 0];
-				_inst.y = con_client.player.op_projects_pos[_aux_sup_o, 1];
+				_inst.x = con_client.player.op_superclass_pos[_aux_sup_o, 0];
+				_inst.y = con_client.player.op_superclass_pos[_aux_sup_o, 1];
 			}
 		}
 		with (_inst){
