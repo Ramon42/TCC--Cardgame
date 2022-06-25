@@ -11,12 +11,14 @@ if (mouse_check_button_released(mb_left)){
 			if (position_meeting(mouse_x, mouse_y, con_client.instance_list[i, 2])){
 				con_client.instance_list[i, 2].incr_decr = true;
 				con_client.instance_list[i, 2].last_card = self.card;
-				instance_destroy(self);
+				self.del_pos = ds_list_find_index(con_client.player.hand, self.card);
+				show_message("DELETAR POS BT>> " + string(self.del_pos));
+				con_client.instance_list[i, 2].del_card_in_hand = self.del_pos;
 				break;
 			}
-		}	
+		}
 	}
-	if (position_meeting(mouse_x, mouse_y, obj_card)){
+	if (position_meeting(mouse_x, mouse_y, obj_card) and !self.sel){
 		instance_destroy(self);
 	}
 }

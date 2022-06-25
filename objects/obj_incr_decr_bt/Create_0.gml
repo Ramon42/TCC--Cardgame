@@ -6,3 +6,4 @@ y = 370;
 
 sel = false;
 card = noone;
+del_pos = -1;

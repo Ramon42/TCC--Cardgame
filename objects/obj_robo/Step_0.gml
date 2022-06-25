@@ -6,6 +6,13 @@ if (!self.atk_path){
 	path_start(self.pth, 75, path_action_stop, false);
 }
 
+//metodo incremento
+if (self.incr_decr){
+	instance_destroy();
+		scr_incremento_create(self, self.last_card, self.del_card_in_hand);
+		self.incr_decr = false;
+}
+//
 
 if (mouse_check_button_released(mb_left)){
 	
@@ -62,11 +69,6 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	//
-	//metodo incremento
-	if (self.incr_decr){
-		scr_incremento_create(self, self.last_card);
-		self.incr_decr = false;
-	}
 	//metodo explodir
 	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){
 		self.explode = true;

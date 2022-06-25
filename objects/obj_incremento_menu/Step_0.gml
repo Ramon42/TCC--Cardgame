@@ -27,8 +27,9 @@ if(mouse_check_button_released(mb_left)){
 		for (var i = 0; i < ds_list_size(self.var_list); i++){
 			instance_destroy(self.var_list[|i]);
 		}
-		var _pos = ds_list_find_index(con_client.player.hand, self.incremento);
-		ds_list_delete(con_client.player.hand, _pos);
+		show_message("DELETAR POS MENU>> " + string(self.del_pos));
+		instance_destroy(self.incremento);
+		ds_list_delete(con_client.player.hand, self.del_pos);
 		instance_destroy(self);
 	}
 }

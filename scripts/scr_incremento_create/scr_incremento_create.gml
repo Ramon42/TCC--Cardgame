@@ -1,9 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scr_incremento_create(_robo, _incremento){
+function scr_incremento_create(_robo, _incremento, _del){
 	var _menu = instance_create_depth(0, 0, -2, obj_incremento_menu);
 	_menu.robo = _robo;
 	_menu.incremento = _incremento;
+	_menu.del_pos = _del;
 	for (var i=0; i < array_length(_robo.sprite_list); i ++){
 		if (_robo.sprite_list[i] == spr_card_energia1 or _robo.sprite_list[i] == spr_card_energia2 or
 		_robo.sprite_list[i] == spr_card_escudo1_var or _robo.sprite_list[i] == spr_card_escudo2_var or 

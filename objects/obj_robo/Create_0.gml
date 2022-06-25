@@ -9,6 +9,7 @@ lin_eng = y+60;;
 
 pth = noone;
 
+del_card_in_hand = -1;
 selected = false;
 attacking1 = false;
 attacking2 = false;
