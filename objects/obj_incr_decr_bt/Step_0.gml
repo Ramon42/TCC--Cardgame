@@ -12,7 +12,6 @@ if (mouse_check_button_released(mb_left)){
 				con_client.instance_list[i, 2].incr_decr = true;
 				con_client.instance_list[i, 2].last_card = self.card;
 				self.del_pos = ds_list_find_index(con_client.player.hand, self.card);
-				show_message("DELETAR POS BT>> " + string(self.del_pos));
 				con_client.instance_list[i, 2].del_card_in_hand = self.del_pos;
 				break;
 			}

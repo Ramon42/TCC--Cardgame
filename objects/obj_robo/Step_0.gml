@@ -8,9 +8,9 @@ if (!self.atk_path){
 
 //metodo incremento
 if (self.incr_decr){
-	instance_destroy();
-		scr_incremento_create(self, self.last_card, self.del_card_in_hand);
-		self.incr_decr = false;
+	instance_destroy(obj_incr_decr_bt);
+	scr_incremento_create(self, self.last_card, self.del_card_in_hand);
+	self.incr_decr = false;
 }
 //
 
