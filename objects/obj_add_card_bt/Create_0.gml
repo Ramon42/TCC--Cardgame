@@ -5,3 +5,4 @@ x = 150;
 y = 370;
 
 card = noone;
+image_alpha = 0.4;

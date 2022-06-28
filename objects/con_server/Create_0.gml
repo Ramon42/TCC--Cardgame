@@ -10,6 +10,7 @@ buffer = buffer_create(1024, buffer_grow, 1);
 clients = ds_map_create();
 sockets = ds_list_create();
 projects_server = array_create(0);
+classes_server = array_create(0);
 instances_server = array_create(0);
 turn_player = noone;
 

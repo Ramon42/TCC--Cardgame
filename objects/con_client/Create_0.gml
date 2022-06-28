@@ -20,6 +20,7 @@ if (connect < 0){
 opponent = noone;
 player = noone;
 project_list = array_create(0);
+classes_list = array_create(0);
 instance_list = array_create(0);
 player_proj = array_create(0);
 
@@ -32,9 +33,11 @@ enum network { //enumerar ações possiveis para enviar para o servidor
 	start_turn,
 	update,
 	update_projects,
+	update_class,
 	update_instances,
 	draw_card,
 	create_project,
+	create_class,
 	create_instance,
 	send_edit_project,
 	deal_damage,

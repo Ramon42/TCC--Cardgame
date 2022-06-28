@@ -84,6 +84,9 @@ function scr_atribuir_sprite(_val){
 		case CARD.superclasse_voar:
 			return spr_card_superclasse_voar;
 			break;
+		case CARD.canhao:
+			return spr_card_classe_canhao;
+			break;
 		case CARD.v_incremento1:
 			return spr_card_incremento1;
 			break;

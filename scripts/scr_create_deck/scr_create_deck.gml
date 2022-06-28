@@ -18,6 +18,7 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.v_decremento1);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.canhao);
 	ds_list_add(cards_in_deck, CARD.v_escudo1);
 	ds_list_add(cards_in_deck, CARD.b_voo);
 	ds_list_add(cards_in_deck, CARD.projeto);

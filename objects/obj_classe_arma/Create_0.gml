@@ -1,7 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-classe_id = 0;
+sprite = noone;
+
+class_id = 0;
 player_socket = noone;
 
 dano = 0;

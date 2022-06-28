@@ -38,6 +38,7 @@ enum CARD {
 	v_decremento2,
 	robo,
 	projeto,
+	canhao,
 	projeto_final,
 	superclasse_atacar1,
 	superclasse_atacar2,

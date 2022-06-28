@@ -3,6 +3,8 @@
 
 if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, self)){
+		var _dica = instance_create_depth(0, 0, 0, obj_dicas_menu);
+		_dica.text = "Selecione o objeto Robô alvo!";
 		self.sel = true;
 		self.card = con_client.player.card_selected;
 	}

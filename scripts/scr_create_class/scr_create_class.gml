@@ -1,0 +1,12 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function scr_create_class(_class, _sock){
+	show_message("PROJETO RECEBIDO: " + string(_class));
+	var _size = array_length(classes_server);
+	_class.class_id = array_length(con_server.classes_server);
+	classes_server[_size, 0] = _sock; //id do jogador
+	classes_server[_size, 1] = _class.class_id; //id do projeto
+	classes_server[_size, 2] = _class;
+	
+	scr_update_class(_sock);
+}

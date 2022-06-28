@@ -47,6 +47,11 @@ if (socket == _event_id){
 			scr_decode_project_list(_project_list);
 			scr_set_player_projects(self.project_list);
 			break;
+			
+		case network.update_class:
+			var _class_list = buffer_read(_buff, buffer_string);
+			scr_decode_class_list(_class_list);
+			break;
 		
 		case network.update_instances:
 			var _instance_list = buffer_read(_buff, buffer_string);

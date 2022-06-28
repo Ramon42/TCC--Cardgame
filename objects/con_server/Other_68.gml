@@ -95,6 +95,10 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			scr_create_project(_project, _sock);
 			break;
 			
+		case network.create_class:
+			var _class = json_parse(buffer_read(_buff, buffer_string));
+			scr_create_class(_class, _sock);
+			break;
 		case network.create_instance:
 			var _instance = json_parse(buffer_read(_buff, buffer_string));
 			scr_create_instance(_instance, _sock);

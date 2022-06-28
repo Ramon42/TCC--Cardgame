@@ -30,6 +30,8 @@ if (mouse_check_button_released(mb_left)){ //draw card
 			}
 			instance_destroy(obj_create_class_menu);
 			instance_destroy(obj_class_menu_parent_bt);
+			var _dica = instance_create_depth(0, 0, 0, obj_dicas_menu);
+			_dica.text = "Agora que criou um Projeto, você pode selecioná-lo na sua lista de Projetos. \nCaso tenha uma carta de Robô na mão selecione um Projeto e clique em ''Instanciar'' para criar um Objeto em campo.";
 			player.create_project = false;
 		}
 	}
