@@ -20,7 +20,7 @@ if (connect < 0){
 opponent = noone;
 player = noone;
 project_list = array_create(0);
-classes_list = array_create(0);
+class_list = array_create(0);
 instance_list = array_create(0);
 player_proj = array_create(0);
 

@@ -46,6 +46,8 @@ function scr_get_card_bt(_card_selected){
 							
 						case SUBTYPE.CANHAO:
 							instance_create_layer(0,0, "Instances", obj_arma_bt);
+							var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+							_dica.text = "Cartas de Classe de Arma com método estático não precisam ser Instanciadas para serem utilizadas pelos seus Robôs caso eles tenham o Método ''AtirarEm(Alvo)''!\nSó é possível ter uma dessas cartas em campo por vez";
 							break;
 					}
 					break;
