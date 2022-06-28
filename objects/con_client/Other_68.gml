@@ -19,17 +19,17 @@ if (socket == _event_id){
 			server_socket = buffer_read(_buff, buffer_u8);
 			player.vida_atual = 20;
 			//scr_draw_card_client(7); //esse draw ta dando problema no segundo jogador conectado
-			break;
+		break;
 			
 		case network.start_player:
 			self.player.state = PLAYERSTATE.DRAW_PHASE;
 			scr_draw_card_client(7);
-			break;
+		break;
 		
 		case network.second_player:
 			self.player.state = PLAYERSTATE.ENEMY_TURN;
 			//scr_draw_card_client(7);
-			break;
+		break;
 		
 		case network.update: // retorna= deck size, cartas na mão do oponente
 			deck.deck_size = buffer_read(_buff, buffer_u8);
@@ -38,7 +38,7 @@ if (socket == _event_id){
 			player.vida_atual = buffer_read(_buff, buffer_u8);
 			scr_show_hand();
 			//for (var i = 0; i < opponent.hand_size)
-			break;
+		break;
 		
 		case network.update_projects:
 			//projetos recebidos em json:
@@ -46,18 +46,18 @@ if (socket == _event_id){
 			scr_att_client_project_list(_project_list, project_list);
 			scr_decode_project_list(_project_list);
 			scr_set_player_projects(self.project_list);
-			break;
+		break;
 			
 		case network.update_class:
 			var _class_list = buffer_read(_buff, buffer_string);
 			scr_decode_class_list(_class_list);
-			break;
+		break;
 		
 		case network.update_instances:
 			var _instance_list = buffer_read(_buff, buffer_string);
 			scr_decode_instance_list(_instance_list);
 			//scr_set_instances_position(self.instance_list);
-			break;
+		break;
 		
 		case network.draw_card:
 			var _card = instance_create_layer(0, 0, "Instances", obj_card);
@@ -66,7 +66,7 @@ if (socket == _event_id){
 			scr_assign_stats(_card);
 			ds_list_add(player.hand, _card);
 			scr_show_hand();
-			break;
+		break;
 			
 		case network.def_menu: //cria um menu para o jogador defensor decidir se vai usar 
 		// o metodo defender()
@@ -74,34 +74,34 @@ if (socket == _event_id){
 			var _def_id = buffer_read(_buff, buffer_u8);
 			var _dmg = buffer_read(_buff, buffer_u8);
 			scr_menu_defender(_atk_id, _def_id, _dmg);
-			break;
+		break;
 		
 		case network.atk_animation:
 			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _def_id = buffer_read(_buff, buffer_u8);
 			scr_atk_animation(_atk_id, _def_id);
-			break;
+		break;
 			
 		case network.atk_instance:
 			var _instance_list = buffer_read(_buff, buffer_string);
 			scr_att_client_instances(_instance_list);
-			break;
+		break;
 		
 		case network.explode:
 			var _obj1_id = buffer_read(_buff, buffer_u8);
 			var _obj2_id = buffer_read(_buff, buffer_u8);
 			scr_explode(_obj1_id, _obj2_id);
-			break;
+		break;
 			
 		case network.invert:
 			var _obj_id = buffer_read(_buff, buffer_u8);
 			var _update = buffer_read(_buff, buffer_string);
 			scr_inverter(_obj_id, _update);
-			break;
+		break;
 			
 		case network.wait:
 			self.player.state = PLAYERSTATE.ENEMY_TURN;
-			break;
+		break;
 		
 		case network.start_turn:
 			var _turn_player = buffer_read(_buff, buffer_u8);
@@ -111,7 +111,7 @@ if (socket == _event_id){
 				show_message("STARTANDO TURNO");
 				con_client.player.state = PLAYERSTATE.DRAW_PHASE;
 			}
-			break;
+		break;
 		//FIM DO NOVO
 			
 		

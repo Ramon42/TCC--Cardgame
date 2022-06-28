@@ -24,6 +24,7 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.m_atacar1);
+	ds_list_add(cards_in_deck, CARD.m_usar_arma);
 	ds_list_add(cards_in_deck, CARD.m_atacar2);
 	ds_list_add(cards_in_deck, CARD.m_defender);
 	ds_list_add(cards_in_deck, CARD.m_inverter);

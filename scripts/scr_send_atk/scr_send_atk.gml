@@ -12,6 +12,6 @@ function scr_send_atk(_atk, _def = undefined, _dmg){
 	
 	else{ //atacando diretamente
 		show_message("SEND ATK ATACANDO DIRETO");
-		scr_send_damage(_atk);
+		scr_send_damage(_atk.inst_id, _dmg);
 	}
 }

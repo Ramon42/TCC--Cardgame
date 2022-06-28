@@ -11,9 +11,12 @@ pth = noone;
 
 del_card_in_hand = -1;
 selected = false;
+
 attacking1 = false;
 attacking2 = false;
+atirar = false;
 explode = false;
+
 atk2_count = 0;
 dmg_rest = 0;
 atk_list = array_create(0);
@@ -27,6 +30,7 @@ voar_bt = noone;
 inverter_bt = noone;
 explodir_bt = noone;
 usar_arma_bt = noone;
+arma = noone;
 agrupar_atacar_bt = noone;
 bt_pos = [[75, 800], [175 ,800],
 		  [75, 875], [175, 875],

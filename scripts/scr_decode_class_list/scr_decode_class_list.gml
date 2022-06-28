@@ -34,6 +34,7 @@ function scr_decode_class_list(_class_list){
 				class_id = _load.class_id;
 				dano = _load.dano;
 				recarregar = _load.recarregar;
+				recarregar_count = _load.recarregar;
 			}
 			var _size = array_length(con_client.class_list);
 		
@@ -51,6 +52,7 @@ function scr_decode_class_list(_class_list){
 				class_id = _load.class_id;
 				dano = _load.dano;
 				recarregar = _load.recarregar;
+				recarregar_count = _load.recarregar_count;
 			}
 		}
 	}

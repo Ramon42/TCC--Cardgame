@@ -36,9 +36,14 @@ if (mouse_check_button_released(mb_left)){
 			_pos++;
 		}
 		if (self.usar_arma and self.inst_sock_id == con_client.server_socket){
-			self.selected = true;
-			self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
-			_pos++;
+			for (var i = 0; i < array_length(con_client.class_list); i++){
+				if (con_client.class_list[i, 0] == con_client.server_socket){
+					self.selected = true;
+					self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
+					_pos++;
+					break;
+				}
+			}
 		}
 		//caso o jogador clique na carta durante a fase de batalha
 		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
@@ -69,6 +74,38 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	//
+	
+	//metodo usar arma
+	if (position_meeting(mouse_x, mouse_y, self.usar_arma_bt)){
+		_count = 0;
+		for (var i = 0; i < array_length(con_client.class_list); i++){
+			if (con_client.class_list[i, 0] == con_client.server_socket){
+				self.arma = con_client.class_list[i, 2];
+				if (con_client.class_list[i, 2].recarregar_count == con_client.class_list[i, 2].recarregar){
+					//checa se a arma já carregou para chamar o método de atirar
+					self.atirar = true;
+					break;
+				}
+			}
+		}
+		if (!self.atirar){
+			show_message("A arma ainda está recarregando, aguarde " + string(self.arma.recarregar - self.arma.recarregar_count) + " TURNOS!");
+		}
+		for (var i = 0; i < array_length(con_client.instance_list); i++){
+			if (con_client.server_socket != con_client.instance_list[i, 0]){
+				atk_direct = false;
+				_count ++;
+				if (_count >= 2){
+					break;
+				}
+			}
+			else if (_count == 0){
+				atk_direct = true;
+			}
+		}
+	}
+	//
+	
 	//metodo explodir
 	if (position_meeting(mouse_x, mouse_y, self.explodir_bt) and self.selected){
 		self.explode = true;
@@ -153,6 +190,26 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 
+	if (self.atirar){
+		if (position_meeting(mouse_x, mouse_y, obj_robo)){
+			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
+			if(_inst.inst_sock_id != con_client.server_socket){
+				show_message("ALVO SELECIONADO");
+				scr_send_atk(self, _inst, self.arma.dano);
+				self.arma.recarregar_count = 0;
+				scr_att_recarga(self.arma);
+				self.atirar = false;
+			}
+		}
+		else if (self.atk_direct){
+			scr_send_atk(self, undefined, self.arma.dano);
+			self.arma.recarregar_count = 0;
+			scr_att_recarga(self.arma);
+			self.atirar = false;
+			self.atk_direct = false;
+		}
+	}
+	
 	if (self.attacking1){ //selecionar alvo do ataque
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
@@ -171,8 +228,10 @@ if (mouse_check_button_released(mb_left)){
 		else if (atk_direct){
 			//ataca diretamente  
 			show_message("ATACANDO DIRETO");
-			scr_send_atk(self, undefined);
+			if(self.forca_var > 0) { scr_send_atk(self, undefined, self.forca_var); }
+			else { scr_send_atk(self, undefined, self.forca_cons); }
 			self.attacking1 = false;
+			self.atk_direct = false;
 		}
 	}
 	else if (self.attacking2){

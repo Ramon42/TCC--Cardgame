@@ -161,6 +161,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		break;
 			
 		case network.deal_damage:
+			var _atk_id = buffer_read(_buff, buffer_u8);
 			var _dmg = buffer_read(_buff, buffer_u8);
 			var _op = scr_find_op(_p);
 			_op.vida_atual -= _dmg;
