@@ -45,6 +45,8 @@ inst_proj_id = 0;
 inst_sock_id = 0;
 inst_id = 0;
 
+texto_auxiliar = ""
+
 forca_var = 0;
 forca_cons = 0;
 

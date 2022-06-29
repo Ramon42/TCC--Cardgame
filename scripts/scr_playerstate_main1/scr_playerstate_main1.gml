@@ -4,9 +4,7 @@ function scr_playerstate_main1(){
 	if (mouse_check_button_released(mb_left)){
 		
 		
-		if (position_meeting(mouse_x, mouse_y, obj_card)){ 
-			scr_get_card();
-		}
+		scr_get_card();
 		
 		if (position_meeting(mouse_x, mouse_y, obj_advance_turn_phase_bt)){
 			con_client.player.state = PLAYERSTATE.BATTLE_PHASE;

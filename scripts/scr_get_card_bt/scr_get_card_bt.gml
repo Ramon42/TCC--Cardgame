@@ -2,7 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //AO CLICAR NO BOTÃO DE JOGAR UMA CARTA, RETORNA AS POSSIVEIS JOGADAS COM ELA
 function scr_get_card_bt(_card_selected){
-	if (_card_selected != noone and (con_client.player.state == PLAYERSTATE.MAIN_PHASE1 or con_client.player.state == PLAYERSTATE.MAIN_PHASE2)){
+	if (_card_selected != noone and (con_client.player.state == PLAYERSTATE.MAIN_PHASE1 or con_client.player.state == PLAYERSTATE.MAIN_PHASE2)
+	and (_card_selected.object_index == obj_card)){
 		//if (ds_list_find_index(con.client.project_list)//caso a carta esteja dentro de um projeto
 		if (ds_list_find_index(con_client.player.hand, _card_selected) != -1){ //checa se a carta 
 			//selecionada está na mão do jogador, caso sim, serão mostrados os botoes de adicionar ao projeto
@@ -48,7 +49,7 @@ function scr_get_card_bt(_card_selected){
 							instance_create_layer(0,0, "Instances", obj_arma_bt);
 							var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
 							_dica.text = "Cartas de Classe de Arma com método estático não precisam ser Instanciadas para serem utilizadas pelos seus Robôs caso eles tenham o Método ''AtirarEm(Alvo)''!\nSó é possível ter uma dessas cartas em campo por vez";
-							break;
+						break;
 					}
 					break;
 			

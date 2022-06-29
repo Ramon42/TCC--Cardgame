@@ -14,7 +14,7 @@ draw_healthbar(650, 1030, 850, 1060, _pc, c_black, c_red, c_lime, 0, true, true)
 
 draw_text((750 - (_lf_w/2)), (1045 - (_lf_h/2)), _str);
 
-if(card_selected != noone and instance_exists(card_selected)){
+if(card_selected != noone and instance_exists(card_selected) and card_selected.object_index == obj_card){
 	draw_text(room_width/4, 110, "CARTA SELECIONADA: " + sprite_get_name(card_selected.sprite_index) + " - " + string(card_selected.card_type));
 	
 }

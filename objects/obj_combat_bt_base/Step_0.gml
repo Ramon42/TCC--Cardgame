@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-x = 75;
-y = 420;
+if (con_client.player.state != PLAYERSTATE.BATTLE_PHASE){
+	instance_destroy(self);
+}

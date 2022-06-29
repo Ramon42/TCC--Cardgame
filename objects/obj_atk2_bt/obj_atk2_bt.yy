@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_remove_card",
-    "path": "sprites/spr_remove_card/spr_remove_card.yy",
+    "name": "spr_atacar_2",
+    "path": "sprites/spr_atacar_2/spr_atacar_2.yy",
   },
   "solid": false,
   "visible": true,

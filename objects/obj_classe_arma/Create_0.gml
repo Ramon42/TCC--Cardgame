@@ -9,4 +9,4 @@ player_socket = noone;
 dano = 0;
 recarregar = 0;
 recarregar_count = 0;
-show_text = "";
+texto_auxiliar = "";

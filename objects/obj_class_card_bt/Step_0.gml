@@ -14,3 +14,8 @@ if (mouse_check_button_released(mb_left)){
 		instance_destroy(self);
 	}
 }
+else if (mouse_check_button_pressed(mb_left)){
+	if(!position_meeting(mouse_x, mouse_y, self) and (!position_meeting(mouse_x, mouse_y, obj_ok_bt))){
+		instance_destroy(self);
+	}
+}

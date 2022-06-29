@@ -1,6 +1,18 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+if (con_client.player.state != PLAYERSTATE.MAIN_PHASE1 and con_client.player.state != PLAYERSTATE.MAIN_PHASE2){
+	if (instance_exists(self.voar_bt)){ instance_destroy(self.voar_bt); }
+	if (instance_exists(self.inverter_bt)){ instance_destroy(self.inverter_bt); }
+}
+if (con_client.player.state != PLAYERSTATE.BATTLE_PHASE){
+	if (instance_exists(self.atk1_bt)){ instance_destroy(self.atk1_bt); }
+	if (instance_exists(self.atk2_bt)){ instance_destroy(self.atk2_bt); }
+	if (instance_exists(self.explodir_bt)){ instance_destroy(self.explodir_bt); }
+	if (instance_exists(self.usar_arma_bt)){ instance_destroy(self.usar_arma_bt); }
+}
+
 if (!self.atk_path){
 	self.atk_path = true;
 	path_start(self.pth, 75, path_action_stop, false);
@@ -20,38 +32,34 @@ if (mouse_check_button_released(mb_left)){
 		var _pos = 0;
 		
 		instance_destroy(obj_action_bt_parent);
-		if (self.voar and self.inst_sock_id == con_client.server_socket){
+		if (self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.MAIN_PHASE1){
+			_pos = 0;
 			self.selected = true;
-			self.voar_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_voar_bt);
-			_pos++;
-		}
-		if (self.inverter and self.inst_sock_id == con_client.server_socket){
-			self.selected = true;
-			self.inverter_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
-			_pos++;
-		}
-		if (self.explodir and self.inst_sock_id == con_client.server_socket){
-			self.selected = true;
-			self.explodir_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
-			_pos++;
-		}
-		if (self.usar_arma and self.inst_sock_id == con_client.server_socket){
-			for (var i = 0; i < array_length(con_client.class_list); i++){
-				if (con_client.class_list[i, 0] == con_client.server_socket){
-					self.selected = true;
-					self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_combat_bt_base);
-					_pos++;
-					break;
-				}
+			if (self.voar){
+				self.voar_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_voar_bt);
+				_pos++;
+			}
+			if (self.inverter){
+				self.inverter_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_invert_bt);
+				_pos++;
 			}
 		}
 		//caso o jogador clique na carta durante a fase de batalha
-		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
+		else if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
+			_pos = 0;
 			self.selected = true;
 			con_client.player.card_selected = noone;
-			with(obj_card_preview){ instance_destroy(); }
-			instance_destroy(obj_action_bt_parent);
-		
+			//with(obj_card_preview){ instance_destroy(); }
+			//instance_destroy(obj_action_bt_parent);
+			if (self.usar_arma){
+				for (var i = 0; i < array_length(con_client.class_list); i++){
+					if (con_client.class_list[i, 0] == con_client.server_socket){
+						self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_usar_arma_bt);
+						_pos++;
+						break;
+					}
+				}
+			}
 			if (self.atacar_1){
 				//caso possa usar o método atacar_1
 				self.atk1_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_atk1_bt);
@@ -59,6 +67,11 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (self.atacar_2){
 				self.atk2_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1],0 -1, obj_atk2_bt);
+				_pos++;
+			}
+			if (self.explodir){
+				self.selected = true;
+				self.explodir_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_explodir_bt);
 				_pos++;
 			}
 		}
@@ -72,6 +85,7 @@ if (mouse_check_button_released(mb_left)){
 		else {
 			self.voo = true;
 		}
+		instance_destroy(self.voar_bt);
 	}
 	//
 	
@@ -103,6 +117,7 @@ if (mouse_check_button_released(mb_left)){
 				atk_direct = true;
 			}
 		}
+		instance_destroy(self.usar_arma_bt);
 	}
 	//
 	
@@ -134,6 +149,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 		if (_count >= 2){ scr_inverter_create(self); }
 		else { show_message("Este Robô possui menos de duas variáveis lógicas!"); }
+		instance_destroy(self.inverter_bt);
 	}
 	//
 
@@ -273,4 +289,50 @@ if (mouse_check_button_released(mb_left)){
 		self.attacking2 = false;
 		instance_destroy(obj_combat_bt_base);
 	}
+}
+
+
+self.texto_auxiliar = "Objeto Robô: \n";
+if (self.forca_var != 0){
+	self.texto_auxiliar = self.texto_auxiliar + "-int var Força= " + string(self.forca_var) + "\n";
+}
+else if (self.forca_cons != 0){
+	self.texto_auxiliar = self.texto_auxiliar + "-int cons Força= " + string(self.forca_cons)+ "\n";
+}
+if (self.escudo_var != 0){
+	self.texto_auxiliar = self.texto_auxiliar + "-int var Escudo= " + string(self.escudo_var)+ "\n";
+}
+else if (self.escudo_cons != 0){
+	self.texto_auxiliar = self.texto_auxiliar + "-int cons Escudo= " + string(self.escudo_cons)+ "\n";
+}
+if (self.energia != 0){
+	self.texto_auxiliar = self.texto_auxiliar + "-int var Energia= " + string(self.energia)+ "\n";
+}
+if (self.voo != noone){
+	if (self.voo){ self.texto_auxiliar = self.texto_auxiliar + "-bool var Voo= True\n"; }
+	else{ self.texto_auxiliar = self.texto_auxiliar + "-bool var Voo= False\n"; }
+}
+if (self.voar){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Voar()\n";
+}
+if (self.atacar_1){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Atacar(Objeto)\n";
+}
+if (self.atacar_2){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Atacar(Objeto, Objeto)\n";
+}
+if (self.defender){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Defender(Ataque)\n";
+}
+if (self.refletir){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Refletir(Ataque)\n";
+}
+if (self.explodir){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Explodir(Objeto)\n";
+}
+if (self.inverter){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método Inverter(Var, Var)\n";
+}
+if (self.usar_arma){
+	self.texto_auxiliar = self.texto_auxiliar + "-Método UsarArma()\n";
 }

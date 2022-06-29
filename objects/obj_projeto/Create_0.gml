@@ -18,7 +18,7 @@ lin_for = y+60;
 sprite_list = array_create(0);
 
 selected = false;
-show_text = "";
+texto_auxiliar = "";
 project_id = 0;
 player_socket = noone;
 

@@ -3,6 +3,7 @@
 
 player_projects = array_create(0);
 player_instances = array_create(0);
+
 create_project = false; //true= tela de criação de nova classe
 edit_project = false; //true = tela de edição de projeto
 
