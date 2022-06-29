@@ -43,6 +43,9 @@ function scr_get_card_bt(_card_selected){
 							break;
 						
 						case SUBTYPE.HERANCA:
+							if (!con_client.player.create_project and !con_client.player.edit_project){
+								instance_create_layer(0,0, "Instances", obj_heranca_bt);
+							}
 							break;
 							
 						case SUBTYPE.CANHAO:

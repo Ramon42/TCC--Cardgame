@@ -6,6 +6,11 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.CLASSE;
 		_card.texto_auxiliar = "Classe - final - \nProjeto -> Descreve o funcionamento do robô. \nAgrupa variáveis e métodos. \nNão pode ser superclasse numa relação de herança.";
 	}
+	else if (_card.sprite_index == spr_card_heranca){
+		_card.card_subtype = SUBTYPE.HERANCA;
+		_card.card_type = CARDTYPE.CLASSE;
+		_card.texto_auxiliar = "Copia variáveis e métodos de uma SuperClasse para uma subclasse.\nA subclasse passa a ter todas as características da SuperClasse, além das que forem definidas nela. \nMétodos e variáveis com mesmo nome e parâmetros na subclasse sobrepõem os da SuperClasse.";
+	}
 	else if (_card.sprite_index == spr_card_projeto){
 		_card.card_subtype = SUBTYPE.PROJETO;
 		_card.card_type = CARDTYPE.CLASSE;
@@ -141,6 +146,11 @@ function scr_assign_stats(_card){
 		_card.card_subtype = SUBTYPE.VOO;
 		_card.card_type = CARDTYPE.VARIAVEL;
 		_card.texto_auxiliar = "Variável - lógico - \nVoo -> Concede a habilidade de voar.\nO voo deve ser ativado através de uma carta de método.\nGire a carta de objeto quando estiver voando, retorne à posição normal quando estiver em terra.";
+	}
+	else if (_card.sprite_index == spr_card_refletir){
+		_card.card_subtype = SUBTYPE.REFLETIR;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Método - retorno inteiro - \nRefletir(Ataque) -> Se durante a defesa o Objeto receber um Ataque maior que ENERGIA + ESCUDO, a diferença é devolvida ao atacante.";
 	}
 	else if (_card.sprite_index == spr_card_voar){
 		_card.card_subtype = SUBTYPE.VOAR;

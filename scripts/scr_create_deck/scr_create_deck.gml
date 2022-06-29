@@ -23,6 +23,7 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.b_voo);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_refletir);
 	ds_list_add(cards_in_deck, CARD.m_atacar1);
 	ds_list_add(cards_in_deck, CARD.m_usar_arma);
 	ds_list_add(cards_in_deck, CARD.m_atacar2);
@@ -30,8 +31,7 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.m_inverter);
 	ds_list_add(cards_in_deck, CARD.m_explodir);
 	ds_list_add(cards_in_deck, CARD.m_voar);
-	ds_list_add(cards_in_deck, CARD.m_agrupar_atacar);
-	ds_list_add(cards_in_deck, CARD.m_destruir_arma);
+	ds_list_add(cards_in_deck, CARD.heranca);
 	ds_list_add(cards_in_deck, CARD.m_usar_arma);
 	ds_list_add(cards_in_deck, CARD.v_forca2);
 	ds_list_add(cards_in_deck, CARD.projeto);

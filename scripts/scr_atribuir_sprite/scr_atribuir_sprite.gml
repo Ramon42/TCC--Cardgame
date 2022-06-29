@@ -69,6 +69,9 @@ function scr_atribuir_sprite(_val){
 		case CARD.projeto_final:
 			return spr_card_projeto_final;
 			break;
+		case CARD.heranca:
+			return spr_card_heranca;
+			break;
 		case CARD.superclasse_atacar1:
 			return spr_card_superclasse_atacar1;
 			break;
