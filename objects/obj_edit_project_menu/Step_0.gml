@@ -69,12 +69,27 @@ if (mouse_check_button_released(mb_left)){
 	//
 
 	
-	if (position_meeting(mouse_x, mouse_y, cancel_bt)){
+	if (position_meeting(mouse_x, mouse_y, save_bt)){
 		self.projeto.created = false;
 		scr_set_projects_position(con_client.project_list);
 		con_client.player.edit_project = false;
+		con_client.player.card_selected = noone;
+		for (var i = 0; i < ds_list_size(self.card_list); i++){
+			instance_destroy(self.card_list[|i]);
+		}
+		for (var i = 0; i < ds_list_size(self.projeto.cards_in_project); i++){
+			instance_destroy(self.projeto.cards_in_project[|i]);
+		}
+		ds_list_destroy(self.card_list);
+		instance_destroy(self.save_bt);
+		instance_destroy(self);
+		
+		/*
+		self.projeto.created = false;
+		scr_set_projects_position(con_client.project_list);
+		con_client.player.edit_project = false;
+		
 		if (instance_exists(con_client.player.card_selected)){
-			con_client.player.card_selected.move_card = false;
 			con_client.player.card_selected = noone;
 		}
 		for (var i = 0; i < ds_list_size(obj_edit_project_menu.card_list); i++){
@@ -83,11 +98,9 @@ if (mouse_check_button_released(mb_left)){
 		ds_list_destroy(self.card_list);
 		instance_destroy(obj_edit_project_menu);
 		instance_destroy(obj_class_menu_parent_bt);
+		*/
 		
 	}
-	else if (position_meeting(mouse_x, mouse_y, save_bt)){
-	}
-	
 	
 }
 

@@ -10,7 +10,6 @@ aux_y = sprite_height/2
 
 col = x - aux_x*0.75;
 
-lin_voo = y;
 lin_eng = y+20;
 lin_esc = y+45;
 lin_for = y+60;
@@ -26,6 +25,7 @@ cards_in_project = ds_list_create();
 created = false;
 edit_project_bt = noone;
 create_instance_bt = noone;
+
 final = false;
 abstract = false;
 

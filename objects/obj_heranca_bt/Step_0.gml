@@ -9,7 +9,7 @@ if (mouse_check_button_released(mb_left)){
 		self.dica = true;
 		var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 		_dica.text = "Selecione o Projeto que servirá como SuperClasse (Lembre-se que uma classe Final não pode ser alterada).\nOs Robôs já Instanciados a partir desta classe NÃO serão destruidos.";
-	
+		self.x = -500;
 	}
 	
 	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse == noone and self.subclasse == noone){
@@ -39,5 +39,14 @@ if (mouse_check_button_released(mb_left)){
 
 if (self.superclasse != noone and self.subclasse != noone){
 	scr_send_heranca(self.superclasse, self.subclasse);
+	for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
+		if (con_client.player.hand[|i].card_subtype == SUBTYPE.HERANCA){
+			instance_destroy(con_client.player.hand[|i]);
+			ds_list_delete(con_client.player.hand, i); //deleta carta da mão do jogador
+			scr_show_hand();
+			break;
+		}
+	}
+	con_client.player.card_selected = noone;
 	instance_destroy(self);
 }

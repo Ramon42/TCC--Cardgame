@@ -27,20 +27,15 @@ function scr_send_heranca(_superclasse, _subclasse){
 		voar : _superclasse.voar
 	};
 	//agora sobreescrever o que foi criado na superclasse
-	var _find_forca_sub = false;
 	var _find_forca_sup = false;
-	var _find_escudo_sub = false;
 	var _find_escudo_sup = false;
-	var _find_energia_sub = false;
 	var _find_energia_sup = false;
 	
 	if (_subclasse.forca_var != 0){
 		_save.forca_var = _subclasse.forca_var;
-		_find_forca_sub = true;
 	}
 	else if (_subclasse.forca_cons != 0){
 		_save.forca_cons = _subclasse.forca_cons;
-		_find_forca_sub = true;
 	}
 	else if (_superclasse.forca_var != 0 or _superclasse.forca_cons != 0){
 		_find_forca_sup = true;
@@ -48,11 +43,9 @@ function scr_send_heranca(_superclasse, _subclasse){
 	
 	if (_subclasse.escudo_var != 0){
 		_save.escudo_var = _subclasse.escudo_var;
-		_find_escudo_sub = true;
 	}
 	else if (_subclasse.escudo_cons != 0){
 		_save.escudo_cons = _subclasse.escudo_cons;
-		_find_escudo_sub = true;
 	}
 	else if (_superclasse.escudo_var != 0 or _superclasse.escudo_cons != 0){
 		_find_escudo_sup = true;
@@ -60,51 +53,50 @@ function scr_send_heranca(_superclasse, _subclasse){
 	
 	if (_subclasse.energia != 0){
 		_save.energia = _subclasse.energia;
-		_find_energia_sub = true;
 	}
 	else if (_superclasse.energia != 0){
 		_find_energia_sup = true;
 	}
 	
 	for (var i = 0; i < array_length(_subclasse.sprite_list); i++){
-		if (sprite_get_name(_subclasse.sprite_list[i]) == spr_card_forca1_var or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_forca2_var or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_forca3_cons or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_forca4_cons or
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_escudo1_var or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_escudo2_var or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_escudo1_cons or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_escudo2_cons or
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_energia1 or 
-		sprite_get_name(_subclasse.sprite_list[i]) == spr_card_energia2){
+		if (_subclasse.sprite_list[i] == spr_card_forca1_var or 
+		_subclasse.sprite_list[i] == spr_card_forca2_var or 
+		_subclasse.sprite_list[i] == spr_card_forca3_cons or 
+		_subclasse.sprite_list[i] == spr_card_forca4_cons or
+		_subclasse.sprite_list[i] == spr_card_escudo1_var or 
+		_subclasse.sprite_list[i] == spr_card_escudo2_var or 
+		_subclasse.sprite_list[i] == spr_card_escudo1_cons or 
+		_subclasse.sprite_list[i] == spr_card_escudo2_cons or
+		_subclasse.sprite_list[i] == spr_card_energia1 or 
+		_subclasse.sprite_list[i] == spr_card_energia2){
+			show_message("Adicionando sprite> " + string(sprite_get_name(_subclasse.sprite_list[i])) + " da subclasse");
 			array_push(_sprites, _subclasse.sprite_list[i]);
 		}
 	}
 	for (var i = 0; i < array_length(_superclasse.sprite_list); i++){
 		if (_find_forca_sup){
-			if (sprite_get_name(_superclasse.sprite_list[i] == spr_card_forca1_var) or
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_forca2_var) or 
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_forca3_cons) or
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_forca4_cons)){
+			if (_superclasse.sprite_list[i] == spr_card_forca1_var or
+			_superclasse.sprite_list[i] == spr_card_forca2_var or 
+			_superclasse.sprite_list[i] == spr_card_forca3_cons or
+			_superclasse.sprite_list[i] == spr_card_forca4_cons){
 				array_push(_sprites, _superclasse.sprite_list[i]);
 			}
 		}
 		if (_find_escudo_sup){
-			if (sprite_get_name(_superclasse.sprite_list[i] == spr_card_escudo1_var) or
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_escudo2_var) or 
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_escudo1_cons) or
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_escudo2_cons)){
+			if (_superclasse.sprite_list[i] == spr_card_escudo1_var or
+			_superclasse.sprite_list[i] == spr_card_escudo2_var or 
+			_superclasse.sprite_list[i] == spr_card_escudo1_cons or
+			_superclasse.sprite_list[i] == spr_card_escudo2_cons){
 				array_push(_sprites, _superclasse.sprite_list[i]);
 			}
 		}
 		if (_find_energia_sup){
-			if (sprite_get_name(_superclasse.sprite_list[i] == spr_card_energia1) or
-			sprite_get_name(_superclasse.sprite_list[i] == spr_card_energia2)){
+			if (_superclasse.sprite_list[i] == spr_card_energia1 or
+			_superclasse.sprite_list[i] == spr_card_energia2){
 				array_push(_sprites, _superclasse.sprite_list[i]);
 			}
 		}
 	}
-	
 	
 	if (_save.voo == noone){
 		_save.voo = _subclasse.voo;
@@ -194,64 +186,6 @@ function scr_send_heranca(_superclasse, _subclasse){
 	}
 	else { array_push(_sprites, spr_card_voar); }
 	
-	//arrumando a lista de sprites da herança agora
-	for (var i = 0; i < array_length(_superclasse.sprite_list); i++){
-		for (var o = 0; o < array_length(_subclasse.sprite_list); o++){
-			if (sprite_get_name(_superclasse.sprite_list[i]) == spr_card_forca1_var or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_forca2_var or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_forca3_cons or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_forca4_cons){
-				if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca1_var or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca2_var or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca3_cons or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca4_cons){
-					array_push(_sprites, _subclasse.sprite_list[o]);
-					break;
-				}
-			}
-			else if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca1_var or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca2_var or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca3_cons or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_forca4_cons){
-				array_push(_sprites, _subclasse[o]);
-				break;
-			}
-			
-			if (sprite_get_name(_superclasse.sprite_list[i]) == spr_card_escudo1_var or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_escudo2_var or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_escudo1_cons or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_escudo2_cons){
-				if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo1_var or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo2_var or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo1_cons or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo2_cons){
-					array_push(_sprites, _subclasse.sprite_list[o]);
-					break;
-				}
-			}
-			else if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo1_var or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo2_var or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo1_cons or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_escudo2_cons){
-				array_push(_sprites, _subclasse[o]);
-				break;
-			}
-			
-			if (sprite_get_name(_superclasse.sprite_list[i]) == spr_card_energia1 or 
-			sprite_get_name(_superclasse.sprite_list[i]) == spr_card_energia2){
-				if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_energia1 or 
-				sprite_get_name(_subclasse.sprite_list[o]) == spr_card_energia2){
-					array_push(_sprites, _subclasse.sprite_list[o]);
-					break;
-				}
-			}
-			else if (sprite_get_name(_subclasse.sprite_list[o]) == spr_card_energia1 or 
-			sprite_get_name(_subclasse.sprite_list[o]) == spr_card_energia2){
-				array_push(_sprites, _subclasse[o]);
-				break;
-			}
-		}
-	}
 	_save.sprite_list = _sprites;
 	
 	buffer_seek(con_client.buffer, buffer_seek_start, 0);

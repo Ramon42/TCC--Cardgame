@@ -57,6 +57,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		with (_inst){
 			image_xscale = 0.5;
 			image_yscale = 0.5;
+			depth = 0;
 			sprite_list = _load.sprite_list;
 			player_socket = _load.player_socket;
 			project_id = _load.project_id;

@@ -43,7 +43,5 @@ belongs_to_player = false;
 projeto = noone;
 moving_card = false;
 
-
-cancel_bt = instance_create_depth((col4), (lin6-20), -3, obj_cancel_bt);
 save_bt = instance_create_depth((col4), (lin6+20), -3, obj_save_class_bt);
 

@@ -34,6 +34,7 @@
     {"id":{"name":"spr_add_attr","path":"sprites/spr_add_attr/spr_add_attr.yy",},"order":4,},
     {"id":{"name":"spr_heranca","path":"sprites/spr_heranca/spr_heranca.yy",},"order":21,},
     {"id":{"name":"obj_incr_decr_bt","path":"objects/obj_incr_decr_bt/obj_incr_decr_bt.yy",},"order":2,},
+    {"id":{"name":"scr_edit_project_create_new","path":"scripts/scr_edit_project_create_new/scr_edit_project_create_new.yy",},"order":8,},
     {"id":{"name":"scr_send_incremento","path":"scripts/scr_send_incremento/scr_send_incremento.yy",},"order":0,},
     {"id":{"name":"scr_show_hand","path":"scripts/scr_show_hand/scr_show_hand.yy",},"order":1,},
     {"id":{"name":"spr_card_usar_arma","path":"sprites/spr_card_usar_arma/spr_card_usar_arma.yy",},"order":27,},

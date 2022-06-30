@@ -106,7 +106,6 @@ function scr_get_card_bt(_card_selected){
 					case CARDTYPE.VARIAVEL:
 						if (con_client.player.edit_project){ 
 							//teste
-							_card_selected.move_card = true;
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
 							//
 						}
@@ -114,7 +113,6 @@ function scr_get_card_bt(_card_selected){
 				
 					case CARDTYPE.METODO:
 						if (con_client.player.edit_project){
-							_card_selected.move_card = true;
 							instance_create_layer(0, 0, "Instances", obj_move_card_bt);
 						}
 						break;
