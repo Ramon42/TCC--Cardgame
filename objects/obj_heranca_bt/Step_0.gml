@@ -2,6 +2,9 @@
 // You can write your code in this editor
 
 if (mouse_check_button_released(mb_left)){
+	if (!position_meeting(mouse_x,mouse_y,self) and !self.dica){
+		instance_destroy(self);
+	}
 	if (position_meeting(mouse_x, mouse_y, self) and !self.dica){
 		self.dica = true;
 		var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
@@ -9,8 +12,8 @@ if (mouse_check_button_released(mb_left)){
 	
 	}
 	
-	if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse == noone and self.subclasse == noone){
-		var _inst = position_meeting(mouse_x, mouse_y, obj_projeto);
+	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse == noone and self.subclasse == noone){
+		var _inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 			_dica.text = "Não é possível selecionar um projeto do oponente como SuperClasse.";
@@ -23,7 +26,7 @@ if (mouse_check_button_released(mb_left)){
 	}
 	
 	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse != noone and self.subclasse == noone){
-		var _inst = position_meeting(mouse_x, mouse_y, obj_projeto);
+		var _inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 			_dica.text = "Não é possível selecionar um projeto do oponente como Subclasse.";

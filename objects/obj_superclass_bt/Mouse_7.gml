@@ -45,6 +45,10 @@ if (position_meeting(mouse_x, mouse_y, self)){
 			scr_send_project(_superclass);
 		break;
 	}
+	var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
+	ds_list_delete(con_client.player.hand, pos);
+	instance_destroy(con_client.player.card_selected);
+	con_client.player.card_selected = noone;
 	instance_destroy(_superclass);
 	instance_destroy(self);
 }

@@ -54,6 +54,9 @@ function scr_atribuir_sprite(_val){
 		case CARD.m_inverter:
 			return spr_card_inverter;
 			break;
+		case CARD.m_refletir:
+			return spr_card_refletir;
+			break;
 		case CARD.m_defender:
 			return spr_card_defender;
 			break;
