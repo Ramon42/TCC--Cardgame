@@ -112,6 +112,13 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			scr_edit_project(_att_project, _sock);
 			break;
 			
+		case network.heranca:
+			var _projeto = json_parse(buffer_read(_buff, buffer_string));
+			var _id = buffer_read(_buff, buffer_u32);
+			show_message("ID SERVIDOR> " + string(_id));
+			scr_send_heranca_servidor(_projeto, _id, _sock);
+		break;
+		
 		case network.wait:
 			
 		break;

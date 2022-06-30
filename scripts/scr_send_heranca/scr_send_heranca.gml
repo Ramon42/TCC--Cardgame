@@ -6,7 +6,7 @@ function scr_send_heranca(_superclasse, _subclasse){
 	var _save = {
 		sprite_list : [],
 		player_socket : con_client.server_socket,
-		project_id : _superclasse.project_id,
+		project_id : -1,
 		final : false,
 		abstract : false,
 		forca_var : _superclasse.forca_var,
@@ -189,8 +189,9 @@ function scr_send_heranca(_superclasse, _subclasse){
 	_save.sprite_list = _sprites;
 	
 	buffer_seek(con_client.buffer, buffer_seek_start, 0);
-	buffer_write(con_client.buffer, buffer_u8, network.create_project);
+	buffer_write(con_client.buffer, buffer_u8, network.heranca);
 	var _data = json_stringify(_save);
 	buffer_write(con_client.buffer, buffer_string, _data);
+	buffer_write(con_client.buffer, buffer_u32, _subclasse.project_id);
 	network_send_packet(con_client.socket, con_client.buffer, buffer_tell(con_client.buffer));
 }

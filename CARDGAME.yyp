@@ -202,6 +202,7 @@
     {"id":{"name":"scr_incremento_create","path":"scripts/scr_incremento_create/scr_incremento_create.yy",},"order":1,},
     {"id":{"name":"obj_dicas_menu","path":"objects/obj_dicas_menu/obj_dicas_menu.yy",},"order":0,},
     {"id":{"name":"spr_card_defender","path":"sprites/spr_card_defender/spr_card_defender.yy",},"order":12,},
+    {"id":{"name":"scr_send_heranca_servidor","path":"scripts/scr_send_heranca_servidor/scr_send_heranca_servidor.yy",},"order":7,},
     {"id":{"name":"rm_startmenu","path":"rooms/rm_startmenu/rm_startmenu.yy",},"order":0,},
   ],
   "Options": [

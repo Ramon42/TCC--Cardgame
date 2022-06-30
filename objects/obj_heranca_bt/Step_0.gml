@@ -33,6 +33,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 		else {
 			self.subclasse = _inst;
+			show_message("ID SUBCLASSE> " + string(self.subclasse.project_id));
 		}
 	}
 }

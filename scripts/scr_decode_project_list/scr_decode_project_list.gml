@@ -8,6 +8,23 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	var _aux_sup_p = 0;
 	var _aux_sup_o = 0;
 	
+
+	for (var o = 0; o < array_length(con_client.project_list); o++){
+		var _find = false;
+		for (var i = 0; i < array_length(_array); i++){
+			if (con_client.project_list[o, 1] == _array[i, 1]){
+				_find = true;
+				break;
+			}
+		}
+		if (!_find){
+			show_message("NÃO ACHOU PROJETO ID> " + string(con_client.project_list[o, 1]));
+			instance_destroy(con_client.project_list[o, 2]);
+			array_delete(con_client.project_list, o, 1);
+		}
+	}
+
+	
 	for (var i = 0; i < array_length(con_client.project_list); i ++){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 2].player_socket != con_client.server_socket) { 
