@@ -188,10 +188,10 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		break;
 		
 		case network.increment:
-			var _obj_id = buffer_read(_buff, buffer_u8);
+			var _proj_id = buffer_read(_buff, buffer_u8);
 			var _var_sub = buffer_read(_buff, buffer_u8);
 			var _incr_sub = buffer_read(_buff, buffer_u8);
-			scr_incremento_server(_obj_id, _var_sub, _incr_sub, _sock, _sock_op);
+			scr_incremento_server(_proj_id, _var_sub, _incr_sub, _sock, _sock_op);
 		break;
 		
 		case network.pass_turn:

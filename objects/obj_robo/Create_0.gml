@@ -9,7 +9,7 @@ lin_eng = y+60;;
 
 pth = noone;
 
-del_card_in_hand = -1;
+
 selected = false;
 
 attacking1 = false;
@@ -20,8 +20,7 @@ explode = false;
 atk2_count = 0;
 dmg_rest = 0;
 atk_list = array_create(0);
-incr_decr = false;
-last_card = noone;
+
 atk_path = true; //variavel para startar e parar o path de ataque
 sprite_list = [];
 atk1_bt = noone;

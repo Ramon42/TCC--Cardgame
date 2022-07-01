@@ -18,13 +18,7 @@ if (!self.atk_path){
 	path_start(self.pth, 75, path_action_stop, false);
 }
 
-//metodo incremento
-if (self.incr_decr){
-	instance_destroy(obj_incr_decr_bt);
-	scr_incremento_create(self, self.last_card, self.del_card_in_hand);
-	self.incr_decr = false;
-}
-//
+
 
 if (mouse_check_button_released(mb_left)){
 	

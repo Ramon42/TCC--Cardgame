@@ -46,6 +46,14 @@ if (self.usar_arma){
 }
 
 
+//metodo incremento
+if (self.incr_decr){
+	instance_destroy(obj_incr_decr_bt);
+	scr_incremento_create(self, self.last_card, self.del_card_in_hand);
+	self.incr_decr = false;
+}
+//
+
 if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, self) and !con_client.player.edit_project and !con_client.player.create_project and (con_client.player.state == PLAYERSTATE.MAIN_PHASE1 or con_client.player.state == PLAYERSTATE.MAIN_PHASE2)){
 		con_client.player.card_selected = noone;

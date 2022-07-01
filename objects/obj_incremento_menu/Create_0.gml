@@ -8,7 +8,7 @@ image_xscale = 3;
 image_yscale = 2;
 
 var_list = ds_list_create();
-robo = noone;
+projeto = noone;
 var1 = noone;
 save_bt = noone;
 incremento = noone;

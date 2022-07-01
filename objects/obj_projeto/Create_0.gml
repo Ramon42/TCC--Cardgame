@@ -29,6 +29,9 @@ create_instance_bt = noone;
 final = false;
 abstract = false;
 
+del_card_in_hand = -1;
+incr_decr = false;
+last_card = noone;
 
 forca_var = 0;
 forca_cons = 0;

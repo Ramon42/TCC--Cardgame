@@ -69,7 +69,7 @@ function scr_get_card_bt(_card_selected){
 					break;
 					
 				case CARDTYPE.VALOR:
-					if (array_length(con_client.instance_list) > 0){
+					if (array_length(con_client.project_list) > 0){
 						instance_create_layer(0, 0, "Instances", obj_incr_decr_bt);
 					}
 					break;
