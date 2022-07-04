@@ -46,6 +46,7 @@ if (socket == _event_id){
 			scr_att_client_project_list(_project_list, self.project_list);
 			scr_decode_project_list(_project_list);
 			scr_set_player_projects(self.project_list);
+			scr_check_instance_project();
 		break;
 			
 		case network.update_class:

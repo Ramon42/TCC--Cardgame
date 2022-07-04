@@ -16,12 +16,16 @@ if (keyboard_check_pressed(vk_enter)){
 		case 1:
 			scr_room(rm_game);
 			break;
-		
+			
 		case 2:
+			
+			break;
+		
+		case 3:
 			scr_room(rm_config);
 			break;
 			
-		case 3:
+		case 4:
 			game_end();
 	}
 }

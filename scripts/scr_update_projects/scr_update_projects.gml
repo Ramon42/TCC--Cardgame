@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_update_projects(_sock){
 	if (_sock > 1){
+		scr_check_instances_server();
 		buffer_seek(buffer, buffer_seek_start, 0);
 		buffer_write(buffer, buffer_u8, network.update_projects);
 		var _data_projects = json_stringify(projects_server);

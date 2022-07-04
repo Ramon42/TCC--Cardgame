@@ -7,6 +7,7 @@ if (mouse_check_button_released(mb_left)){
 		_dica.text = "Selecione a classe alvo!";
 		self.sel = true;
 		self.card = con_client.player.card_selected;
+		self.x = -500;
 	}
 	if (self.sel){
 		for (var i = 0; i < array_length(con_client.project_list); i++){

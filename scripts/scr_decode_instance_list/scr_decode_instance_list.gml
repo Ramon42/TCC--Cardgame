@@ -31,24 +31,12 @@ function scr_decode_instance_list(_instance_list){
 		var _inst = instance_create_depth(0, 0,  -1, obj_robo);
 		var _load = _array[i, 2];
 		if (_array[i, 0] == con_client.server_socket){
-			if (_aux_p mod 2 == 0){
-				_inst.x = 1000;
-				_inst.y = ((100*(_aux_p div 2))+800);
-			}
-			else {
-				_inst.x = 1200;
-				_inst.y = ((100*((_aux_p-1) div 2))+800);
-			}
+			_inst.x = con_client.player.p_instances_pos[_aux_p, 0];
+			_inst.y = con_client.player.p_instances_pos[_aux_p, 1];
 		}
 		else{
-			if (_aux_o mod 2 == 0) {
-				_inst.x = 1000;
-				_inst.y = ((100*(_aux_o div 2))+300);
-			}
-			else {
-				_inst.x = 1200;
-				_inst.y = ((100*((_aux_o-1) div 2))+300);
-			}
+			_inst.x = con_client.player.op_instances_pos[_aux_o, 0];
+			_inst.y = con_client.player.op_instances_pos[_aux_o, 1];
 		}
 		with(_inst){
 			image_xscale = 0.5;

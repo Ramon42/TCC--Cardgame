@@ -16,13 +16,13 @@ function scr_decode_class_list(_class_list){
 			show_message("Criando classe");
 			var _inst = instance_create_depth(0, 0,  -1, obj_classe_arma);
 			if (_array[i, 0] == con_client.server_socket){
-				_inst.x = 750;
-				_inst.y = 900;
+				_inst.x = 1869;
+				_inst.y = 637;
 			
 			}
 			else{
-				_inst.x = 750;
-				_inst.y = 100;
+				_inst.x = 1869;
+				_inst.y = 442;
 			}
 		
 			with (_inst){
