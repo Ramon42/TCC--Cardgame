@@ -2,6 +2,11 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_update_instances(_sock){
 	if (_sock > 1){
+		for (var i = 0; i < array_length(con_server.instances_server); i++){
+			if (con_server.instances_server[i, 2].energia <= 0){
+				array_delete(con_server.instances_server, i, 1);
+			}
+		}
 		buffer_seek(buffer, buffer_seek_start, 0);
 		buffer_write(buffer, buffer_u8, network.update_instances);
 		var _data_instances = json_stringify(instances_server);

@@ -1,8 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_create_project(_project, _sock){ //lado do servidor
-	show_message("PROJETO RECEBIDO: " + string(_project));
-	
 	var _size = array_length(projects_server);
 	//_project.project_id = array_length(con_server.projects_server);
 	_project.project_id = irandom_range(0, 1000);
@@ -14,7 +12,6 @@ function scr_create_project(_project, _sock){ //lado do servidor
 		}
 	}
 	*/
-	show_message("ID DO PROJETO: " + string(_project.project_id));
 	projects_server[_size, 0] = _sock; //id do jogador
 	projects_server[_size, 1] = _project.project_id; //id do projeto
 	projects_server[_size, 2] = _project;

@@ -9,7 +9,7 @@ function scr_edit_project(_project, _sock){
 			break;
 		}
 	}
-	
+	_project.project_id = irandom_range(0, 1000);
 	_size = array_length(projects_server); //cria o projeto novo e atualizado
 	projects_server[_size, 0] = _sock; //id do jogador
 	projects_server[_size, 1] = _project.project_id; //id do projeto

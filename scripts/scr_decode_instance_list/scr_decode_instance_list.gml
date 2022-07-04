@@ -16,6 +16,12 @@ function scr_decode_instance_list(_instance_list){
 	}
 	*/
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
+		if (con_client.instance_list[i, 2].energia <= 0){
+			instance_destroy(con_client.instance_list[i, 2]);
+			array_delete(con_client.instance_list, i, 1);
+		}
+	}
+	for (var i = 0; i < array_length(con_client.instance_list); i++){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 0] != con_client.server_socket) { _aux_o ++; }
 			else { _aux_p ++; }

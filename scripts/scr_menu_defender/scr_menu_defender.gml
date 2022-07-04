@@ -9,7 +9,6 @@ function scr_menu_defender(_atk_id, _def_id, _dmg){
 			break;
 		}
 	}
-	
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
 		if (con_client.instance_list[i, 1] == _def_id){
 			if (con_client.instance_list[i, 2].defender){
@@ -41,6 +40,7 @@ function scr_menu_defender(_atk_id, _def_id, _dmg){
 		buffer_write(con_client.buffer, buffer_u8, network.instance_dmg_calc);
 		buffer_write(con_client.buffer, buffer_u8, _atk_id);
 		buffer_write(con_client.buffer, buffer_u8, _def_id);
+		buffer_write(con_client.buffer, buffer_u8, _dmg);
 		buffer_write(con_client.buffer, buffer_bool, false);
 		network_send_packet(con_client.socket, con_client.buffer, buffer_tell(con_client.buffer));
 	}
