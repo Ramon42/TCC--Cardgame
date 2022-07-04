@@ -10,15 +10,17 @@ if (keyboard_check_pressed(vk_enter)){
 	switch(menu_index){
 		case 0:
 			instance_create_layer(0, 0, "Instances", con_server);
+			scr_con_client_create("127.0.0.1");
 			scr_room(rm_game);
 			break;
 			
 		case 1:
 			scr_room(rm_game);
+			scr_con_client_create("127.0.0.1");
 			break;
 			
 		case 2:
-			
+			scr_room(rm_search_host);
 			break;
 		
 		case 3:

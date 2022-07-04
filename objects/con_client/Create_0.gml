@@ -4,6 +4,7 @@
 
 //NAO CRIAR O DECK AQUI, E TODOS OBJETOS SÃO CRIADOS PELO CON_SERVER AO SE CONECTAR
 
+/*
 socket = network_create_socket(network_socket_tcp);
 global.socket = socket;
 buffer = buffer_create(1024, buffer_grow, 1);
@@ -15,8 +16,14 @@ if (connect < 0){
 	show_message("SERVIDOR NAO ENCONTRADO");
 	game_restart();
 }
-
+*/
+socket = network_create_socket(network_socket_tcp);
+global.socket = socket;
+buffer = buffer_create(1024, buffer_grow, 1);
+connect = noone;
+server_socket = noone;
 //
+
 opponent = noone;
 player = noone;
 project_list = array_create(0);
