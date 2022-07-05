@@ -42,6 +42,7 @@ card_list_size = ds_list_size(card_list);
 belongs_to_player = false;
 projeto = noone;
 moving_card = false;
+alterado = false;
 
 save_bt = instance_create_depth((col4), (lin6+20), -3, obj_save_class_bt);
 

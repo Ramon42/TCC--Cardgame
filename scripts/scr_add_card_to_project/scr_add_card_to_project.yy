@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "AUXILIAR",
-    "path": "folders/Scripts/AUXILIAR.yy",
+    "name": "MOVER CARTAS",
+    "path": "folders/Scripts/CLIENTE/EDIT PROJECT/MOVER CARTAS.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_update_client",
+  "name": "scr_add_card_to_project",
   "tags": [],
   "resourceType": "GMScript",
 }

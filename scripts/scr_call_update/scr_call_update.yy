@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AUXILIAR.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scr_update_client",
+  "name": "scr_call_update",
   "tags": [],
   "resourceType": "GMScript",
 }

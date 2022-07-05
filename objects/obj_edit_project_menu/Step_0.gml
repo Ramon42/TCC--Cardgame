@@ -31,13 +31,15 @@ if (mouse_check_button_released(mb_left)){
 			ds_list_add(card_list, con_client.player.card_selected);
 			card_list_size = ds_list_size(card_list);
 			array_push(self.projeto.sprite_list, con_client.player.card_selected.sprite_index);
-			scr_org_cards_in_project(card_list, card_list_size); //organiza os sprites dentro da interface
-			scr_edit_add_card(self.projeto);
+			scr_add_card_to_project(self.projeto, self.card_list, self.card_list_size);
+			//scr_org_cards_in_project(card_list, card_list_size); //organiza os sprites dentro da interface
+			//scr_edit_add_card(self.projeto);
 			
 			//DELETAR AQUI CARTAS DA MÃO ADICIONADAS AO PROJETO
 			var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
 			ds_list_delete(con_client.player.hand, pos);
 			self.alarm[0] = 0;
+			self.alterado = true;
 		}
 		else{
 			show_message("ESTA CARTA JÁ ESTA NO PROJETO");
@@ -72,6 +74,9 @@ if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, save_bt)){
 		self.projeto.created = false;
 		scr_set_projects_position(con_client.project_list);
+		if (self.alterado){ scr_edit_add_card(self.projeto); }
+		scr_call_update();
+		
 		con_client.player.edit_project = false;
 		con_client.player.card_selected = noone;
 		for (var i = 0; i < ds_list_size(self.card_list); i++){

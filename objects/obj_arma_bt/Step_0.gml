@@ -14,6 +14,7 @@ if (mouse_check_button_released(mb_left)){
 					break;
 			}
 			scr_send_class(_class);
+			scr_call_update();
 			var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
 			instance_destroy(con_client.player.card_selected);
 			ds_list_delete(con_client.player.hand, pos);

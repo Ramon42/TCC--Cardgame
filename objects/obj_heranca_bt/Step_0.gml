@@ -40,6 +40,7 @@ if (mouse_check_button_released(mb_left)){
 
 if (self.superclasse != noone and self.subclasse != noone){
 	scr_send_heranca(self.superclasse, self.subclasse);
+	scr_call_update();
 	for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
 		if (con_client.player.hand[|i].card_subtype == SUBTYPE.HERANCA){
 			instance_destroy(con_client.player.hand[|i]);

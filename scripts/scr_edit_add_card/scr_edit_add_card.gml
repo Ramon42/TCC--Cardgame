@@ -10,6 +10,8 @@ var _save_project = {
 	sprite_list : _projeto.sprite_list,
 	player_socket : con_client.server_socket,
 	project_id : _projeto.project_id,
+	final : _projeto.final,
+	abstract : _projeto.abstract,
 	forca_var : _projeto.forca_var,
 	forca_cons : _projeto.forca_cons,
 	escudo_var : _projeto.escudo_var,
@@ -24,6 +26,7 @@ var _save_project = {
 	explodir : _projeto.explodir,
 	agrupar_atacar : _projeto.agrupar_atacar,
 	destruir_arma : _projeto.destruir_arma,
+	usar_arma : _projeto.usar_arma,
 	voar : _projeto.voar
 }
 var _data = json_stringify(_save_project);

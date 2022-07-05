@@ -79,6 +79,7 @@ if (mouse_check_button_released(mb_left)){
 		else {
 			self.voo = true;
 		}
+		scr_update_voar(self.inst_id, self.voo);
 		instance_destroy(self.voar_bt);
 	}
 	//

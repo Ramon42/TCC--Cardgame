@@ -3,7 +3,7 @@
 function scr_reset_project_value(_projeto){ //reseta todos os atributos do projeto para 0
 	_projeto.forca_var = 0;
 	_projeto.energia = 0;
-	projeto.escudo_var = 0;
+	_projeto.escudo_var = 0;
 	_projeto.voo = noone;
 	_projeto.forca_cons = 0;
 	_projeto.escudo_cons = 0;

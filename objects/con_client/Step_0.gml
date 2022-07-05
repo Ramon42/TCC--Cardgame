@@ -30,6 +30,7 @@ if (mouse_check_button_released(mb_left)){ //draw card
 			}
 			instance_destroy(obj_create_class_menu);
 			instance_destroy(obj_class_menu_parent_bt);
+			scr_call_update();
 			var _dica = instance_create_depth(0, 0, 0, obj_dicas_menu);
 			_dica.text = "Agora que criou um Projeto, você pode selecioná-lo na sua lista de Projetos. \nCaso tenha uma carta de Robô na mão selecione um Projeto e clique em ''Instanciar'' para criar um Objeto em campo.";
 			player.create_project = false;
@@ -42,6 +43,12 @@ if (mouse_check_button_released(mb_right)){ //draw card
 		scr_update_client();
 }
 
+if (con_client.player != noone){
+	if (!con_client.player.edit_project and !con_client.player.create_project){
+		scr_set_projects_position(con_client.project_list);
+		scr_call_update();
+	}
+}
 
 //PLACEHOLDER PARA TELA DE CRIAÇÃO DE CLASSE
 

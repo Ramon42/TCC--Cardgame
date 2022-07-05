@@ -38,8 +38,8 @@ function scr_menu_defender(_atk_id, _def_id, _dmg){
 		show_message("ALVO NÃO PODE BLOQUEAR");
 		buffer_seek(con_client.buffer, buffer_seek_start, 0);
 		buffer_write(con_client.buffer, buffer_u8, network.instance_dmg_calc);
-		buffer_write(con_client.buffer, buffer_u8, _atk_id);
-		buffer_write(con_client.buffer, buffer_u8, _def_id);
+		buffer_write(con_client.buffer, buffer_u32, _atk_id);
+		buffer_write(con_client.buffer, buffer_u32, _def_id);
 		buffer_write(con_client.buffer, buffer_u8, _dmg);
 		buffer_write(con_client.buffer, buffer_bool, false);
 		network_send_packet(con_client.socket, con_client.buffer, buffer_tell(con_client.buffer));

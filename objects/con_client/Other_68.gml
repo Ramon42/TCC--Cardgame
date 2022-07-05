@@ -71,15 +71,15 @@ if (socket == _event_id){
 			
 		case network.def_menu: //cria um menu para o jogador defensor decidir se vai usar 
 		// o metodo defender()
-			var _atk_id = buffer_read(_buff, buffer_u8);
-			var _def_id = buffer_read(_buff, buffer_u8);
+			var _atk_id = buffer_read(_buff, buffer_u32);
+			var _def_id = buffer_read(_buff, buffer_u32);
 			var _dmg = buffer_read(_buff, buffer_u8);
 			scr_menu_defender(_atk_id, _def_id, _dmg);
 		break;
 		
 		case network.atk_animation:
-			var _atk_id = buffer_read(_buff, buffer_u8);
-			var _def_id = buffer_read(_buff, buffer_u8);
+			var _atk_id = buffer_read(_buff, buffer_u32);
+			var _def_id = buffer_read(_buff, buffer_u32);
 			scr_atk_animation(_atk_id, _def_id);
 		break;
 			
@@ -89,13 +89,13 @@ if (socket == _event_id){
 		break;
 		
 		case network.explode:
-			var _obj1_id = buffer_read(_buff, buffer_u8);
-			var _obj2_id = buffer_read(_buff, buffer_u8);
+			var _obj1_id = buffer_read(_buff, buffer_u32);
+			var _obj2_id = buffer_read(_buff, buffer_u32);
 			scr_explode(_obj1_id, _obj2_id);
 		break;
 			
 		case network.invert:
-			var _obj_id = buffer_read(_buff, buffer_u8);
+			var _obj_id = buffer_read(_buff, buffer_u32);
 			var _update = buffer_read(_buff, buffer_string);
 			scr_inverter(_obj_id, _update);
 		break;

@@ -1,8 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_incremento_server(_proj_id, _var_sub, _incr_sub, _sock, _sock_op){
+	show_message("\nSUBTYPE RECEBIDO> " + string(_incr_sub));
 	for (var i = 0; i < array_length(con_server.projects_server); i++){
-		if (con_server.projects_server[i, 2].project_id == _proj_id){
+		if (con_server.projects_server[i, 1] == _proj_id){
+			show_message("ACHOU \nPROJETO> " + string(_proj_id) + "\nINCREMENTO SUBTYPE> " + string(_incr_sub));
 			switch (_var_sub){
 				case SUBTYPE.FORCA:
 					switch (_incr_sub){
@@ -88,8 +90,7 @@ function scr_incremento_server(_proj_id, _var_sub, _incr_sub, _sock, _sock_op){
 			}
 			var _data = json_stringify(_update);
 			*/
-			scr_update_projects(_sock);
-			scr_update_projects(_sock_op);
+			scr_update_projects(_sock, _sock_op);
 			/*
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, network.invert);

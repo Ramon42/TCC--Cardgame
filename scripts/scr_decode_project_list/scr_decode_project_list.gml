@@ -25,7 +25,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 	}
 
 	
-	for (var i = 0; i < array_length(con_client.project_list); i ++){
+	for (var i =  array_length(con_client.project_list)-1; i >= 0; i --){
 		for (var o = 0; o < array_length(_array); o++){
 			if (_array[o, 2].player_socket != con_client.server_socket) { 
 				if (con_client.project_list[i, 2].abstract){
@@ -46,7 +46,7 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 		}
 	}
 		
-	for (var i = 0; i < array_length(_array); i++){
+	for (var i = array_length(_array)-1; i >= 0 ; i--){
 		var _inst = instance_create_depth(0, 0,  -1, obj_projeto);
 		var _load = _array[i, 2];
 		if (!_load.abstract){

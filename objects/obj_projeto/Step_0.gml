@@ -61,9 +61,9 @@ if (mouse_check_button_released(mb_left)){
 		instance_destroy(obj_action_bt_parent);
 		self.selected = true;
 		
-		//if (!self.abstract){
+		if (!self.final){
 			edit_project_bt = instance_create_depth(0, 0, -1, obj_edit_project_bt);
-		//}
+		}
 		//checar se existe uma carta de robô na mão do jogador para poder criar o botão de criar instancia
 		if (player_socket == con_client.server_socket and !self.abstract) {
 			for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
@@ -112,6 +112,7 @@ if (mouse_check_button_released(mb_left)){
 			instance_destroy(self.edit_project_bt);
 			instance_destroy(self.create_instance_bt);
 			scr_send_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
+			scr_call_update();
 			show_message("CRIANDO INSTANCIA DO PROJETO");
 			
 	}
