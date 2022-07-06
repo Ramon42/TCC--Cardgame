@@ -21,6 +21,7 @@ texto_auxiliar = "";
 project_id = 0;
 player_socket = noone;
 
+
 cards_in_project = ds_list_create();
 created = false;
 edit_project_bt = noone;

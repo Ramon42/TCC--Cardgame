@@ -26,6 +26,7 @@ if (mouse_check_button_released(mb_left)){
 	}
 	
 	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse != noone and self.subclasse == noone){
+		con_client.player.in_heranca = true;
 		var _inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
@@ -39,6 +40,7 @@ if (mouse_check_button_released(mb_left)){
 }
 
 if (self.superclasse != noone and self.subclasse != noone){
+	con_client.player.in_heranca = false;
 	scr_send_heranca(self.superclasse, self.subclasse);
 	scr_call_update();
 	for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
