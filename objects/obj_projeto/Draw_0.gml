@@ -6,6 +6,11 @@
 if (instance_position(mouse_x, mouse_y, self)){
 	draw_sprite_ext(spr_card_highlight, 0, self.x, self.y, self.image_xscale, self.image_yscale, 0, c_white, 0.8);
 }
+if (self.player_socket != noone){
+	if (self.player_socket != con_client.server_socket){
+		image_angle = 180;
+	}
+}
 
 draw_self();
 

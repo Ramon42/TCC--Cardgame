@@ -40,6 +40,7 @@ card_selected = noone;
 is_local = true;
 def_menu_queue = array_create(0);
 in_heranca = false;
+in_atk = false;
 
 state = PLAYERSTATE.ENEMY_TURN;
 

@@ -143,13 +143,16 @@ if (mouse_check_button_released(mb_left)){
 			if (_count >= 2){ break; }
 		}
 		if (_count >= 2){ scr_inverter_create(self); }
-		else { show_message("Este Robô possui menos de duas variáveis lógicas!"); }
+		else { 
+			var _menu = instance_create_depth(0,0,0,obj_dicas_menu);
+			_menu.dica = "Não é possível inverter duas variáveis desse Projeto pois ele possui menos de duas variáveis"}
 		instance_destroy(self.inverter_bt);
 	}
 	//
 
 	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){
 		var _text = "";
+		con_client.player.in_atk = true;
 		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)
 		if (position_meeting(mouse_x, mouse_y, self.atk1_bt)) { 
 			self.attacking1 = true; 
@@ -234,6 +237,7 @@ if (mouse_check_button_released(mb_left)){
 				path_rotate(self.pth, _ang);
 				self.atk_path = false;
 				self.attacking1 = false;
+				con_client.player.in_atk = false;
 			}
 		}
 		else if (atk_direct){
@@ -243,6 +247,7 @@ if (mouse_check_button_released(mb_left)){
 			else { scr_send_atk(self, undefined, self.forca_cons); }
 			self.attacking1 = false;
 			self.atk_direct = false;
+			con_client.player.in_atk = false;
 		}
 	}
 	else if (self.attacking2){
@@ -274,6 +279,7 @@ if (mouse_check_button_released(mb_left)){
 				self.atk_path = false;
 				self.atk2_count = 0;
 				self.attacking2 = false;
+				con_client.player.in_atk = false;
 			}
 		}
 	}

@@ -13,7 +13,7 @@ projects_server = array_create(0);
 classes_server = array_create(0);
 instances_server = array_create(0);
 turn_player = noone;
-
+turn_count = 0
 
 aux_atk = noone;
 aux_def1 = noone;

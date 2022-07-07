@@ -10,6 +10,7 @@ if (mouse_check_button_released(mb_left)){
 		var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 		_dica.text = "Selecione o Projeto que servirá como SuperClasse (Lembre-se que uma classe Final não pode ser alterada).\nOs Robôs já Instanciados a partir desta classe NÃO serão destruidos.";
 		self.x = -500;
+		con_client.player.in_heranca = true;
 	}
 	
 	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse == noone and self.subclasse == noone){
@@ -26,15 +27,17 @@ if (mouse_check_button_released(mb_left)){
 	}
 	
 	else if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.superclasse != noone and self.subclasse == noone){
-		con_client.player.in_heranca = true;
 		var _inst = instance_position(mouse_x, mouse_y, obj_projeto);
-		if (_inst.player_socket != con_client.server_socket){
+		if (_inst.project_id == self.superclasse.project_id){
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "Não é possível selecionar a Superclasse como Subclasse.";
+		}
+		else if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 			_dica.text = "Não é possível selecionar um projeto do oponente como Subclasse.";
 		}
 		else {
 			self.subclasse = _inst;
-			show_message("ID SUBCLASSE> " + string(self.subclasse.project_id));
 		}
 	}
 }

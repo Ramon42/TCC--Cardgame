@@ -6,6 +6,9 @@ if (instance_position(mouse_x, mouse_y, self) or self.selected){
 }
 if (self.voo){ image_angle = 90; }
 else { image_angle = 0; }
+if (self.inst_sock_id != con_client.server_socket){
+	image_angle = 180;
+}
 draw_self();
 
 if (self.attacking1 or self.attacking2){

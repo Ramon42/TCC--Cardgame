@@ -210,6 +210,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		case network.pass_turn:
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
 			else{ self.turn_player = self.sockets[|0]; }
+			self.turn_count ++;
 			scr_change_player_turn(_sock);
 			
 		break;

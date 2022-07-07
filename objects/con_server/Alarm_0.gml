@@ -12,6 +12,7 @@ if (ds_list_size(self.sockets) == 2){
 	if (_rand == 0){ _scnd = 1; }
 	buffer_seek(buffer, buffer_seek_start, 0);
 	buffer_write(buffer, buffer_u8, network.start_player); //envia essa resposta para o primeiro jogador
+	self.turn_count++;
 	network_send_packet(_sock, buffer, buffer_tell(buffer));
 
 	buffer_seek(buffer, buffer_seek_start, 0);
