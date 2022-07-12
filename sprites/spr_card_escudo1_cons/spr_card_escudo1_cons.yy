@@ -25,10 +25,9 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"9fb9bc88-bb40-4157-b880-fddecddf2aa3","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"21da7c83-24e2-4c2c-9585-df9df545e3ed","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"28fe4ffc-64eb-4a07-a5d0-42a86e79b759","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"48c7e66b-1300-4ddd-ba88-984163d71b60","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"21da7c83-24e2-4c2c-9585-df9df545e3ed","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"LayerId":{"name":"9fb9bc88-bb40-4157-b880-fddecddf2aa3","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"spr_card_escudo1_cons","path":"sprites/spr_card_escudo1_cons/spr_card_escudo1_cons.yy",},"resourceVersion":"1.0","name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
