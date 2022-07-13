@@ -9,7 +9,7 @@
 
 draw_self();
 
-
+draw_text(x, lin1, "EDITANDO UM PROJETO");
 
 /*
 draw_line(x - aux_x/2, y-aux_y, x - aux_x/2, y+aux_y);

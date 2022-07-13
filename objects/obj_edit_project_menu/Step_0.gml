@@ -54,7 +54,7 @@ if (mouse_check_button_released(mb_left)){
 		var _mv = instance_create_depth(0, 0, -3, obj_move_card_menu);
 		_mv.project = self.projeto;
 	}
-	if (position_meeting(mouse_x, mouse_y, obj_projeto)){ //teste pra drag and drop em cima de um projeto
+	if (position_meeting(mouse_x, mouse_y, obj_projeto) and self.moving_card){ //teste pra drag and drop em cima de um projeto
 		var _inst;
 		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if(_inst.id == self.projeto.id){
