@@ -12,6 +12,9 @@ layer = "Instances";
 pth = noone;
 
 
+//limitações
+executou_metodo = false;
+
 selected = false;
 
 attacking1 = false;
