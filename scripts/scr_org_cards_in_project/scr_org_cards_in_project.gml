@@ -9,10 +9,10 @@ function scr_org_cards_in_project(_card_list, _card_list_size){
 		if (instance_exists(_card_list[|i])){
 			switch(_card_list[|i].card_type){
 				case CARDTYPE.CLASSE:
-					_card_list[|i].x = 500;
-					_card_list[|i].y = 500;
-					_card_list[|i].x_pos = 500;
-					_card_list[|i].y_pos = 500;
+					_card_list[|i].x = -500;
+					_card_list[|i].y = -500;
+					_card_list[|i].x_pos = -500;
+					_card_list[|i].y_pos = -500;
 					_card_list[|i].depth = -3;
 					break;
 				

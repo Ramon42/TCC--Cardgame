@@ -88,13 +88,11 @@ if (mouse_check_button_released(mb_left)){
 	
 	if (position_meeting(mouse_x, mouse_y, self.edit_project_bt) and !con_client.player.edit_project){
 		con_client.player.edit_project = true;
-		show_message("SPRITES = " + string(self.sprite_list));
 				//checa se o projeto é do jogador ou do oponente (caso do oponente, só
 								//pode usar cartas como incremento e decremento)
 		if (self.player_socket == con_client.server_socket) {
 			instance_destroy(self.edit_project_bt);
 			instance_destroy(self.create_instance_bt);
-			show_message("O PROJETO PERTENCE AO JOGADOR");
 			//scr_edit_project_create(self, true);
 			scr_edit_project_create_new(self, true);
 		}
@@ -113,7 +111,6 @@ if (mouse_check_button_released(mb_left)){
 			instance_destroy(self.create_instance_bt);
 			scr_send_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
 			scr_call_update();
-			show_message("CRIANDO INSTANCIA DO PROJETO");
 			
 	}
 }

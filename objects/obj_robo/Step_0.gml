@@ -267,21 +267,24 @@ if (mouse_check_button_released(mb_left)){
 				self.atk_list[0, 1] = _alvo1;
 				if(self.forca_var > 0) { self.atk_list[0, 2] = self.forca_var; }
 				else { self.atk_list[0, 2] = self.forca_cons; }
-	
-				self.atk_menu = instance_create_depth(0, 0, -2, obj_atk2_menu);
-				self.atk_menu.menu_list = self.atk_list;
-				self.atk_menu.max_dmg = self.atk_list[0, 2];
+
 				self.atk2_count = 1;
 			}
 		}
 		else if (position_meeting(mouse_x, mouse_y, obj_robo) and self.atk2_count == 1){
 			var _alvo2 = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_alvo2.inst_sock_id != con_client.server_socket){
-				scr_send_atk(self, _alvo2, self.dmg_rest);
+				//scr_send_atk(self, _alvo2, self.dmg_rest);
 				self.pth = path_duplicate(pth_test);
 				var _ang = (point_direction(self.x, self.y, _alvo2.x, _alvo2.y))-90;
 				path_rotate(self.pth, _ang);
 				self.atk_path = false;
+				self.atk_list[1, 0] = self;
+				self.atk_list[1, 1] = _alvo2;
+				self.atk_menu = instance_create_depth(0, 0, -2, obj_atk2_menu);
+				self.atk_menu.menu_list = self.atk_list;
+				self.atk_menu.max_dmg = self.atk_list[0, 2];
+				
 				self.atk2_count = 0;
 				self.attacking2 = false;
 				con_client.player.in_atk = false;

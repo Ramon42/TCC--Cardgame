@@ -172,18 +172,11 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			var _atk_id = buffer_read(_buff, buffer_u32);
 			var _def1_id = buffer_read(_buff, buffer_u32);
 			var _def2_id = buffer_read(_buff, buffer_u32);
-			var _dmg = buffer_read(_buff, buffer_u8);
+			var _dmg1 = buffer_read(_buff, buffer_u8);
+			var _dmg2 = buffer_read(_buff, buffer_u8);
 			var _atk_forca = buffer_read(_buff, buffer_u8);
-			aux_atk = _atk_id;
-			aux_def1 = _def1_id;
-			aux_sock = _sock_op;
-			alarm[1] = 0;
-			//scr_send_atk_animation(_sock_op, _atk_id, _def_id);
-			scr_send_def_choice(_sock_op, _atk_id, _def1_id, _dmg);
-			aux_def1 = _def2_id;
-			alarm[2] = 60;
-			//scr_send_atk_animation(_sock_op, _atk_id, _def_id);
-			scr_send_def_choice(_sock_op, _atk_id, _def2_id, (_atk_forca - _dmg));
+			scr_send_def_choice(_sock_op, _atk_id, _def1_id, _dmg1);
+			scr_send_def_choice(_sock_op, _atk_id, _def2_id, _dmg2);
 		break;
 		
 		case network.instance_dmg_calc:

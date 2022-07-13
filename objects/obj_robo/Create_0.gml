@@ -7,6 +7,8 @@ lin_for = y-aux_y/6;
 lin_esc = y+aux_y/6;
 lin_eng = y+60;;
 
+layer = "Instances";
+
 pth = noone;
 
 
@@ -30,7 +32,6 @@ inverter_bt = noone;
 explodir_bt = noone;
 usar_arma_bt = noone;
 arma = noone;
-agrupar_atacar_bt = noone;
 bt_pos = [[75, 800], [175 ,800],
 		  [75, 875], [175, 875],
 		  [75, 950], [175, 950]];

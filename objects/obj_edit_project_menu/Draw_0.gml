@@ -9,8 +9,9 @@
 
 draw_self();
 
-draw_sprite(spr_lixeira, 0, 100, 800);
 
+
+/*
 draw_line(x - aux_x/2, y-aux_y, x - aux_x/2, y+aux_y);
 draw_line(x + aux_x/2, y-aux_y, x + aux_x/2, y+aux_y);
 
@@ -52,3 +53,4 @@ draw_line(x-aux_x, y+aux_y*0.33, x+aux_x, y+aux_y*0.33);
 //linha 6
 draw_line_color(x-aux_x, lin6, x+aux_x, lin6, c_red, c_red);
 draw_line(x-aux_x, y+aux_y*0.66, x+aux_x, y+aux_y*0.66);
+*/

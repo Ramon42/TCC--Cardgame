@@ -31,4 +31,4 @@ draw_text(startX + sprite_get_width(spr_slider), startY, " Selecionado: " + stri
 show_message("ENTROU AQUI DO DRAY GUI 3");
 */
 
-draw_text((room_width/2) + sprite_get_width(spr_slider), (room_height/2), " Selecionado: " + string(self.slider.amount_current) + " / " +  string(self.slider.amount_max));
+draw_text((room_width/2) + sprite_get_width(spr_slider), (room_height/2), " Selecionado: " + string(self.slider.amount_current) + " / " +  string(self.slider.max_value));
