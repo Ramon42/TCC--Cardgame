@@ -11,6 +11,7 @@ if (mouse_check_button_released(mb_left)){
 					_class.sprite = spr_card_classe_canhao;
 					_class.dano = 8;
 					_class.recarregar = 5;
+					_class.recarregar_count = 5;
 					break;
 			}
 			scr_send_class(_class);

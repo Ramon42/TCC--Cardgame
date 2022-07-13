@@ -90,11 +90,15 @@ if (mouse_check_button_released(mb_left)){
 		for (var i = 0; i < array_length(con_client.class_list); i++){
 			if (con_client.class_list[i, 0] == con_client.server_socket){
 				self.arma = con_client.class_list[i, 2];
-				if (con_client.class_list[i, 2].recarregar_count == con_client.class_list[i, 2].recarregar){
+				show_message("RECARREGAR_COUNT= " + string(self.arma.recarregar_count) + "\nRECARREGAR> " 
+				+string(self.arma.recarregar));
+				if (self.arma.recarregar_count >= self.arma.recarregar){
 					//checa se a arma já carregou para chamar o método de atirar
+					show_message("Pronto para atirar");
 					self.atirar = true;
 					break;
 				}
+				break;
 			}
 		}
 		if (!self.atirar){
@@ -216,6 +220,7 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 		else if (self.atk_direct){
+			show_message("Entrou em ataque direto com arma");
 			scr_send_atk(self, undefined, self.arma.dano);
 			self.arma.recarregar_count = 0;
 			scr_att_recarga(self.arma);

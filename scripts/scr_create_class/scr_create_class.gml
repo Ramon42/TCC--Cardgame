@@ -9,7 +9,7 @@ function scr_create_class(_class, _sock){
 			show_message("ATUALIZANDO CLASSE DO JOGADOR");
 			_check = true;
 			classes_server[i, 0] = _sock;
-			classes_server[i, 1] = _class.class_id;
+			classes_server[i, 1] = _size;
 			classes_server[i, 2] = _class;
 			break;
 		}
@@ -17,7 +17,7 @@ function scr_create_class(_class, _sock){
 	if (!_check){
 		_class.class_id = array_length(con_server.classes_server);
 		classes_server[_size, 0] = _sock; //id do jogador
-		classes_server[_size, 1] = _class.class_id; //id do projeto
+		classes_server[_size, 1] = _size; //id do projeto
 		classes_server[_size, 2] = _class;
 	}
 	scr_update_class(_sock);

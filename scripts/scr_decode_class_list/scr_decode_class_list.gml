@@ -43,7 +43,7 @@ function scr_decode_class_list(_class_list){
 			con_client.class_list[_size, 2] = _inst;
 		}
 		else {
-			with (_array[i, 2]){
+			with (con_client.class_list[o, 2]){
 				image_xscale = 0.5;
 				image_yscale = 0.5;
 				sprite_index = _load.sprite;

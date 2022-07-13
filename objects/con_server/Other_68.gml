@@ -20,6 +20,7 @@ if (server == _event_id) {
 		ds_map_add(clients, _sock, _p); //_sock = key
 		self.alarm[0] = 30;
 		
+		
 		for (var i = 0; i < ds_map_size(sockets); i ++){
 			show_debug_message("VALOR SOCKET: " + string(sockets[|i])); //retorna todos os sockets conectados
 			show_debug_message("VALOR CLIENTS: " + string(clients[? sockets[|i]])); //retorna ID da instancia
@@ -73,6 +74,18 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 	}
 	
 	var _p = clients[? _sock];
+	
+	if (keyboard_check_released(vk_f5)){
+		if (self.turn_count mod 2 == 0){ //jogador par
+			self.turn_player = 0;
+			scr_change_player_turn(_sock);
+		}
+		else {
+			self.turn_player = 1;
+			scr_change_player_turn(_sock);
+		}
+	}
+	
 	switch (_msgid){
 		
 		case network.call_update:
@@ -113,6 +126,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			var _class = json_parse(buffer_read(_buff, buffer_string));
 			scr_create_class(_class, _sock);
 			break;
+			
 		case network.create_instance:
 			var _instance = json_parse(buffer_read(_buff, buffer_string));
 			scr_create_instance(_instance, _sock);

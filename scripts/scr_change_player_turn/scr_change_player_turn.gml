@@ -4,6 +4,7 @@ function scr_change_player_turn(_sock){
 	for (var i = 0; i < array_length(con_server.classes_server); i++){ //atualiza a contagem de recarga das armas
 		if (con_server.classes_server[i, 2].recarregar_count < con_server.classes_server[i, 2].recarregar){
 			con_server.classes_server[i, 2].recarregar_count++;
+			show_message("RELOAD> " + string(con_server.classes_server[i, 2].recarregar_count));
 		}
 	}
 	buffer_seek(con_server.buffer, buffer_seek_start, 0);

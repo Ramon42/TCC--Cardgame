@@ -19,6 +19,8 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.heranca);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.canhao);
+	ds_list_add(cards_in_deck, CARD.m_usar_arma);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.v_energia1);

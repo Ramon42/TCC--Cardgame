@@ -10,7 +10,7 @@ function scr_send_class(_class){
 		class_id : _class.class_id,
 		dano : _class.dano,
 		recarregar : _class.recarregar,
-		recarregar_count : _class.recarregar
+		recarregar_count : _class.recarregar_count
 	}
 
 	var _data = json_stringify(_save_project);
