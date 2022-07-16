@@ -18,6 +18,12 @@ function scr_atribuir_sprite(_val){
 		case CARD.v_escudo2:
 			return spr_card_escudo2_var;
 			break;
+		case CARD.c_escudo1:
+			return spr_card_escudo1_cons;
+			break;
+		case CARD.c_escudo2:
+			return spr_card_escudo2_cons;
+			break;
 		case CARD.projeto:
 			return spr_card_projeto;
 			break;
@@ -26,6 +32,12 @@ function scr_atribuir_sprite(_val){
 			break;
 		case CARD.v_forca2:
 			return spr_card_forca2_var;
+			break;
+		case CARD.c_forca3:
+			return spr_card_forca3_cons;
+			break;
+		case CARD.c_forca4:
+			return spr_card_forca4_cons;
 			break;
 		case CARD.b_voo:
 			return spr_card_voo;

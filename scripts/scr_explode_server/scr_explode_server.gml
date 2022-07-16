@@ -11,8 +11,8 @@ function scr_explode_server(_obj1_id, _obj2_id, _sock, _sock_op){
 	}
 	buffer_seek(buffer, buffer_seek_start, 0);
 	buffer_write(buffer, buffer_u8, network.explode);
-	buffer_write(buffer, buffer_u8, _obj1_id);
-	buffer_write(buffer, buffer_u8, _obj2_id);
+	buffer_write(buffer, buffer_u32, _obj1_id);
+	buffer_write(buffer, buffer_u32, _obj2_id);
 	network_send_packet(_sock, buffer, buffer_tell(buffer));
 	network_send_packet(_sock_op, buffer, buffer_tell(buffer));
 }

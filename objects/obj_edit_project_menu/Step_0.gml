@@ -5,7 +5,7 @@
 
 
 if (mouse_check_button_released(mb_left)){
-	if (position_meeting(mouse_x, mouse_y, obj_add_card_bt)){ //edicionar cartas da mão ao projeto
+	if (position_meeting(mouse_x, mouse_y, obj_add_card_bt)){ //adicionar cartas da mão ao projeto
 		if (ds_list_find_index(card_list, con_client.player.card_selected) == -1){
 			//checa se já não existe outra carta de mesmo nome
 			for (var i = 0; i < card_list_size; i++){
@@ -28,13 +28,15 @@ if (mouse_check_button_released(mb_left)){
 			}
 			//caso passe a verificação:
 			con_client.player.card_selected.in_project = true;
-			ds_list_add(card_list, con_client.player.card_selected);
+			ds_list_add(self.card_list, con_client.player.card_selected);
 			card_list_size = ds_list_size(card_list);
 			array_push(self.projeto.sprite_list, con_client.player.card_selected.sprite_index);
+			
 			scr_add_card_to_project(self.projeto, self.card_list, self.card_list_size);
 			//scr_org_cards_in_project(card_list, card_list_size); //organiza os sprites dentro da interface
 			//scr_edit_add_card(self.projeto);
-			
+			show_message("sprites apos push: " + string(self.projeto.sprite_list));
+			array_push(self.new_sprites, con_client.player.card_selected.sprite_index);
 			//DELETAR AQUI CARTAS DA MÃO ADICIONADAS AO PROJETO
 			var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
 			ds_list_delete(con_client.player.hand, pos);
@@ -45,6 +47,28 @@ if (mouse_check_button_released(mb_left)){
 			show_message("ESTA CARTA JÁ ESTA NO PROJETO");
 		}
 		
+	}
+	if (position_meeting(mouse_x, mouse_y, save_bt)){
+		if (self.alterado){ 
+			show_message("PROJETO ALTERADO, CHAMANDO METODO");
+			show_message("sprites apos SAVE: " + string(self.projeto.sprite_list));
+			scr_edit_add_card(self.projeto, self.new_sprites); 
+		}
+		self.projeto.created = false;
+		scr_set_projects_position(con_client.project_list);
+		scr_call_update();
+		
+		con_client.player.edit_project = false;
+		con_client.player.card_selected = noone;
+		for (var i = 0; i < ds_list_size(self.card_list); i++){
+			instance_destroy(self.card_list[|i]);
+		}
+		for (var i = 0; i < ds_list_size(self.projeto.cards_in_project); i++){
+			instance_destroy(self.projeto.cards_in_project[|i]);
+		}
+		ds_list_destroy(self.card_list);
+		instance_destroy(self.save_bt);
+		instance_destroy(self);
 	}
 	
 	
@@ -69,43 +93,6 @@ if (mouse_check_button_released(mb_left)){
 
 	}
 	//
-
-	
-	if (position_meeting(mouse_x, mouse_y, save_bt)){
-		self.projeto.created = false;
-		scr_set_projects_position(con_client.project_list);
-		if (self.alterado){ scr_edit_add_card(self.projeto); }
-		scr_call_update();
-		
-		con_client.player.edit_project = false;
-		con_client.player.card_selected = noone;
-		for (var i = 0; i < ds_list_size(self.card_list); i++){
-			instance_destroy(self.card_list[|i]);
-		}
-		for (var i = 0; i < ds_list_size(self.projeto.cards_in_project); i++){
-			instance_destroy(self.projeto.cards_in_project[|i]);
-		}
-		ds_list_destroy(self.card_list);
-		instance_destroy(self.save_bt);
-		instance_destroy(self);
-		
-		/*
-		self.projeto.created = false;
-		scr_set_projects_position(con_client.project_list);
-		con_client.player.edit_project = false;
-		
-		if (instance_exists(con_client.player.card_selected)){
-			con_client.player.card_selected = noone;
-		}
-		for (var i = 0; i < ds_list_size(obj_edit_project_menu.card_list); i++){
-			obj_edit_project_menu.card_list[|i].x = -700;
-		}
-		ds_list_destroy(self.card_list);
-		instance_destroy(obj_edit_project_menu);
-		instance_destroy(obj_class_menu_parent_bt);
-		*/
-		
-	}
 	
 }
 

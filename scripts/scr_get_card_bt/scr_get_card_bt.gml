@@ -61,7 +61,13 @@ function scr_get_card_bt(_card_selected){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
 					}
 					break;
-				
+					
+				case CARDTYPE.CONSTANTE:
+					if (con_client.player.create_project or con_client.player.edit_project){
+						instance_create_layer(0, 0, "Instances", obj_add_card_bt);
+					}
+					break;
+					
 				case CARDTYPE.METODO:
 					if (con_client.player.create_project or con_client.player.edit_project){
 						instance_create_layer(0, 0, "Instances", obj_add_card_bt);

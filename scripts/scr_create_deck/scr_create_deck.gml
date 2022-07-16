@@ -17,12 +17,17 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.v_forca2);
 	ds_list_add(cards_in_deck, CARD.m_atacar2);
 	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.canhao);
 	ds_list_add(cards_in_deck, CARD.m_usar_arma);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
-	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	
 	ds_list_add(cards_in_deck, CARD.v_energia1);
 	ds_list_add(cards_in_deck, CARD.v_forca2);
 	ds_list_add(cards_in_deck, CARD.m_atacar1);
@@ -31,6 +36,7 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.projeto);
+	
 	
 	ds_list_add(cards_in_deck, CARD.v_energia1);
 	ds_list_add(cards_in_deck, CARD.v_forca2);

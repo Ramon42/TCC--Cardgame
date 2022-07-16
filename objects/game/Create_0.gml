@@ -28,8 +28,6 @@ enum CARD {
 	c_escudo2,
 	v_forca1,
 	v_forca2,
-	c_forca1,
-	c_forca2,
 	c_forca3,
 	c_forca4,
 	v_incremento1,

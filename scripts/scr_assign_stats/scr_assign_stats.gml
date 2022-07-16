@@ -78,6 +78,18 @@ function scr_assign_stats(_card){
 		_card.valor = 2;
 		_card.texto_auxiliar = "Variável - inteiro - \nForça = 2 -> Causa 2 pontos de dano ao objeto ou fábrica alvo.";
 	}
+	else if (_card.sprite_index == spr_card_forca3_cons){
+		_card.card_subtype = SUBTYPE.FORCA;
+		_card.card_type = CARDTYPE.CONSTANTE;
+		_card.valor = 3;
+		_card.texto_auxiliar = "Constante - inteiro - \nForça = 3 -> Causa 3 pontos de dano ao objeto ou fábrica alvo.";
+	}
+	else if (_card.sprite_index == spr_card_forca4_cons){
+		_card.card_subtype = SUBTYPE.FORCA;
+		_card.card_type = CARDTYPE.CONSTANTE;
+		_card.valor = 4;
+		_card.texto_auxiliar = "Constante - inteiro - \nForça = 4 -> Causa 4 pontos de dano ao objeto ou fábrica alvo.";
+	}
 	else if (_card.sprite_index == spr_card_escudo1_var){
 		_card.card_subtype = SUBTYPE.ESCUDO;
 		_card.card_type = CARDTYPE.VARIAVEL;
@@ -89,6 +101,18 @@ function scr_assign_stats(_card){
 		_card.card_type = CARDTYPE.VARIAVEL;
 		_card.valor = 2;
 		_card.texto_auxiliar = "Variável - inteiro - \nEscudo = 2 -> Resiste a 2 pontos de dano.";
+	}
+	else if (_card.sprite_index == spr_card_escudo1_cons){
+		_card.card_subtype = SUBTYPE.ESCUDO;
+		_card.card_type = CARDTYPE.CONSTANTE;
+		_card.valor = 1;
+		_card.texto_auxiliar = "Constante - inteiro - \nEscudo = 1 -> Resiste a 1 ponto de dano.";
+	}
+	else if (_card.sprite_index == spr_card_escudo2_cons){
+		_card.card_subtype = SUBTYPE.ESCUDO;
+		_card.card_type = CARDTYPE.CONSTANTE;
+		_card.valor = 2;
+		_card.texto_auxiliar = "Constante - inteiro - \nEscudo = 2 -> Resiste a 2 pontos de dano.";
 	}
 	else if (_card.sprite_index == spr_card_energia1){
 		_card.card_subtype = SUBTYPE.ENERGIA;
@@ -113,6 +137,11 @@ function scr_assign_stats(_card){
 		_card.texto_auxiliar = "Método - retorno inteiro - \nAtacar(Objeto) -> Causa FORÇA de dano ao Objeto alvo.";
 	}
 	else if (_card.sprite_index == spr_card_atacar2){
+		_card.card_subtype = SUBTYPE.ATACAR_2;
+		_card.card_type = CARDTYPE.METODO;
+		_card.texto_auxiliar = "Método - retorno inteiro - \nAtacar(Objeto, Objeto) -> Permite atacar até dois objetos numa única jogada. \nCausa FORÇA de dano distribuído entre os Objetos-alvo, conforme escolha do jogador atacante.";
+	}
+		else if (_card.sprite_index == spr_card_atacar2){
 		_card.card_subtype = SUBTYPE.ATACAR_2;
 		_card.card_type = CARDTYPE.METODO;
 		_card.texto_auxiliar = "Método - retorno inteiro - \nAtacar(Objeto, Objeto) -> Permite atacar até dois objetos numa única jogada. \nCausa FORÇA de dano distribuído entre os Objetos-alvo, conforme escolha do jogador atacante.";

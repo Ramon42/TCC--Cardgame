@@ -37,6 +37,8 @@ lin6 = y_pos+aux_y*0.83;
 lines = [lin1, lin2, lin3, lin4, lin5, lin6];
 
 
+
+new_sprites = array_create(0);
 card_list = ds_list_create();
 card_list_size = ds_list_size(card_list);
 belongs_to_player = false;

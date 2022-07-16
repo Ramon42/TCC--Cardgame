@@ -137,6 +137,7 @@ if (mouse_check_button_released(mb_left)){
 	//
 	//metodo inverter
 	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected){
+		show_message(string(self.sprite_list));
 		var _count = 0;
 		for (var i = 0; i < array_length(self.sprite_list); i++){
 			if (self.sprite_list[i] == spr_card_energia1 or self.sprite_list[i] == spr_card_energia2 or
@@ -146,10 +147,11 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (_count >= 2){ break; }
 		}
+		show_message("COUNT> " + string(_count));
 		if (_count >= 2){ scr_inverter_create(self); }
 		else { 
 			var _menu = instance_create_depth(0,0,0,obj_dicas_menu);
-			_menu.dica = "Não é possível inverter duas variáveis desse Projeto pois ele possui menos de duas variáveis"}
+			_menu.text = "Não é possível inverter duas Variáveis desse Projeto pois ele possui menos de duas Variáveis!\nLembre-se que não é possível alterar o valor de uma Constante!"}
 		instance_destroy(self.inverter_bt);
 	}
 	//

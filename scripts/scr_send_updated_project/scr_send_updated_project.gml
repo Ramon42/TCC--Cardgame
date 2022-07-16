@@ -103,10 +103,6 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 			//instance_destroy(_projeto2);
 		}
 	
-		//ENVIANDO PROJETOS ATUALIZADOS PARA O SERVIDOR
-		buffer_seek(con_client.buffer, buffer_seek_start, 0);
-		buffer_write(con_client.buffer, buffer_u8, network.send_edit_project);
-	
 	//chamar: scr_add_value_to_project() ao final para atualizar os valores
 	//talvez atualizar a var card_list_size
 	}

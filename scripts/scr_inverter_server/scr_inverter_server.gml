@@ -74,7 +74,7 @@ function scr_inverter_server(_obj_id, _var1, _var2, _sock ,_sock_op){
 			var _data = json_stringify(_update);
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, network.invert);
-			buffer_write(buffer, buffer_u8, _obj_id);
+			buffer_write(buffer, buffer_u32, _obj_id);
 			buffer_write(buffer, buffer_string, _data);
 			network_send_packet(_sock, buffer, buffer_tell(buffer));
 			network_send_packet(_sock_op, buffer, buffer_tell(buffer));
