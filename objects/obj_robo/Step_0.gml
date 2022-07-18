@@ -90,11 +90,8 @@ if (mouse_check_button_released(mb_left)){
 		for (var i = 0; i < array_length(con_client.class_list); i++){
 			if (con_client.class_list[i, 0] == con_client.server_socket){
 				self.arma = con_client.class_list[i, 2];
-				show_message("RECARREGAR_COUNT= " + string(self.arma.recarregar_count) + "\nRECARREGAR> " 
-				+string(self.arma.recarregar));
 				if (self.arma.recarregar_count >= self.arma.recarregar){
 					//checa se a arma já carregou para chamar o método de atirar
-					show_message("Pronto para atirar");
 					self.atirar = true;
 					break;
 				}
@@ -102,7 +99,8 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 		if (!self.atirar){
-			show_message("A arma ainda está recarregando, aguarde " + string(self.arma.recarregar - self.arma.recarregar_count) + " TURNOS!");
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "A arma ainda está recarregando, aguarde " + string(self.arma.recarregar - self.arma.recarregar_count) + "turnos para recarregar!";
 		}
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
 			if (con_client.server_socket != con_client.instance_list[i, 0]){
@@ -128,7 +126,6 @@ if (mouse_check_button_released(mb_left)){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
-				show_message("ALVO SELECIONADO");
 				scr_send_explode(self, _inst);
 				instance_destroy(obj_combat_bt_base);
 			}
@@ -137,7 +134,6 @@ if (mouse_check_button_released(mb_left)){
 	//
 	//metodo inverter
 	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected){
-		show_message(string(self.sprite_list));
 		var _count = 0;
 		for (var i = 0; i < array_length(self.sprite_list); i++){
 			if (self.sprite_list[i] == spr_card_energia1 or self.sprite_list[i] == spr_card_energia2 or
@@ -147,7 +143,6 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (_count >= 2){ break; }
 		}
-		show_message("COUNT> " + string(_count));
 		if (_count >= 2){ scr_inverter_create(self); }
 		else { 
 			var _menu = instance_create_depth(0,0,0,obj_dicas_menu);
@@ -162,16 +157,17 @@ if (mouse_check_button_released(mb_left)){
 		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)
 		if (position_meeting(mouse_x, mouse_y, self.atk1_bt)) { 
 			self.attacking1 = true; 
-			_text = "SELECIONE UM ROBÔ INIMIGO PARA ATACAR!";
+			_text = "Selecione um Robô inimigo para atacar!";
 		}
 		else if (position_meeting(mouse_x, mouse_y, self.atk2_bt)) { 
 			self.attacking2 = true; 
-			_text = "SELECIONE DOIS ROBÔS INIMIGOS PARA ATACAR!";
+			_text = "Selecione dois Robôs inimigos para atacar!";
 		}
 		if (!self.voo){
 			for (var i = 0; i < array_length(con_client.instance_list); i++){
 				if (con_client.server_socket != con_client.instance_list[i, 0]){
-					show_message(_text);
+					var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+					_dica.text = _text;
 					atk_direct = false;
 					_count ++;
 					if (_count >= 2){
@@ -184,14 +180,16 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (_count < 2 and self.attacking2){
 				self.attacking2 = false;
-				show_message("O OPONENTE POSSUI MENOS DE DOIS ROBÔS, NÃO É POSSÍVEL UTILIZAR ESTE MÉTODO!");
+				var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+				_dica.text = "O oponente possui menos de dois Robôs, não é possível utilizar este Método";
 			}
 		}
 		else {
 			for (var i = 0; i < array_length(con_client.instance_list); i++){
 				if (con_client.server_socket != con_client.instance_list[i, 0]){
 					if (con_client.instance_list[i, 2].voo){
-						show_message("OPONENTE POSSUI ROBÔ(S) VOANDO, " + _text);
+						var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+					    _dica.text = "Oponente possui Robô(s) voando, "+_text;
 						atk_direct = false;
 						_count ++;
 						if (_count >= 2){
@@ -205,7 +203,8 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (_count < 2 and self.attacking2){
 				self.attacking2 = false;
-				show_message("O OPONENTE POSSUI MENOS DE DOIS ROBÔS, NÃO É POSSÍVEL UTILIZAR ESTE MÉTODO!");
+				var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+				_dica.text = "O oponente possui menos de dois Robôs, não é possível utilizar este Método";
 			}
 		}
 	}
@@ -214,7 +213,6 @@ if (mouse_check_button_released(mb_left)){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
-				show_message("ALVO SELECIONADO");
 				scr_send_atk(self, _inst, self.arma.dano);
 				self.arma.recarregar_count = 0;
 				scr_att_recarga(self.arma);
@@ -222,7 +220,6 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 		else if (self.atk_direct){
-			show_message("Entrou em ataque direto com arma");
 			scr_send_atk(self, undefined, self.arma.dano);
 			self.arma.recarregar_count = 0;
 			scr_att_recarga(self.arma);
@@ -235,7 +232,6 @@ if (mouse_check_button_released(mb_left)){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
-				show_message("ALVO SELECIONADO");
 				if(self.forca_var > 0) { scr_send_atk(self, _inst, self.forca_var); }
 				else { scr_send_atk(self, _inst, self.forca_cons); }
 				//significa que selecionou um robo que não é do jogador como alvo
@@ -249,7 +245,6 @@ if (mouse_check_button_released(mb_left)){
 		}
 		else if (atk_direct){
 			//ataca diretamente  
-			show_message("ATACANDO DIRETO");
 			if(self.forca_var > 0) { scr_send_atk(self, undefined, self.forca_var); }
 			else { scr_send_atk(self, undefined, self.forca_cons); }
 			self.attacking1 = false;

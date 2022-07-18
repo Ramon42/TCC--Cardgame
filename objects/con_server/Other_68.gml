@@ -70,7 +70,7 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 	var _msgid = buffer_read(_buff, buffer_u8);
 	
 	if (_msgid == 55){
-		show_message("MENSAGEM RECEBIDA DE: " + string(_sock));
+		//show_message("MENSAGEM RECEBIDA DE: " + string(_sock));
 	}
 	
 	var _p = clients[? _sock];
@@ -135,14 +135,14 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 		
 		case network.send_edit_project:
 			var _att_project = json_parse(buffer_read(_buff, buffer_string));
-			show_message("PROJETO ATUALIZADO RECEBIDO> " + string(_att_project));
+			//show_message("PROJETO ATUALIZADO RECEBIDO> " + string(_att_project));
 			scr_edit_project(_att_project, _sock);
 			break;
 			
 		case network.heranca:
 			var _projeto = json_parse(buffer_read(_buff, buffer_string));
 			var _id = buffer_read(_buff, buffer_u32);
-			show_message("ID SERVIDOR> " + string(_id));
+			//show_message("ID SERVIDOR> " + string(_id));
 			scr_send_heranca_servidor(_projeto, _id, _sock);
 		break;
 		

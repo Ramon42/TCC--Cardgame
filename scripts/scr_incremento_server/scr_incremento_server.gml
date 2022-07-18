@@ -1,49 +1,49 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_incremento_server(_proj_id, _var_sub, _incr_sub, _sock, _sock_op){
-	show_message("\nSUBTYPE RECEBIDO> " + string(_incr_sub));
+	show_debug_message("\nSUBTYPE RECEBIDO> " + string(_incr_sub));
 	for (var i = 0; i < array_length(con_server.projects_server); i++){
 		if (con_server.projects_server[i, 1] == _proj_id){
-			show_message("ACHOU \nPROJETO> " + string(_proj_id) + "\nINCREMENTO SUBTYPE> " + string(_incr_sub));
+			show_debug_message("ACHOU \nPROJETO> " + string(_proj_id) + "\nINCREMENTO SUBTYPE> " + string(_incr_sub));
 			switch (_var_sub){
 				case SUBTYPE.FORCA:
 					switch (_incr_sub){
 						case SUBTYPE.INCREMENTO1:
 							con_server.projects_server[i, 2].forca_var += 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
 						break;
 						case SUBTYPE.INCREMENTO2:
 							con_server.projects_server[i, 2].forca_var += 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
 						break;
 						case SUBTYPE.DECREMENTO1:
 							con_server.projects_server[i, 2].forca_var -= 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
 						break;
 						case SUBTYPE.DECREMENTO2:
 							con_server.projects_server[i, 2].forca_var -= 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].forca_var));
 						break;
 					}
 				break;
 				case SUBTYPE.ENERGIA:
-				show_message("ENTROY SUBTYPE ENERGIA");
+				show_debug_message("ENTROY SUBTYPE ENERGIA");
 					switch (_incr_sub){
 						case SUBTYPE.INCREMENTO1:
 							con_server.projects_server[i, 2].energia += 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
 						break;
 						case SUBTYPE.INCREMENTO2:
 							con_server.projects_server[i, 2].energia += 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
 						break;
 						case SUBTYPE.DECREMENTO1:
 							con_server.projects_server[i, 2].energia -= 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
 						break;
 						case SUBTYPE.DECREMENTO2:
 							con_server.projects_server[i, 2].energia -= 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].energia));
 						break;
 					}
 				break;
@@ -51,19 +51,19 @@ function scr_incremento_server(_proj_id, _var_sub, _incr_sub, _sock, _sock_op){
 					switch (_incr_sub){
 						case SUBTYPE.INCREMENTO1:
 							con_server.projects_server[i, 2].escudo_var += 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
 							break;
 						case SUBTYPE.INCREMENTO2:
 							con_server.projects_server[i, 2].escudo_var += 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
 							break;
 						case SUBTYPE.DECREMENTO1:
 							con_server.projects_server[i, 2].escudo_var -= 1;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
 							break;
 						case SUBTYPE.DECREMENTO2:
 							con_server.projects_server[i, 2].escudo_var -= 2;
-							show_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
+							show_debug_message("NOVO VALOR> " + string(con_server.projects_server[i, 2].escudo_var));
 							break;
 					}
 					break;

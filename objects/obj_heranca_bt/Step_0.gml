@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+if(array_length(con_client.player.player_projects) <= 1){
+	instance_destroy(self);
+}
+
 if (mouse_check_button_released(mb_left)){
 	if (!position_meeting(mouse_x,mouse_y,self) and !self.dica){
 		instance_destroy(self);
@@ -8,7 +12,7 @@ if (mouse_check_button_released(mb_left)){
 	if (position_meeting(mouse_x, mouse_y, self) and !self.dica){
 		self.dica = true;
 		var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
-		_dica.text = "Selecione o Projeto que servirá como SuperClasse (Lembre-se que uma classe Final não pode ser alterada).\nOs Robôs já Instanciados a partir desta classe NÃO serão destruidos.";
+		_dica.text = "Selecione o Projeto que servirá como SuperClasse (Lembre-se que uma classe FINAL não pode ser alterada e uma classe ABSTRATA não pode ser instanciada).\nOs Robôs já Instanciados a partir desta classe NÃO serão destruidos.";
 		self.x = -500;
 		con_client.player.in_heranca = true;
 	}
@@ -17,7 +21,7 @@ if (mouse_check_button_released(mb_left)){
 		var _inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
-			_dica.text = "Não é possível selecionar um projeto do oponente como SuperClasse.";
+			_dica.text = "Não é possível selecionar um Projeto do oponente como SuperClasse.";
 		}
 		else {
 			self.superclasse = _inst;
@@ -34,7 +38,15 @@ if (mouse_check_button_released(mb_left)){
 		}
 		else if (_inst.player_socket != con_client.server_socket){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
-			_dica.text = "Não é possível selecionar um projeto do oponente como Subclasse.";
+			_dica.text = "Não é possível selecionar um Projeto do oponente como Subclasse.";
+		}
+		else if (_inst.final){
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "Projetos do tipo FINAL não podem ser alteradas, selecione outro Projeto como Subclasse.";
+		}
+		else if (_inst.abstract){
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "Projetos do tipo ABSTRATO não podem ser instanciados, selecione outro Projeto como Subclasse.";
 		}
 		else {
 			self.subclasse = _inst;

@@ -109,7 +109,7 @@ if (socket == _event_id){
 			show_debug_message("_TURN_PLAYER> " + string(_turn_player));
 			show_debug_message("SELF.SOCKET> " + string(self.socket));
 			if (_turn_player == self.server_socket){
-				show_message("STARTANDO TURNO");
+				//show_message("STARTANDO TURNO");
 				con_client.player.state = PLAYERSTATE.DRAW_PHASE;
 			}
 		break;
@@ -117,7 +117,7 @@ if (socket == _event_id){
 			
 		
 		case 42:
-			show_message("RETORNO SOCKET" + string(self.socket));
+			//show_message("RETORNO SOCKET" + string(self.socket));
 			buffer_seek(buffer, buffer_seek_start, 0);
 			buffer_write(buffer, buffer_u8, 55);
 			network_send_packet(global.socket, buffer, buffer_tell(buffer));

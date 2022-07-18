@@ -69,7 +69,7 @@ function scr_send_heranca(_superclasse, _subclasse){
 		_subclasse.sprite_list[i] == spr_card_escudo2_cons or
 		_subclasse.sprite_list[i] == spr_card_energia1 or 
 		_subclasse.sprite_list[i] == spr_card_energia2){
-			show_message("Adicionando sprite> " + string(sprite_get_name(_subclasse.sprite_list[i])) + " da subclasse");
+			//show_message("Adicionando sprite> " + string(sprite_get_name(_subclasse.sprite_list[i])) + " da subclasse");
 			array_push(_sprites, _subclasse.sprite_list[i]);
 		}
 	}

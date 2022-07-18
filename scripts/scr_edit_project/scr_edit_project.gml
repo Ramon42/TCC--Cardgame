@@ -5,7 +5,6 @@ function scr_edit_project(_project, _sock){
 	for (var i = _size-1; i >= 0; i--){
 		if (projects_server[i, 0] == _sock and projects_server[i, 1] == _project.project_id){ //compara id do projeto armazenado com id recebido
 			array_delete(projects_server, i, 1); //deleta o projeto antigo
-			show_message("PROJETO DELETADO NO SERVIDOR");
 			break;
 		}
 	}

@@ -26,15 +26,18 @@ if (mouse_check_button_released(mb_left)){
 					
 					//mensagens personalizadas para ajudar o jogador no erro ficarão aqui
 					if (card_list[|i].card_type == CARDTYPE.VARIAVEL){
-						show_message("Já existe uma variavel de mesmo nome");
+						var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+						_dica.text = "Já existe uma Variável de mesmo nome!";
 						exit;
 					}
 					else if (card_list[|i].card_type == CARDTYPE.CONSTANTE){
-						show_message("Já existe uma constante de mesmo nome");
+						var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+						_dica.text = "Já existe uma Variável de mesmo nome!";
 						exit;
 					}
 					else if (card_list[|i].card_type == CARDTYPE.METODO){
-						show_message("Já existe um método com a mesma assinatura");
+						var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+						_dica.text = "Já existe uma Variável de mesmo nome!";
 						exit;
 					}
 				}
@@ -52,7 +55,8 @@ if (mouse_check_button_released(mb_left)){
 			ds_list_delete(con_client.player.hand, pos);
 		}
 		else{
-			show_message("ESTA CARTA JÁ ESTA NO PROJETO");
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "Esta carta já pertence a este Projeto!";
 		}
 	}
 }

@@ -13,15 +13,18 @@ if (mouse_check_button_released(mb_left)){
 					
 					//mensagens personalizadas para ajudar o jogador no erro ficarão aqui
 					if (card_list[|i].card_type == CARDTYPE.VARIAVEL){
-						show_message("Já existe uma variavel de mesmo nome");
+						var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+						_dica.text = "Já existe uma Variavel de mesmo nome neste projeto!";
 						exit;
 					}
 					else if (card_list[|i].card_type == CARDTYPE.CONSTANTE){
-						show_message("Já existe uma constante de mesmo nome");
+						var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+						_dica.text = "Já existe uma Constante de mesmo nome neste projeto!";
 						exit;
 					}
 					else if (card_list[|i].card_type == CARDTYPE.METODO){
-						show_message("Já existe um método com a mesma assinatura");
+						var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+						_dica.text = "Já existe um Método de mesmo nome neste projeto!";
 						exit;
 					}
 				}
@@ -35,7 +38,6 @@ if (mouse_check_button_released(mb_left)){
 			scr_add_card_to_project(self.projeto, self.card_list, self.card_list_size);
 			//scr_org_cards_in_project(card_list, card_list_size); //organiza os sprites dentro da interface
 			//scr_edit_add_card(self.projeto);
-			show_message("sprites apos push: " + string(self.projeto.sprite_list));
 			array_push(self.new_sprites, con_client.player.card_selected.sprite_index);
 			//DELETAR AQUI CARTAS DA MÃO ADICIONADAS AO PROJETO
 			var pos = ds_list_find_index(con_client.player.hand, con_client.player.card_selected);
@@ -44,14 +46,13 @@ if (mouse_check_button_released(mb_left)){
 			self.alterado = true;
 		}
 		else{
-			show_message("ESTA CARTA JÁ ESTA NO PROJETO");
+			var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+			_dica.text = "Esta carta já pertence a este Projeto!";
 		}
 		
 	}
 	if (position_meeting(mouse_x, mouse_y, save_bt)){
 		if (self.alterado){ 
-			show_message("PROJETO ALTERADO, CHAMANDO METODO");
-			show_message("sprites apos SAVE: " + string(self.projeto.sprite_list));
 			scr_edit_add_card(self.projeto, self.new_sprites); 
 		}
 		self.projeto.created = false;
@@ -82,11 +83,10 @@ if (mouse_check_button_released(mb_left)){
 		var _inst;
 		_inst = instance_position(mouse_x, mouse_y, obj_projeto);
 		if(_inst.id == self.projeto.id){
-			show_message("Esta carta já pertence a esse Projeto");
+			var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+			_dica.text = "Esta carta já pertence a este Projeto!";
 		}
 		else { //aqui deve ser atualizado tanto o projeto atual (saida da carta) quanto o novo alvo da carta
-			show_message(_inst.id);
-			show_message(con_client.player.card_selected);
 			con_client.player.card_selected.image_alpha = 0.6;
 			scr_send_updated_project(self.projeto, _inst, con_client.player.card_selected);
 		}

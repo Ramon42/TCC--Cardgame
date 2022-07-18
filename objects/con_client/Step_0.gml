@@ -22,6 +22,7 @@ if (mouse_check_button_released(mb_left)){ //draw card
 	
 	if (instance_find(obj_create_class_menu, 0) != noone) {
 		if (position_meeting(mouse_x, mouse_y, obj_create_class_menu.save_bt)){
+			con_client.player.criou_projeto = true;
 			player.card_selected = noone;
 			scr_send_project(obj_create_class_menu.projeto);
 			instance_destroy(obj_create_class_menu.projeto);

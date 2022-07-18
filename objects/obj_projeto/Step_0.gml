@@ -99,7 +99,8 @@ if (mouse_check_button_released(mb_left)){
 		else {
 			instance_destroy(self.edit_project_bt);
 			instance_destroy(self.create_instance_bt);
-			show_message("O PROJETO PERTENCE AO OPONENTE");
+			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+			_dica.text = "O Projeto percence ao oponente!";
 			//scr_edit_project_create(self, false);
 			scr_edit_project_create_new(self, false);
 		}

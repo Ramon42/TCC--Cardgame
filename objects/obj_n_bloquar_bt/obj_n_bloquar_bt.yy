@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_cancel",
-    "path": "sprites/spr_cancel/spr_cancel.yy",
+    "name": "spr_nao_bloquear",
+    "path": "sprites/spr_nao_bloquear/spr_nao_bloquear.yy",
   },
   "solid": false,
   "visible": true,

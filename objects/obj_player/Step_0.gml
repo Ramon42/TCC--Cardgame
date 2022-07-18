@@ -5,7 +5,7 @@
 if (!is_local) { exit; }
 
 if (instance_number(obj_def_menu) < 1 and array_length(self.def_menu_queue) > 0){ //caso já não exista esse menu
-	show_message("CRIANDO MENU DEFENDER");
+	//show_message("CRIANDO MENU DEFENDER");
 	var _menu = instance_create_depth(0, 0, -5, obj_def_menu);
 	_menu.atk_recebido = self.def_menu_queue[0, 0];
 	_menu.escudo = self.def_menu_queue[0, 1]

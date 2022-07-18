@@ -35,10 +35,10 @@ inverter_bt = noone;
 explodir_bt = noone;
 usar_arma_bt = noone;
 arma = noone;
-bt_pos = [[75, 800], [175 ,800],
-		  [75, 875], [175, 875],
-		  [75, 950], [175, 950]];
-
+bt_pos = [[75, 680], [175 ,680],
+		  [75, 755], [175, 755],
+		  [75, 830], [175, 830]];
+		  
 defending = false;
 atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 

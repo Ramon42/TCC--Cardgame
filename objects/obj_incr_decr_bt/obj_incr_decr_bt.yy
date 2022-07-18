@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_turn_phase",
-    "path": "sprites/spr_turn_phase/spr_turn_phase.yy",
+    "name": "spr_incremento",
+    "path": "sprites/spr_incremento/spr_incremento.yy",
   },
   "solid": false,
   "visible": true,

@@ -6,45 +6,45 @@ var _lf_w, _lf_h, _str;
 if (con_client.player != noone){
 	switch(con_client.player.state){
 		case PLAYERSTATE.MAIN_PHASE1:
-			_str = "PRINCIPAL";
+			_str = "FASE PRINCIPAL";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(_lf_w/2), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 	
 		case PLAYERSTATE.BATTLE_PHASE:
-			_str = "BATALHA";
+			_str = "FASE DE BATALHA";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(sprite_width/4), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 	
 		case PLAYERSTATE.MAIN_PHASE2:
-			_str = "PRINCIPAL";
+			_str = "FASE PRINCIPAL 2";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(sprite_width/4), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 	
 		case PLAYERSTATE.ENEMY_TURN:
-			_str = "INIMIGO";
+			_str = "TURNO DO OPONENTE";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(_lf_w/2), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 		
 		case PLAYERSTATE.DRAW_PHASE:
-			_str = "COMPRA";
+			_str = "FASE DE COMPRA";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(_lf_w/2), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 		
 		case PLAYERSTATE.END_PHASE:
-			_str = "FIM";
+			_str = "FASE FINAL";
 			_lf_w = string_width(_str);
 			_lf_h = string_height(_str);
-			draw_text(x-(_lf_w/2), y-(_lf_h/2), _str);
+			draw_text(814-(_lf_w/2), 607-(_lf_h/2), _str);
 		break;
 	}
 }

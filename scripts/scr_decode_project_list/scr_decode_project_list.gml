@@ -18,7 +18,6 @@ function scr_decode_project_list(_project_list){ //arrumar todo esse método, ch
 			}
 		}
 		if (!_find){
-			show_message("NÃO ACHOU PROJETO ID> " + string(con_client.project_list[o, 1]));
 			instance_destroy(con_client.project_list[o, 2]);
 			array_delete(con_client.project_list, o, 1);
 		}

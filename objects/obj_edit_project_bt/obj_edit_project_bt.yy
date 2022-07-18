@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_add_attr",
-    "path": "sprites/spr_add_attr/spr_add_attr.yy",
+    "name": "spr_edit_project",
+    "path": "sprites/spr_edit_project/spr_edit_project.yy",
   },
   "solid": false,
   "visible": true,

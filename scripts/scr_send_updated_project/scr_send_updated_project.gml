@@ -9,7 +9,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 	if (_projeto2 != undefined){
 		for (var i = 0; i < array_length(_projeto2.sprite_list); i++){
 			if(_card.sprite_index == _projeto2.sprite_list){
-				show_message("NÃO É POSSÍVEL ADICIONAR ESTA CARTA AO PROJETO POIS ELE JÁ POSSUI UMA SEMELHANTE!");
+				show_debug_message("NÃO É POSSÍVEL ADICIONAR ESTA CARTA AO PROJETO POIS ELE JÁ POSSUI UMA SEMELHANTE!");
 				_move = false;
 				break;
 			}
@@ -55,7 +55,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 				//
 				obj_edit_project_menu.card_list[|i].x = -700;
 				aux_del = ds_list_find_index(obj_edit_project_menu.card_list, _card);
-				show_message("AUX DEL>>> " + string(aux_del));
+				show_debug_message("AUX DEL>>> " + string(aux_del));
 				ds_list_delete(obj_edit_project_menu.card_list, aux_del);
 				//instance_destroy(_aux);
 			
@@ -71,7 +71,7 @@ function scr_send_updated_project(_projeto1, _projeto2 = undefined, _card){ //_p
 		if (_projeto2 != undefined){
 			ds_list_add(_projeto2.cards_in_project, _card); //original é ds_list_add(_projeto2.cards_in_project, _card);
 			array_push(_projeto2.sprite_list, _card.sprite_index);
-			show_message("CARTA ENVIADA PARA O NOVO PROJETO");
+			show_debug_message("CARTA ENVIADA PARA O NOVO PROJETO");
 			scr_add_value_to_project_new(_projeto2.cards_in_project, _projeto2);
 			//enviando atualização do projeto que recebeu a carta
 			buffer_seek(con_client.buffer, buffer_seek_start, 0);

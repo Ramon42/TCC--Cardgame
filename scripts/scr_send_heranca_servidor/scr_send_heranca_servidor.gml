@@ -5,7 +5,6 @@ function scr_send_heranca_servidor(_projeto, _id, _sock){
 	for (var i = 0; i < _size; i++){
 		if (con_server.projects_server[i, 1] == _id){ //compara id do projeto armazenado com id recebido
 			array_delete(con_server.projects_server, i, 1); //deleta o projeto antigo
-			show_message("SUBCLASSE DELETADA NO SERVIDOR");
 			break;
 		}
 	}

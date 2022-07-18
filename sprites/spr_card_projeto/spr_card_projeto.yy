@@ -22,7 +22,7 @@
   },
   "swatchColours": null,
   "gridX": 16,
-  "gridY": 16,
+  "gridY": 32,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_projeto/spr_card_projeto.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"d57581c5-e28f-45cc-a84a-298ab1b5fcbd","path":"sprites/spr_card_projeto/spr_card_projeto.yy",},"LayerId":{"name":"637a1e81-1357-44e1-b616-8b42a8cdd5c6","path":"sprites/spr_card_projeto/spr_card_projeto.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},

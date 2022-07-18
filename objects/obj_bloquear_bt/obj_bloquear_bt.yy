@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_save_class",
-    "path": "sprites/spr_save_class/spr_save_class.yy",
+    "name": "spr_bloquear",
+    "path": "sprites/spr_bloquear/spr_bloquear.yy",
   },
   "solid": false,
   "visible": true,

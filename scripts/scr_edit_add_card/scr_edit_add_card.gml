@@ -17,7 +17,6 @@ for (var o = 0; o < array_length(_new_sprites); o++){
 
 buffer_seek(con_client.buffer, buffer_seek_start, 0);
 buffer_write(con_client.buffer, buffer_u8, network.send_edit_project);
-show_message("SPRITELIST EM EDIT ADD CARD> "+ string(_projeto.sprite_list));
 var _save_project = {
 	sprite_list : _projeto.sprite_list,
 	player_socket : con_client.server_socket,

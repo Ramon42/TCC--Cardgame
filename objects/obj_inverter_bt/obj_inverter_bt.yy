@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_save_class",
-    "path": "sprites/spr_save_class/spr_save_class.yy",
+    "name": "spr_salvar_inverter",
+    "path": "sprites/spr_salvar_inverter/spr_salvar_inverter.yy",
   },
   "solid": false,
   "visible": true,
