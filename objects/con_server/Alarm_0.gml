@@ -2,10 +2,10 @@
 // You can write your code in this editor
 
 if (ds_list_size(self.sockets) == 2){
-	//self.first_player = irandom_range(0, 1);
+	self.first_player = irandom_range(0, 1);
 	var _scnd = 0;
-	//var _sock = self.sockets[|self.first_player]; //jogador 1
-	var _sock = self.sockets[|0] //SÓ PRA TESTES, O PRIMEIRO A SE CONECTAR SEMPRE COMEÇA
+	var _sock = self.sockets[|self.first_player]; //jogador 1
+	//var _sock = self.sockets[|0] //SÓ PRA TESTES, O PRIMEIRO A SE CONECTAR SEMPRE COMEÇA
 	self.turn_player = _sock;
 	if (self.first_player == 0){ _scnd = 1; }
 	buffer_seek(buffer, buffer_seek_start, 0);

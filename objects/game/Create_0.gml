@@ -5,7 +5,7 @@ draw_set_font(fn_padrao);
 randomise();
 global.rm_width = 1920;
 global.rm_height = 1080;
-global.fullscreen = false;
+global.fullscreen = true;
 
 
 enum CARD {
@@ -37,6 +37,8 @@ enum CARD {
 	robo,
 	projeto,
 	canhao,
+	blaster,
+	railgun,
 	projeto_final,
 	superclasse_atacar1,
 	superclasse_atacar2,

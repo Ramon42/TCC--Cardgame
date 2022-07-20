@@ -106,10 +106,9 @@ if (mouse_check_button_released(mb_left)){
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
 			if (con_client.server_socket != con_client.instance_list[i, 0]){
 				atk_direct = false;
-				_count ++;
-				if (_count >= 2){
-					break;
-				}
+				var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+				_dica.text = "Selecione um Robô inimigo para atacar!";
+				break;
 			}
 			else if (_count == 0){
 				atk_direct = true;

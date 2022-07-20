@@ -12,30 +12,24 @@ function scr_menu_defender(_atk_id, _def_id, _dmg){
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
 		if (con_client.instance_list[i, 1] == _def_id){
 			if (con_client.instance_list[i, 2].defender){
+				var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+				_dica.text = "Oponente atacou seu Robô, mas ele possui o Método Defender(Ataque), logo, sofrerá dano igual a ATAQUE RECEBIDO - ESCUDO";
 				_def = con_client.instance_list[i, 2];
-				if (instance_number(obj_def_menu) < 1){ //caso já não exista esse menu
-					//show_message("CRIANDO MENU DEFENDER");
-					var _menu = instance_create_depth(0, 0, -5, obj_def_menu);
-					_menu.atk_recebido = _dmg;
-					if (_def.escudo_var != 0){ _menu.escudo = _def.escudo_var; }
-					else { _menu.escudo = _def.escudo_cons; }
-					_menu.atk = _atk;
-					_menu.def = _def;
-					break;
-				}
-				else {
-					var _size = array_length(con_client.player.def_menu_queue);
-					con_client.player.def_menu_queue[_size, 0] = _dmg;
-					if (_def.escudo_var != 0){ con_client.player.def_menu_queue[_size, 1] = _def.escudo_var; }
-					else { con_client.player.def_menu_queue[_size, 1] = _def.escudo_cons; }
-					con_client.player.def_menu_queue[_size, 2] = _atk;
-					con_client.player.def_menu_queue[_size, 3] = _def;
-				}
+				buffer_seek(con_client.buffer, buffer_seek_start, 0);
+				buffer_write(con_client.buffer, buffer_u8, network.instance_dmg_calc);
+				buffer_write(con_client.buffer, buffer_u32, _atk_id);
+				buffer_write(con_client.buffer, buffer_u32, _def_id);
+				buffer_write(con_client.buffer, buffer_u8, _dmg);
+				buffer_write(con_client.buffer, buffer_bool, true);
+				network_send_packet(con_client.socket, con_client.buffer, buffer_tell(con_client.buffer));
+				break;
 			}
 		}
 	}
 	if (_def == noone){ //caso objeto alvo não tenha metodo de defender
 		//show_message("ALVO NÃO PODE BLOQUEAR");
+		var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
+		_dica.text = "Oponente atacou seu Robô que não possui o Método Defender(Ataque), logo, ele sofrerá dano na ENERGIA igual à FORÇA do Robô atacante.";
 		buffer_seek(con_client.buffer, buffer_seek_start, 0);
 		buffer_write(con_client.buffer, buffer_u8, network.instance_dmg_calc);
 		buffer_write(con_client.buffer, buffer_u32, _atk_id);

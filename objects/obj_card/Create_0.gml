@@ -52,8 +52,8 @@ enum SUBTYPE //tipos especificos de cartas
 	SUPERCLASSE_DEFENDER2,
 	SUPERCLASSE_VOAR,
 	HERANCA,
-	FUZIL, 
-	BAZUCA,
+	BLASTER, 
+	RAILGUN,
 	CANHAO, //
 	
 	ROBO, //OBJETOS

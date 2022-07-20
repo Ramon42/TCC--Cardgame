@@ -105,6 +105,12 @@ function scr_atribuir_sprite(_val){
 		case CARD.canhao:
 			return spr_card_classe_canhao;
 			break;
+		case CARD.blaster:
+			return spr_card_classe_blaster;
+			break;
+		case CARD.railgun:
+			return spr_card_classe_railgun;
+			break;
 		case CARD.v_incremento1:
 			return spr_card_incremento1;
 			break;

@@ -8,7 +8,7 @@ function scr_playerstate_battle(){
 		}
 		
 		if (position_meeting(mouse_x, mouse_y, obj_advance_turn_phase_bt)){
-			con_client.player.state = PLAYERSTATE.MAIN_PHASE2;
+			con_client.player.state = PLAYERSTATE.END_PHASE;
 		}
 		
 	}

@@ -218,6 +218,9 @@ else if (_event_id != global.socket){ //recebendo data de outro client
 			if (self.turn_player == self.sockets[|0]){ self.turn_player = self.sockets[|1]; }
 			else{ self.turn_player = self.sockets[|0]; }
 			self.turn_count ++;
+			if (turn_count == 2){ //segundo jogador compra sua mão
+				scr_draw_card_server(_sock_op, 7, scr_find_op(_p));
+			}
 			scr_change_player_turn(_sock);
 			
 		break;

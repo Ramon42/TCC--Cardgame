@@ -11,6 +11,22 @@ if (mouse_check_button_released(mb_left)){
 					case SUBTYPE.CANHAO:
 						_class.type = SUBTYPE.CANHAO;
 						_class.sprite = spr_card_classe_canhao;
+						_class.dano = 5;
+						_class.recarregar = 3;
+						_class.recarregar_count = 3;
+						break;
+						
+					case SUBTYPE.BLASTER:
+						_class.type = SUBTYPE.CANHAO;
+						_class.sprite = spr_card_classe_canhao;
+						_class.dano = 4;
+						_class.recarregar = 2;
+						_class.recarregar_count = 2;
+						break;
+						
+					case SUBTYPE.RAILGUN:
+						_class.type = SUBTYPE.CANHAO;
+						_class.sprite = spr_card_classe_canhao;
 						_class.dano = 8;
 						_class.recarregar = 5;
 						_class.recarregar_count = 5;
