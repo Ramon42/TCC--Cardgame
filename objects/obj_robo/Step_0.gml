@@ -29,11 +29,11 @@ if (mouse_check_button_released(mb_left)){
 		if (self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.MAIN_PHASE1){
 			_pos = 0;
 			self.selected = true;
-			if (self.voar){
+			if (self.voar and !self.executou_metodo){
 				self.voar_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_voar_bt);
 				_pos++;
 			}
-			if (self.inverter){
+			if (self.inverter and !self.executou_metodo){
 				self.inverter_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_invert_bt);
 				_pos++;
 			}
@@ -45,7 +45,7 @@ if (mouse_check_button_released(mb_left)){
 			con_client.player.card_selected = noone;
 			//with(obj_card_preview){ instance_destroy(); }
 			//instance_destroy(obj_action_bt_parent);
-			if (self.usar_arma){
+			if (self.usar_arma and !self.executou_metodo){
 				for (var i = 0; i < array_length(con_client.class_list); i++){
 					if (con_client.class_list[i, 0] == con_client.server_socket){
 						self.usar_arma_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_usar_arma_bt);
@@ -54,16 +54,16 @@ if (mouse_check_button_released(mb_left)){
 					}
 				}
 			}
-			if (self.atacar_1){
+			if (self.atacar_1 and !self.executou_metodo){
 				//caso possa usar o método atacar_1
 				self.atk1_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_atk1_bt);
 				_pos++;
 			}
-			if (self.atacar_2){
+			if (self.atacar_2 and !self.executou_metodo){
 				self.atk2_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1],0 -1, obj_atk2_bt);
 				_pos++;
 			}
-			if (self.explodir){
+			if (self.explodir and !self.executou_metodo){
 				self.selected = true;
 				self.explodir_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_explodir_bt);
 				_pos++;
@@ -80,6 +80,7 @@ if (mouse_check_button_released(mb_left)){
 			self.voo = true;
 		}
 		scr_update_voar(self.inst_id, self.voo);
+		self.executou_metodo = true;
 		instance_destroy(self.voar_bt);
 	}
 	//
@@ -127,6 +128,7 @@ if (mouse_check_button_released(mb_left)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
 				scr_send_explode(self, _inst);
+				self.executou_metodo = true;
 				instance_destroy(obj_combat_bt_base);
 			}
 		}
@@ -143,7 +145,10 @@ if (mouse_check_button_released(mb_left)){
 			}
 			if (_count >= 2){ break; }
 		}
-		if (_count >= 2){ scr_inverter_create(self); }
+		if (_count >= 2){ 
+			scr_inverter_create(self); 
+			self.executou_metodo = true;
+			}
 		else { 
 			var _menu = instance_create_depth(0,0,0,obj_dicas_menu);
 			_menu.text = "Não é possível inverter duas Variáveis desse Projeto pois ele possui menos de duas Variáveis!\nLembre-se que não é possível alterar o valor de uma Constante!"}
@@ -213,6 +218,7 @@ if (mouse_check_button_released(mb_left)){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
+				self.executou_metodo = true;
 				scr_send_atk(self, _inst, self.arma.dano);
 				self.arma.recarregar_count = 0;
 				scr_att_recarga(self.arma);
@@ -220,6 +226,7 @@ if (mouse_check_button_released(mb_left)){
 			}
 		}
 		else if (self.atk_direct){
+			self.executou_metodo = true;
 			scr_send_atk(self, undefined, self.arma.dano);
 			self.arma.recarregar_count = 0;
 			scr_att_recarga(self.arma);
@@ -232,6 +239,7 @@ if (mouse_check_button_released(mb_left)){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
+				self.executou_metodo = true;
 				if(self.forca_var > 0) { scr_send_atk(self, _inst, self.forca_var); }
 				else { scr_send_atk(self, _inst, self.forca_cons); }
 				//significa que selecionou um robo que não é do jogador como alvo
@@ -245,6 +253,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 		else if (atk_direct){
 			//ataca diretamente  
+			self.executou_metodo = true;
 			if(self.forca_var > 0) { scr_send_atk(self, undefined, self.forca_var); }
 			else { scr_send_atk(self, undefined, self.forca_cons); }
 			self.attacking1 = false;
@@ -271,6 +280,7 @@ if (mouse_check_button_released(mb_left)){
 		else if (position_meeting(mouse_x, mouse_y, obj_robo) and self.atk2_count == 1){
 			var _alvo2 = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_alvo2.inst_sock_id != con_client.server_socket){
+				self.executou_metodo = true;
 				//scr_send_atk(self, _alvo2, self.dmg_rest);
 				self.pth = path_duplicate(pth_test);
 				var _ang = (point_direction(self.x, self.y, _alvo2.x, _alvo2.y))-90;
