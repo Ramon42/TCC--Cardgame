@@ -15,9 +15,10 @@
 function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.v_energia1);
 	ds_list_add(cards_in_deck, CARD.v_forca2);
-	ds_list_add(cards_in_deck, CARD.m_atacar2);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
 	ds_list_add(cards_in_deck, CARD.heranca);
 	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.c_forca3);
@@ -41,7 +42,7 @@ function scr_create_deck(){
 	
 	ds_list_add(cards_in_deck, CARD.v_energia1);
 	ds_list_add(cards_in_deck, CARD.v_forca2);
-	ds_list_add(cards_in_deck, CARD.m_atacar2);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
 	ds_list_add(cards_in_deck, CARD.heranca);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.robo);
@@ -187,5 +188,5 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.projeto);
 	
 	deck_size = ds_list_size(cards_in_deck);
-	ds_list_shuffle(cards_in_deck);
+	//ds_list_shuffle(cards_in_deck);
 }

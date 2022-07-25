@@ -5,7 +5,7 @@ draw_set_font(fn_padrao);
 randomise();
 global.rm_width = 1920;
 global.rm_height = 1080;
-global.fullscreen = true;
+global.fullscreen = false;
 
 
 enum CARD {

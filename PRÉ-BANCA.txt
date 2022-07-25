@@ -1,0 +1,8 @@
+rever - mais enfase nas areas de POO abordadas e não abordadas (motivos para não terem sido implementadas) 
+trabalhar documentação (especificação de funcionalidade (descrever aos olhos do usuário))
+colocar o link no git no trabalho
+objetivo geral (focar no desenvolvimento do jogo, (desenvolver uma ferramenta, que até então existe de maneira fisica, tirar o "apoia", 
+usar palavras como+ alternativa para REFORÇAR O ENSINO)
+deixar claro no objetivo a validação da ferramenta, nem tanto para o ensino de POO, e sim plataforma gamificada
+colocar sessão de ameaça (interface gráfica pode ser ameaça pq influencia)
+pegar mais uma turma que não seja a minha 
