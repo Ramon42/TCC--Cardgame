@@ -3,7 +3,6 @@
 
 self.alarm[0] = 1;
 
-
 if (mouse_check_button_released(mb_left)){ //draw card
 	
 	
@@ -40,7 +39,6 @@ if (mouse_check_button_released(mb_left)){ //draw card
 }
 
 if (mouse_check_button_released(mb_right)){ //draw card
-		show_debug_message("UPDATE");
 		scr_update_client();
 }
 

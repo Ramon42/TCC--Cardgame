@@ -4,13 +4,13 @@ function scr_menu_defender(_atk_id, _def_id, _dmg){
 	var _atk;
 	var _def = noone;
 	for (var o = 0; o < array_length(con_client.instance_list); o++){
-		if (con_client.instance_list[o, 1] == _atk_id){
+		if (con_client.instance_list[o, 2].inst_id == _atk_id){
 			_atk = con_client.instance_list[o, 2];
 			break;
 		}
 	}
 	for (var i = 0; i < array_length(con_client.instance_list); i++){
-		if (con_client.instance_list[i, 1] == _def_id){
+		if (con_client.instance_list[i, 2].inst_id == _def_id){
 			if (con_client.instance_list[i, 2].defender){
 				var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
 				_dica.text = "Oponente atacou seu Robô, mas ele possui o Método Defender(Ataque), logo, sofrerá dano igual a ATAQUE RECEBIDO - ESCUDO";

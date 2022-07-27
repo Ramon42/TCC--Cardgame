@@ -24,7 +24,7 @@ if (mouse_check_button_released(mb_left)){
 	
 	if (position_meeting(mouse_x, mouse_y, self)){
 		var _pos = 0;
-		
+		show_debug_message("EXECUTOU METODO= " + string(self.executou_metodo));
 		instance_destroy(obj_action_bt_parent);
 		if (self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.MAIN_PHASE1){
 			_pos = 0;
@@ -134,7 +134,7 @@ if (mouse_check_button_released(mb_left)){
 	}
 	//
 	//metodo inverter
-	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected){
+	if (position_meeting(mouse_x, mouse_y, self.inverter_bt) and self.selected and !self.executou_metodo){
 		var _count = 0;
 		for (var i = 0; i < array_length(self.sprite_list); i++){
 			if (self.sprite_list[i] == spr_card_energia1 or self.sprite_list[i] == spr_card_energia2 or
@@ -155,7 +155,7 @@ if (mouse_check_button_released(mb_left)){
 	}
 	//
 
-	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected){
+	if ((position_meeting(mouse_x, mouse_y, self.atk1_bt) or position_meeting(mouse_x, mouse_y, self.atk2_bt)) and self.selected and !self.executou_metodo){
 		var _text = "";
 		con_client.player.in_atk = true;
 		var _count = 0; //contador para saber se pode executar o método atacar 2 (oponente precisa ter 2+ robos)
@@ -213,7 +213,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 
-	if (self.atirar){
+	if (self.atirar and !self.executou_metodo){
 		if (position_meeting(mouse_x, mouse_y, obj_robo)){
 			var _inst = instance_position(mouse_x, mouse_y, obj_robo);
 			if(_inst.inst_sock_id != con_client.server_socket){
@@ -298,7 +298,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 	}
 	
-	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_combat_bt_base)){
+	if (!position_meeting(mouse_x, mouse_y, obj_robo) and !position_meeting(mouse_x, mouse_y, obj_combat_bt_base) and !position_meeting(mouse_x, mouse_y, obj_ok_bt)){
 		self.selected = false;
 		self.attacking1 = false;
 		self.attacking2 = false;

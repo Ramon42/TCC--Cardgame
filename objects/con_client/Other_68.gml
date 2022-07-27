@@ -37,6 +37,7 @@ if (socket == _event_id){
 			opponent.vida_atual = buffer_read(_buff, buffer_u8);
 			player.vida_atual = buffer_read(_buff, buffer_u8);
 			scr_show_hand();
+			scr_endgame();
 			//for (var i = 0; i < opponent.hand_size)
 		break;
 		

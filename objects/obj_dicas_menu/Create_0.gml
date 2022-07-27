@@ -12,6 +12,8 @@ aux_x = sprite_width/2;
 aux_y = sprite_height/2;
 
 text = "";
+endgame = false;
+
 
 lin1 = y-aux_y*0.83;
 lin2 = y-aux_y*0.5;

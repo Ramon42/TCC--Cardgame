@@ -18,12 +18,12 @@ function scr_calculate_dmg(_atk_id, _def_id, _sock, _sock_op, _bloq, _dmg){
 	if (_def.escudo_var > _def.escudo_cons) { _escudo = _def.escudo_var; } 
 	else { _escudo = _def.escudo_cons; }
 	
-	if (_def.defender and _bloq){
+	if (_def.defender){
 		//caso o alvo tenha o metodo defender, ele absorve dano = seu escudo
 		_dmg = _dmg - _escudo;
 	}
 	
-	if (_def.refletir and _bloq){
+	if (_def.refletir){
 		_dmg_refletir = _escudo + _def.energia;
 		if(_dmg > _dmg_refletir){
 			_atk.energia -= (_dmg - _dmg_refletir);
