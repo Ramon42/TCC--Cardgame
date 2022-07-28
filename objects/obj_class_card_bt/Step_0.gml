@@ -27,3 +27,6 @@ else if (mouse_check_button_pressed(mb_left)){
 		instance_destroy(self);
 	}
 }
+if (con_client.player.state != PLAYERSTATE.MAIN_PHASE1){
+	instance_destroy(self);
+}

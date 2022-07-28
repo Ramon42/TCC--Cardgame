@@ -47,7 +47,7 @@ function scr_decode_instance_list(_instance_list){
 		with(_inst){
 			image_xscale = 0.5;
 			image_yscale = 0.5;
-			depth = -1;
+			depth = 0;
 			sprite_list = _load.sprite_list;
 			inst_proj_id = _load.inst_proj_id;
 			inst_sock_id = _load.inst_sock_id;

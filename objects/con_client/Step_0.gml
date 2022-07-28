@@ -51,10 +51,6 @@ if (con_client.player != noone){
 
 //PLACEHOLDER PARA TELA DE CRIAÇÃO DE CLASSE
 
-if (keyboard_check_released(ord("C"))){
-	show_debug_message("C");
-	instance_create_layer(0, 0, "Menu_edit_project", obj_create_class_menu);
-}
 
 
 /*
