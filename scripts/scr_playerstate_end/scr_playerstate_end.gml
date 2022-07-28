@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_playerstate_end(){
 	con_client.player.criou_projeto = false;
+	con_client.player.criou_instancia = false;
 	con_client.player.state = PLAYERSTATE.ENEMY_TURN;
 	for(var i = 0; i < array_length(con_client.instance_list); i++){
 		con_client.instance_list[i, 2].executou_metodo = false;

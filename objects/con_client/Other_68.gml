@@ -17,7 +17,7 @@ if (socket == _event_id){
 			opponent = instance_create_layer(0, 0, "Instances", obj_opponent); //fazer isso em create_opponent
 			deck.deck_size = buffer_read(_buff, buffer_u8);
 			server_socket = buffer_read(_buff, buffer_u8);
-			player.vida_atual = 20;
+			player.vida_atual = 10;
 			//scr_draw_card_client(7); //esse draw ta dando problema no segundo jogador conectado
 		break;
 			

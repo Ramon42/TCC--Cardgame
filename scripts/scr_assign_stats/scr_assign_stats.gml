@@ -9,7 +9,7 @@ function scr_assign_stats(_card){
 	else if (_card.sprite_index == spr_card_heranca){
 		_card.card_subtype = SUBTYPE.HERANCA;
 		_card.card_type = CARDTYPE.CLASSE;
-		_card.texto_auxiliar = "Copia variáveis e métodos de uma SuperClasse para uma subclasse.\nA subclasse passa a ter todas as características da SuperClasse, além das que forem definidas nela. \nMétodos e variáveis com mesmo nome e parâmetros na subclasse sobrepõem os da SuperClasse.";
+		_card.texto_auxiliar = "Classe - extensão - \nCopia variáveis e métodos de uma SuperClasse para uma subclasse.\nA subclasse passa a ter todas as características da SuperClasse, além das que forem definidas nela. \nMétodos e variáveis com mesmo nome e parâmetros na subclasse sobrepõem os da SuperClasse.";
 	}
 	else if (_card.sprite_index == spr_card_projeto){
 		_card.card_subtype = SUBTYPE.PROJETO;

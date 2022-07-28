@@ -164,16 +164,14 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.robo);
 	ds_list_add(cards_in_deck, CARD.canhao);
-	ds_list_add(cards_in_deck, CARD.blaster);
-	ds_list_add(cards_in_deck, CARD.railgun);
+	ds_list_add(cards_in_deck, CARD.canhao);
+	ds_list_add(cards_in_deck, CARD.canhao);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.superclasse_voar);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
-	ds_list_add(cards_in_deck, CARD.superclasse_atacar2);
-	ds_list_add(cards_in_deck, CARD.superclasse_atacar2);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar2);
 	ds_list_add(cards_in_deck, CARD.superclasse_atacar2);
 	ds_list_add(cards_in_deck, CARD.superclasse_defender1);
@@ -208,11 +206,14 @@ function scr_create_deck(){
 	ds_list_shuffle(cards_in_deck);
 	
 	//cartas compradas
+	ds_list_insert(cards_in_deck, 0, CARD.v_decremento1);
+	ds_list_insert(cards_in_deck, 0, CARD.v_incremento1);
+	
 	ds_list_insert(cards_in_deck, 0, CARD.superclasse_defender1);
 	ds_list_insert(cards_in_deck, 0, CARD.superclasse_atacar2);
 	
-	ds_list_insert(cards_in_deck, 0, CARD.blaster);
-	ds_list_insert(cards_in_deck, 0, CARD.railgun);
+	ds_list_insert(cards_in_deck, 0, CARD.canhao);
+	ds_list_insert(cards_in_deck, 0, CARD.canhao);
 	
 	ds_list_insert(cards_in_deck, 0, CARD.heranca);
 	ds_list_insert(cards_in_deck, 0, CARD.heranca);

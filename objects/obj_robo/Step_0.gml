@@ -101,7 +101,7 @@ if (mouse_check_button_released(mb_left)){
 		}
 		if (!self.atirar){
 			var _dica = instance_create_depth(0,0,0, obj_dicas_menu);
-			_dica.text = "A arma ainda está recarregando, aguarde " + string(self.arma.recarregar - self.arma.recarregar_count) + "turnos para recarregar!";
+			_dica.text = "A arma ainda está recarregando, aguarde " + string(self.arma.recarregar - self.arma.recarregar_count) + " turno(s) para recarregar!";
 		}
 		for (var i = 0; i < array_length(con_client.instance_list); i++){
 			if (con_client.server_socket != con_client.instance_list[i, 0]){

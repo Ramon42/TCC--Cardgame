@@ -5,7 +5,7 @@ if (!is_local) { exit; }
 
 var _pc, _str, _lf_w, _lf_h;
 _pc = (self.vida_atual / self.vida_max) * 100;
-_str = "VIDA: " + string(self.vida_atual);
+_str = "ENERGIA: " + string(self.vida_atual);
 _lf_w = string_width(_str);
 _lf_h = string_height(_str);
 draw_healthbar(700, 20, 900, 50, _pc, c_black, c_red, c_lime, 0, true, true);

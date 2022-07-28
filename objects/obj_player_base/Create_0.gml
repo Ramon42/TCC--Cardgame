@@ -7,7 +7,7 @@ player_instances = array_create(0);
 
 //limitações por turno
 criou_projeto = false;
-
+criou_instancia = false;
 
 
 create_project = false; //true= tela de criação de nova classe
@@ -19,9 +19,9 @@ p_instances_pos = [[1004,622],[1138,622],[1272,622],[1406,622],[1540,622],[1674,
 op_instances_pos = [[1004,457],[1138,457],[1272,457],[1406,457],[1540,457],[1674,457],
 				    [1004,320],[1138,320],[1272,320],[1406,320],[1540,320],[1674,320]];
 
-op_projects_pos = [[327,201],[428,201],[532,201],[633,201],
+op_projects_pos = [[327,472],[428,472],[532,472],[633,472],
 				   [327,338],[428,338],[532,338],[633,338],
-				   [327,472],[428,472],[532,472],[633,472]];
+				   [327,201],[428,201],[532,201],[633,201]];
 				   
 p_projects_pos = [[327,607],[428,607],[532,607],[633,607],
 				  [327,741],[428,741],[532,741],[633,741],
@@ -41,7 +41,7 @@ move_projects_pos = [[100,175],[220,175],
 hand = ds_list_create();
 hand_size = 0;
 vida_atual = 0;
-vida_max = 20;
+vida_max = 10;
 card_selected = noone;
 is_local = true;
 def_menu_queue = array_create(0);

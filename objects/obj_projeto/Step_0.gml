@@ -108,11 +108,17 @@ if (mouse_check_button_released(mb_left)){
 	}
 	
 	if (position_meeting(mouse_x, mouse_y, self.create_instance_bt)){
+		if (!con_client.player.criou_instancia){ //caso ainda não tenha criado uma instancia
+			con_client.player.criou_instancia = true;
 			instance_destroy(self.edit_project_bt);
 			instance_destroy(self.create_instance_bt);
 			scr_send_instance(self); //enviar i para saber a posição da carta projeto na mão do jogador
 			scr_call_update();
-			
+		}
+		else if (con_client.player.criou_instancia){
+			var _dica = instance_create_depth(0,0,0,obj_dicas_menu);
+			_dica.text = "Uma Instância de Robô já foi criada por você neste turno!";
+		}
 	}
 }
 

@@ -10,7 +10,7 @@ if (server == _event_id) {
 	if (_type == network_type_connect){
 		ds_list_add(sockets, _sock);
 		var _p = instance_create_layer(0, 0, "Instances", obj_player_base);
-		_p.vida_atual = 20;
+		_p.vida_atual = 10;
 		scr_send_init(_sock);
 		//colocar tudo isso no send init
 		//scr_send_opponent(_sock, _p.id, _p.hand_size); //arrumar isso (10/10)
