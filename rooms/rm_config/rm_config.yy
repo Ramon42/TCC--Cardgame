@@ -47,7 +47,7 @@
   },
   "parent": {
     "name": "MENU",
-    "path": "folders/Objects/Rooms/MENU.yy",
+    "path": "folders/Rooms/MENU.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_config",

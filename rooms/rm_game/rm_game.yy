@@ -56,7 +56,7 @@
   },
   "parent": {
     "name": "Rooms",
-    "path": "folders/Objects/Rooms.yy",
+    "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_game",
