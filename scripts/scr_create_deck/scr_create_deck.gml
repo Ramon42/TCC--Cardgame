@@ -212,7 +212,7 @@ function scr_create_deck(){
 	ds_list_insert(cards_in_deck, 0, CARD.superclasse_defender1);
 	ds_list_insert(cards_in_deck, 0, CARD.superclasse_atacar2);
 	
-	ds_list_insert(cards_in_deck, 0, CARD.canhao);
+	ds_list_insert(cards_in_deck, 0, CARD.blaster);
 	ds_list_insert(cards_in_deck, 0, CARD.canhao);
 	
 	ds_list_insert(cards_in_deck, 0, CARD.heranca);

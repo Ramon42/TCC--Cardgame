@@ -8,3 +8,4 @@ cursor = "|";
 delay = 20;
 alarm[0] = delay;
 
+selected = false;
