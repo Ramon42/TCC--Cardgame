@@ -3,6 +3,6 @@
 function scr_con_client_create(_ip){
 	var _client = instance_create_layer(0, 0, "Instances", con_client);
 	with(con_client){
-		_client.connect = network_connect(_client.socket, _ip, PORT);
+		_client.connect = network_connect(_client.socket, _ip, 8086);
 	}
 }

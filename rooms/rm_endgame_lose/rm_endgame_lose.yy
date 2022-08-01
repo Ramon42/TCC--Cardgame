@@ -43,7 +43,7 @@
   },
   "parent": {
     "name": "MENU",
-    "path": "folders/Rooms/MENU.yy",
+    "path": "folders/Objects/Rooms/MENU.yy",
   },
   "resourceVersion": "1.0",
   "name": "rm_endgame_lose",
