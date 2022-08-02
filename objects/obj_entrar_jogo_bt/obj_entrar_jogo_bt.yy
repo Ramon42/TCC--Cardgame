@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_buscar_bt",
-    "path": "sprites/spr_buscar_bt/spr_buscar_bt.yy",
+    "name": "spr_entrar",
+    "path": "sprites/spr_entrar/spr_entrar.yy",
   },
   "solid": false,
   "visible": true,
@@ -22,17 +22,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":7,"eventType":6,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MENU",
-    "path": "folders/Objects/MENU.yy",
+    "name": "BOTOES",
+    "path": "folders/Objects/MENU/BOTOES.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_find_game",
+  "name": "obj_entrar_jogo_bt",
   "tags": [],
   "resourceType": "GMObject",
 }

@@ -6,7 +6,7 @@ randomise();
 global.rm_width = 1920;
 global.rm_height = 1080;
 global.fullscreen = false;
-
+global.ip = "";
 
 enum CARD {
 	m_atacar1,

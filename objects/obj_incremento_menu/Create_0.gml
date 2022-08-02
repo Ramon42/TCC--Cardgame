@@ -13,4 +13,4 @@ var1 = noone;
 save_bt = noone;
 incremento = noone;
 del_pos = -1;
-self.save_bt = instance_create_depth(self.x + self.x/4, self.y + self.y/4, -4, obj_incremento_bt);
+self.save_bt = instance_create_depth(self.x + self.x/4, self.y + self.y/8, -4, obj_incremento_bt);

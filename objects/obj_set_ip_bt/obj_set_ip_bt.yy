@@ -28,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MENU",
-    "path": "folders/Objects/MENU.yy",
+    "name": "BOTOES",
+    "path": "folders/Objects/MENU/BOTOES.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_find_game",
+  "name": "obj_set_ip_bt",
   "tags": [],
   "resourceType": "GMObject",
 }
