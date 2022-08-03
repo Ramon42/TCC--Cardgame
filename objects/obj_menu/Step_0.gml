@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+/*
 if (keyboard_check_pressed(vk_down)){menu_index ++;}
 else if (keyboard_check_pressed(vk_up)){menu_index --;}
 
@@ -31,3 +31,4 @@ if (keyboard_check_pressed(vk_enter)){
 			game_end();
 	}
 }
+*/
