@@ -1,17 +1,14 @@
 {
   "spriteId": {
-    "name": "spr_criar_jogo",
-    "path": "sprites/spr_criar_jogo/spr_criar_jogo.yy",
+    "name": "spr_nome_jogo",
+    "path": "sprites/spr_nome_jogo/spr_nome_jogo.yy",
   },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "obj_bt_parent",
-    "path": "objects/obj_bt_parent/obj_bt_parent.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,7 +23,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -35,7 +32,7 @@
     "path": "folders/Objects/MENU/BOTOES.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_criar_jogo_bt",
+  "name": "obj_game_title",
   "tags": [],
   "resourceType": "GMObject",
 }
