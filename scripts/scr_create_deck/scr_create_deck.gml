@@ -13,14 +13,281 @@
 */
 
 function scr_create_deck(){
-	ds_list_add(cards_in_deck, CARD.v_energia1);
-	ds_list_add(cards_in_deck, CARD.c_forca4);
-	ds_list_add(cards_in_deck, CARD.m_atacar1);
-	ds_list_add(cards_in_deck, CARD.heranca);
 	ds_list_add(cards_in_deck, CARD.projeto);
-	ds_list_add(cards_in_deck, CARD.superclasse_voar);
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca4);
+	
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	
+	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.superclasse_defender1);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.m_usar_arma);
+	ds_list_add(cards_in_deck, CARD.canhao);
+	ds_list_add(cards_in_deck, CARD.m_usar_arma);
+	ds_list_add(cards_in_deck, CARD.blaster);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_forca1);
+	
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.robo);
+	
+	ds_list_add(cards_in_deck, CARD.v_incremento2);
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_incremento1);
+	ds_list_add(cards_in_deck, CARD.v_decremento2);
+	
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.superclasse_atacar2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.superclasse_defender1);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.v_forca2);
+	
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.robo);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca4);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	
+	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.superclasse_defender1);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_forca1);
+	
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.robo);
+	
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.v_incremento2);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_incremento1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+		ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.v_forca2);
+	
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.robo);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca4);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_escudo1);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.m_atacar1);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	
+	ds_list_add(cards_in_deck, CARD.superclasse_atacar1);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.superclasse_defender1);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_forca1);
+	
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.robo);
+	
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.v_incremento2);
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_incremento1);
+	ds_list_add(cards_in_deck, CARD.v_decremento2);
+	
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.m_explodir);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	
+	ds_list_add(cards_in_deck, CARD.c_forca3);
+	ds_list_add(cards_in_deck, CARD.v_energia2);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+
+	ds_list_add(cards_in_deck, CARD.v_decremento2);
+	ds_list_add(cards_in_deck, CARD.m_inverter);
+	ds_list_add(cards_in_deck, CARD.v_decremento1);
+	ds_list_add(cards_in_deck, CARD.v_escudo2);
+	
+	ds_list_add(cards_in_deck, CARD.v_energia1);
+	ds_list_add(cards_in_deck, CARD.v_forca2);
+	ds_list_add(cards_in_deck, CARD.m_defender);
+	ds_list_add(cards_in_deck, CARD.heranca);
+	
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.superclasse_voar);
+	ds_list_add(cards_in_deck, CARD.robo);
+	ds_list_add(cards_in_deck, CARD.projeto);
+	
+		
+	
 	
 	ds_list_add(cards_in_deck, CARD.c_forca3);
 	ds_list_add(cards_in_deck, CARD.v_energia2);
@@ -203,43 +470,6 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	
-	ds_list_shuffle(cards_in_deck);
-	
-	//cartas compradas
-	ds_list_insert(cards_in_deck, 0, CARD.v_decremento1);
-	ds_list_insert(cards_in_deck, 0, CARD.v_incremento1);
-	
-	ds_list_insert(cards_in_deck, 0, CARD.superclasse_defender1);
-	ds_list_insert(cards_in_deck, 0, CARD.superclasse_atacar2);
-	
-	ds_list_insert(cards_in_deck, 0, CARD.canhao);
-	ds_list_insert(cards_in_deck, 0, CARD.canhao);
-	
-	ds_list_insert(cards_in_deck, 0, CARD.heranca);
-	ds_list_insert(cards_in_deck, 0, CARD.heranca);
-	
-	ds_list_insert(cards_in_deck, 0, CARD.superclasse_atacar1);
-	ds_list_insert(cards_in_deck, 0, CARD.superclasse_defender2);
-	
-	//mãos iniciais
-	ds_list_insert(cards_in_deck, 0, CARD.projeto);
-	ds_list_insert(cards_in_deck, 0, CARD.v_forca2);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	ds_list_insert(cards_in_deck, 0, CARD.m_usar_arma);
-	ds_list_insert(cards_in_deck, 0, CARD.projeto);
-	ds_list_insert(cards_in_deck, 0, CARD.v_energia2);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	
-	ds_list_insert(cards_in_deck, 0, CARD.projeto);
-	ds_list_insert(cards_in_deck, 0, CARD.v_forca2);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	ds_list_insert(cards_in_deck, 0, CARD.m_usar_arma);
-	ds_list_insert(cards_in_deck, 0, CARD.projeto);
-	ds_list_insert(cards_in_deck, 0, CARD.v_energia2);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	ds_list_insert(cards_in_deck, 0, CARD.robo);
-	
+	//ds_list_shuffle(cards_in_deck);
 	deck_size = ds_list_size(cards_in_deck);
-	
 }

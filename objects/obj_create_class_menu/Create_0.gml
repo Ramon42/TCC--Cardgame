@@ -34,8 +34,8 @@ lin6 = y_pos+aux_y*0.83;
 lines = [lin1, lin2, lin3, lin4, lin5, lin6];
 
 
-cancel_bt = instance_create_depth((col4), (lin6-20), -2, obj_cancel_bt);
-save_bt = instance_create_depth((col4), (lin6+20), -2, obj_save_class_bt);
+cancel_bt = instance_create_depth((col4), (lin5-20), -2, obj_cancel_bt);
+save_bt = instance_create_depth((col4), (lin5+20), -2, obj_save_class_bt);
 
 
 //novo, usando só uma lista para todas as cartas

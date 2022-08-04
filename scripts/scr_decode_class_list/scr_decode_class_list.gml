@@ -35,6 +35,7 @@ function scr_decode_class_list(_class_list){
 				dano = _load.dano;
 				recarregar = _load.recarregar;
 				recarregar_count = _load.recarregar;
+				show_debug_message("SPRITE> " + string(_load.sprite));
 			}
 			var _size = array_length(con_client.class_list);
 		
@@ -53,6 +54,7 @@ function scr_decode_class_list(_class_list){
 				dano = _load.dano;
 				recarregar = _load.recarregar;
 				recarregar_count = _load.recarregar_count;
+				show_debug_message("SPRITE> " + string(_load.sprite));
 			}
 		}
 	}

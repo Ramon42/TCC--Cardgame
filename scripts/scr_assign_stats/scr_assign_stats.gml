@@ -44,17 +44,17 @@ function scr_assign_stats(_card){
 	else if (_card.sprite_index == spr_card_classe_canhao){
 		_card.card_subtype = SUBTYPE.CANHAO;
 		_card.card_type = CARDTYPE.CLASSE;
-		_card.texto_auxiliar = "Classe - com método abstrato - \nCanhão de Fótons -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter a habilidade de usar armas para poder usar esta carta.\nAtirarEm(Objeto): Causa 5 pontos de dano ao alvo. Demora 3 turnos para recarregar.";
+		_card.texto_auxiliar = "Classe - com método abstrato - \nCanhão de Fótons -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter o Método UsarArma() para poder usar esta carta.\nAtirarEm(Objeto): Causa 5 pontos de dano ao alvo. Demora 3 turnos para recarregar.";
 	}
 	else if (_card.sprite_index == spr_card_classe_blaster){
 		_card.card_subtype = SUBTYPE.BLASTER;
 		_card.card_type = CARDTYPE.CLASSE;
-		_card.texto_auxiliar = "Classe - com método abstrato - \nBlaster -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter a habilidade de usar armas para poder usar esta carta.\nAtirarEm(Objeto): Causa 4 pontos de dano ao alvo. Demora 2 turnos para recarregar.";
+		_card.texto_auxiliar = "Classe - com método abstrato - \nBlaster -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter o Método UsarArma() para poder usar esta carta.\nAtirarEm(Objeto): Causa 4 pontos de dano ao alvo. Demora 2 turnos para recarregar.";
 	}
 	else if (_card.sprite_index == spr_card_classe_railgun){
 		_card.card_subtype = SUBTYPE.RAILGUN;
 		_card.card_type = CARDTYPE.CLASSE;
-		_card.texto_auxiliar = "Classe - com método abstrato - \nRailgun -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter a habilidade de usar armas para poder usar esta carta.\nAtirarEm(Objeto): Causa 8 pontos de dano ao alvo. Demora 5 turnos para recarregar.";
+		_card.texto_auxiliar = "Classe - com método abstrato - \nRailgun -> Não é necessário criar um objeto de Arma para usar o método desta classe.\nO Robô precisa ter o Método UsarArma() para poder usar esta carta.\nAtirarEm(Objeto): Causa 8 pontos de dano ao alvo. Demora 5 turnos para recarregar.";
 	}
 	else if (_card.sprite_index == spr_card_incremento1){
 		_card.card_subtype = SUBTYPE.INCREMENTO1;

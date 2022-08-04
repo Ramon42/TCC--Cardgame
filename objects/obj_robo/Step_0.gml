@@ -1,16 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-
-if (con_client.player.state != PLAYERSTATE.MAIN_PHASE1 and con_client.player.state != PLAYERSTATE.MAIN_PHASE2){
-	if (instance_exists(self.voar_bt)){ instance_destroy(self.voar_bt); }
-	if (instance_exists(self.inverter_bt)){ instance_destroy(self.inverter_bt); }
-}
 if (con_client.player.state != PLAYERSTATE.BATTLE_PHASE){
 	if (instance_exists(self.atk1_bt)){ instance_destroy(self.atk1_bt); }
 	if (instance_exists(self.atk2_bt)){ instance_destroy(self.atk2_bt); }
 	if (instance_exists(self.explodir_bt)){ instance_destroy(self.explodir_bt); }
 	if (instance_exists(self.usar_arma_bt)){ instance_destroy(self.usar_arma_bt); }
+	if (instance_exists(self.voar_bt)){ instance_destroy(self.voar_bt); }
+	if (instance_exists(self.inverter_bt)){ instance_destroy(self.inverter_bt); }
 }
 
 if (!self.atk_path){
@@ -26,6 +23,7 @@ if (mouse_check_button_released(mb_left)){
 		var _pos = 0;
 		show_debug_message("EXECUTOU METODO= " + string(self.executou_metodo));
 		instance_destroy(obj_action_bt_parent);
+		/*
 		if (self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.MAIN_PHASE1){
 			_pos = 0;
 			self.selected = true;
@@ -38,8 +36,9 @@ if (mouse_check_button_released(mb_left)){
 				_pos++;
 			}
 		}
+		*/
 		//caso o jogador clique na carta durante a fase de batalha
-		else if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
+		if(self.inst_sock_id == con_client.server_socket and con_client.player.state == PLAYERSTATE.BATTLE_PHASE){
 			_pos = 0;
 			self.selected = true;
 			con_client.player.card_selected = noone;
@@ -53,6 +52,15 @@ if (mouse_check_button_released(mb_left)){
 						break;
 					}
 				}
+			}
+			
+			if (self.voar and !self.executou_metodo){
+				self.voar_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_voar_bt);
+				_pos++;
+			}
+			if (self.inverter and !self.executou_metodo){
+				self.inverter_bt = instance_create_depth(self.bt_pos[_pos, 0], self.bt_pos[_pos, 1], -1, obj_invert_bt);
+				_pos++;
 			}
 			if (self.atacar_1 and !self.executou_metodo){
 				//caso possa usar o método atacar_1

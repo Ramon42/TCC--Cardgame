@@ -9,6 +9,7 @@ else { image_angle = 0; }
 if (self.inst_sock_id != con_client.server_socket){
 	image_angle = 180;
 }
+
 draw_self();
 
 if (self.attacking1 or self.attacking2){
@@ -18,4 +19,3 @@ if (self.attacking1 or self.attacking2){
 if (self.defending){
 	draw_sprite_ext(spr_card_highlight_def, 0, self.x, self.y, self.image_xscale, self.image_yscale, 0, c_white, 0.8);
 }
-

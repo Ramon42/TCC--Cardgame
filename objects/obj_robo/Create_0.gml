@@ -39,6 +39,8 @@ bt_pos = [[75, 680], [175 ,680],
 		  [75, 755], [175, 755],
 		  [75, 830], [175, 830]];
 		  
+energia_pos = [[x + (sprite_width/2)*0.75, y - sprite_height/4], [(x + (sprite_width/2)*0.75) + 20, y - sprite_height/4]];
+
 defending = false;
 atk_direct = true; //caso seja true, o jogador atacará o oponente diretamente
 

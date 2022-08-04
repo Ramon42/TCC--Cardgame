@@ -56,6 +56,7 @@ if (mouse_check_button_released(mb_left)){
 
 if (self.superclasse != noone and self.subclasse != noone){
 	con_client.player.in_heranca = false;
+	con_client.player.criou_projeto = true;
 	scr_send_heranca(self.superclasse, self.subclasse);
 	scr_call_update();
 	for (var i = 0; i < ds_list_size(con_client.player.hand); i++){
