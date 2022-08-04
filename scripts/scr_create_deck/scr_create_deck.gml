@@ -470,6 +470,6 @@ function scr_create_deck(){
 	ds_list_add(cards_in_deck, CARD.projeto);
 	ds_list_add(cards_in_deck, CARD.projeto);
 	
-	//ds_list_shuffle(cards_in_deck);
+	ds_list_shuffle(cards_in_deck);
 	deck_size = ds_list_size(cards_in_deck);
 }
