@@ -5,6 +5,16 @@ if(array_length(con_client.player.player_projects) <= 1){
 	instance_destroy(self);
 }
 
+var _count = 0;
+for (var i = 0; i < array_length(con_client.project_list); i++){
+	if (con_client.project_list[i, 0] == con_client.server_socket){
+		_count ++;
+	}
+}
+if (_count < 2){
+	instance_destroy(self);
+}
+
 if (mouse_check_button_released(mb_left)){
 	if (!position_meeting(mouse_x,mouse_y,self) and !self.dica){
 		instance_destroy(self);
